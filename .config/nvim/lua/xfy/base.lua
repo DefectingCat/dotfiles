@@ -45,3 +45,5 @@ vim.opt.formatoptions:append { 'r' }
 
 -- Use color theme
 vim.cmd[[colorscheme dracula]]
+
+vim.opt.shell = '/usr/bin/zsh'
