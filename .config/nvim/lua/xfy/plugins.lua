@@ -32,8 +32,13 @@ packer.startup(function(use)
   }
 
   use 'kyazdani42/nvim-web-devicons' -- File icons
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+       { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
+  }
+  -- use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'norcalli/nvim-colorizer.lua'
@@ -56,4 +61,7 @@ packer.startup(function(use)
     },
     tag = 'nightly'
   }
+
+  -- Search in content
+  -- use 'junegunn/fzf.vim'
 end)
