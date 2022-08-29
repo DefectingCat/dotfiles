@@ -31,7 +31,7 @@ packer.startup(function(use)
     run = ':TSUpdate'
   }
 
-  use 'kyazdani41/nvim-web-devicons' -- File icons
+  use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
@@ -47,4 +47,13 @@ packer.startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+
+  -- File explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyzadani42/nvim-web-devicons',
+    },
+    tag = 'nightly'
+  }
 end)
