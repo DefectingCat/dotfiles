@@ -2,12 +2,12 @@ local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
+local lga_actions = require("telescope-live-grep-args.actions")
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
 
-local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -17,7 +17,17 @@ telescope.setup {
       },
     },
   },
-  -- extensions = {
+  extensions = {
+    live_grep_args = {
+      auto_quoting = true, -- enable/disable auto-quoting
+      -- override default mappings
+      -- default_mappings = {},
+      mappings = { -- extend mappings
+        i = {
+          ["<C-k>"] = lga_actions.quote_prompt(),
+        }
+      }
+    }
   --   file_browser = {
   --     theme = "dropdown",
   --     -- disables netrw and use telescope-file-browser in its place
@@ -37,7 +47,7 @@ telescope.setup {
   --       },
   --     },
   --   },
-  -- },
+ },
 }
 
 -- telescope.load_extension("file_browser")
@@ -64,6 +74,7 @@ end)
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
+vim.keymap.set("n", ";s", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 -- vim.keymap.set("n", "sf", function()
 --   telescope.extensions.file_browser.file_browser({
 --     path = "%:p:h",
