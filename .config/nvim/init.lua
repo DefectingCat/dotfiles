@@ -8,8 +8,9 @@ local has = function(x)
 end
 local is_mac = has "macunix"
 local is_win = has "win32"
+local is_unix = has "unix"
 
-if is_mac then
+if is_mac or is_unix then
   require('xfy.macos')
 end
 if is_win then
