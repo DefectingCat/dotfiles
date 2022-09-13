@@ -35,5 +35,13 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Close Buffer 
 keymap.set('n', 'sw', ':bw<Return>')
-
+-- File manager
 keymap.set('n', 'sf', ':NvimTreeToggle<Return>')
+
+-- Leader
+vim.g.maplocalleader = ';'
+
+-- Motion
+keymap.set('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+keymap.set('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+keymap.set('', ',,', ":HopWord<Return>")
