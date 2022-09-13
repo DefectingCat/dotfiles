@@ -8,7 +8,6 @@ local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
 
-
 telescope.setup {
   defaults = {
     mappings = {
@@ -68,9 +67,9 @@ end)
 vim.keymap.set('n', ';t', function()
   builtin.help_tags()
 end)
-vim.keymap.set('n', ';;', function()
-  builtin.resume()
-end)
+-- vim.keymap.set('n', ';;', function()
+--   builtin.resume()
+-- end)
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
