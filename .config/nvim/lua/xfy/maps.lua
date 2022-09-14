@@ -44,4 +44,10 @@ vim.g.maplocalleader = ';'
 -- Motion
 keymap.set('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
 keymap.set('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-keymap.set('', ',,', ":HopWord<Return>")
+keymap.set('', ';;', ":HopWord<Return>")
+
+-- Run prettier and save file when press Ctrl + s
+keymap.set('n', '<C-s>', ':Prettier<Return>:w<Return>')
+
+-- Select current world
+keymap.set('n', 'gb', 'viw')
