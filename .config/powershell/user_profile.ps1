@@ -8,6 +8,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
 
 # import module
+# Install-Module -Name Terminal-Icons
 Import-Module -Name Terminal-Icons
 
 # Alias
