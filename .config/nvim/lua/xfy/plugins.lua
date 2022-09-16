@@ -75,8 +75,7 @@ packer.startup(function(use)
     end
   }
 
-  use {
-    'terrortylor/nvim-comment'
-  }
+  use 'terrortylor/nvim-comment'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
 end)
