@@ -51,3 +51,6 @@ keymap.set('n', '<C-s>', ':Prettier<Return>:w<Return>')
 
 -- Select current world
 keymap.set('n', 'gb', 'viw')
+
+-- Comment
+keymap.set('', '<C-/>', ':Comment<Return>')
