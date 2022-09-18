@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/xfy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/home/xfy/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/xfy/.local/share/nvim/site/pack/packer/start/dracula.nvim",
