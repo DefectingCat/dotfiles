@@ -13,9 +13,6 @@ keymap.set("n", "-", "<C-x>")
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- Select current world
-keymap.set("", "gn", "viw")
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
@@ -75,3 +72,6 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- Select current world
 keymap.set("n", "gb", "viw")
+
+-- Comment
+keymap.set("", "<C-/>", ":Comment<Return>")

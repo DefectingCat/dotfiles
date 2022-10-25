@@ -36,9 +36,6 @@ return packer.startup(function(use)
 	-- text
 	-- use 'tpope/vim-surround'
 
-	-- Comment
-	use("numToStr/Comment.nvim")
-
 	-- autocompletion
 	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
 	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
@@ -47,13 +44,13 @@ return packer.startup(function(use)
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+	use("rafamadriz/friendly-snippets")
 
 	-- LSPs
 	use("neovim/nvim-lspconfig") -- LSP
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-	-- use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnos
@@ -63,7 +60,6 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 
-	-- use 'glepnir/lspsaga.nvim' -- LSP UIs
 	-- treesitter configuration
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -118,6 +114,16 @@ return packer.startup(function(use)
 
 	-- multi cursor
 	use("mg979/vim-visual-multi")
+
+	-- Comment
+	use("terrortylor/nvim-comment")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
+	-- function doc
+	use({
+		"kkoomen/vim-doge",
+		run = ":call doge#install()",
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
