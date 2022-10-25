@@ -1,4 +1,3 @@
 # xfy's dotfiles
 
-![](./screenshots/Screenshot_2022-08-22.png)
-
+![](./screenshots/Screenshot from 2022-10-25 15-25-32.png)
