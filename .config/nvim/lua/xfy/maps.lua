@@ -13,6 +13,9 @@ keymap.set("n", "-", "<C-x>")
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+-- Select current world
+keymap.set("", "gn", "viw")
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
