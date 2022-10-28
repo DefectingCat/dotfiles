@@ -13,6 +13,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- configure null_ls
 null_ls.setup({
+	log = {
+		level = "info",
+	},
 	-- setup formatters & linters
 	sources = {
 		--  to disable file types use
