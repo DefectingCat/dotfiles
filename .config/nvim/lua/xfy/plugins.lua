@@ -125,6 +125,9 @@ return packer.startup(function(use)
 		run = ":call doge#install()",
 	})
 
+	-- Display image in editor
+	-- use({ "edluffy/hologram.nvim" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
