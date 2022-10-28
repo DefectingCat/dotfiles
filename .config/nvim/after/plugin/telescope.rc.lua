@@ -4,11 +4,12 @@ if not status then
 end
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
+-- local action_state = require("telescope.actions.state")
 local lga_actions = require("telescope-live-grep-args.actions")
 
-local function telescope_buffer_dir()
-	return vim.fn.expand("%:p:h")
-end
+-- local function telescope_buffer_dir()
+-- 	return vim.fn.expand("%:p:h")
+-- end
 
 telescope.setup({
 	defaults = {
@@ -62,8 +63,26 @@ end)
 vim.keymap.set("n", ";r", function()
 	builtin.live_grep()
 end)
-vim.keymap.set("n", "\\\\", function()
+
+-- local my_buffer = function()
+-- 	require("telescope.builtin").buffers({
+-- 		attach_mappings = function(prompt_bufnr, map)
+-- 			local delete_buf = function()
+-- 				local selection = action_state.get_selected_entry()
+-- 				actions.close(prompt_bufnr)
+-- 				vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+-- 			end
+--
+-- 			map("n", "<C-w>", delete_buf)
+--
+-- 			return true
+-- 		end,
+-- 	})
+-- end
+
+vim.keymap.set("n", ";;", function()
 	builtin.buffers()
+	-- my_buffer()
 end)
 vim.keymap.set("n", ";t", function()
 	builtin.help_tags()
@@ -77,16 +96,3 @@ end)
 vim.keymap.set("n", ";e", function()
 	builtin.diagnostics()
 end)
--- vim.keymap.set("n", ";s", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
--- vim.keymap.set("n", "sf", function()
---   telescope.extensions.file_browser.file_browser({
---     path = "%:p:h",
---     cwd = telescope_buffer_dir(),
---     respect_gitignore = false,
---     hidden = true,
---     grouped = true,
---     previewer = false,
---     initial_mode = "normal",
---     layout_config = { height = 40 }
---   })
--- end)
