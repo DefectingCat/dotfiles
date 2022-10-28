@@ -250,6 +250,11 @@ _G.packer_plugins = {
     path = "/home/xfy/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
   },
+  ["vim-mdx-js"] = {
+    loaded = true,
+    path = "/home/xfy/.local/share/nvim/site/pack/packer/start/vim-mdx-js",
+    url = "https://github.com/jxnblk/vim-mdx-js"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/xfy/.local/share/nvim/site/pack/packer/start/vim-visual-multi",

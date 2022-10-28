@@ -128,6 +128,9 @@ return packer.startup(function(use)
 	-- Display image in editor
 	-- use({ "edluffy/hologram.nvim" })
 
+	-- MDX
+	use("jxnblk/vim-mdx-js")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
