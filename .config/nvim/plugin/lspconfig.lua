@@ -16,6 +16,11 @@ if not typescript_setup then
 	return
 end
 
+local rust_status, rust = pcall(require, "rust-tools")
+if not rust_status then
+	return
+end
+
 local protocol = require("vim.lsp.protocol")
 
 -- Use an on_attach function to only map the following keys
@@ -145,6 +150,36 @@ nvim_lsp["cssls"].setup({
 nvim_lsp.tailwindcss.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+})
+
+nvim_lsp.rust_analyzer.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+rust.setup({
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			["rust-analyzer"] = {
+				cargo = {
+					allFeatures = true,
+				},
+				checkOnSave = {
+					allFeatures = true,
+					command = "clippy",
+				},
+				procMacro = {
+					ignored = {
+						-- ["async-trait"] = { "async_trait" },
+						-- ["napi-derive"] = { "napi" },
+						-- ["async-recursion"] = { "async_recursion" },
+					},
+				},
+			},
+		},
+	},
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

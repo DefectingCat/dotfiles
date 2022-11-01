@@ -57,6 +57,7 @@ return packer.startup({
 		use("onsails/lspkind-nvim") -- vscode-like pictograms
 		use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 		use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+		use("simrat39/rust-tools.nvim") -- rust
 
 		-- formatting & linting
 		use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnos
