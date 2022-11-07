@@ -70,10 +70,12 @@ return packer.startup({
 		-- treesitter configuration
 		use({
 			"nvim-treesitter/nvim-treesitter",
-			run = function()
-				require("nvim-treesitter.install").update({ with_sync = true })
-			end,
+			run = ":TSUpdate",
+			-- run = function()
+			-- 	require("nvim-treesitter.install").update({ with_sync = true })
+			-- end,
 		})
+		use("p00f/nvim-ts-rainbow")
 
 		use("kyazdani42/nvim-web-devicons") -- File icons
 		use({
