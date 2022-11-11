@@ -33,6 +33,9 @@ return packer.startup({
 
 		-- terminal & window
 		use("szw/vim-maximizer") -- maximizs and restore current window
+		use({ "akinsho/toggleterm.nvim" })
+		-- surround
+		use("ur4ltz/surround.nvim")
 
 		-- text
 		-- use 'tpope/vim-surround'
@@ -75,7 +78,7 @@ return packer.startup({
 			-- 	require("nvim-treesitter.install").update({ with_sync = true })
 			-- end,
 		})
-		use("p00f/nvim-ts-rainbow")
+		-- use("p00f/nvim-ts-rainbow")
 
 		use("kyazdani42/nvim-web-devicons") -- File icons
 		use({

@@ -25,6 +25,20 @@ keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<leader>w", ":w<CR>")
 keymap.set("n", "<leader>wq", ":wqa!<CR>")
 
+-- Terminal相关
+keymap.set("n", "st", ":sp | terminal<CR>")
+keymap.set("n", "stv", ":vsp | terminal<CR>")
+-- Esc 回 Normal 模式
+keymap.set("t", "<Esc>", "<C-\\><C-n>")
+keymap.set("t", "<A-h>", [[ <C-\><C-N><C-w>h ]])
+keymap.set("t", "<A-j>", [[ <C-\><C-N><C-w>j ]])
+keymap.set("t", "<A-k>", [[ <C-\><C-N><C-w>k ]])
+keymap.set("t", "<A-l>", [[ <C-\><C-N><C-w>l ]])
+keymap.set("t", "<leader>h", [[ <C-\><C-N><C-w>h ]])
+keymap.set("t", "<leader>j", [[ <C-\><C-N><C-w>j ]])
+keymap.set("t", "<leader>k", [[ <C-\><C-N><C-w>k ]])
+keymap.set("t", "<leader>l", [[ <C-\><C-N><C-w>l ]])
+
 -- Save with root permission (not working for now)
 -- vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
@@ -123,5 +137,69 @@ pluginKeys.nvimTreeList = { -- 打开文件或文件夹
 	-- 进入上一级
 	{ key = { "[" }, action = "dir_up" },
 }
+
+-- 自定义 toggleterm 3个不同类型的命令行窗口
+-- <leader>ta 浮动
+-- <leader>tb 右侧
+-- <leader>tc 下方
+-- 特殊lazygit 窗口，需要安装lazygit
+-- <leader>tg lazygit
+pluginKeys.mapToggleTerm = function(toggleterm)
+	vim.keymap.set({ "n", "t" }, "<leader>ta", toggleterm.toggleA)
+	vim.keymap.set({ "n", "t" }, "<leader>tb", toggleterm.toggleB)
+	vim.keymap.set({ "n", "t" }, "<leader>tc", toggleterm.toggleC)
+	vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
+end
+
+-- gitsigns
+pluginKeys.gitsigns_on_attach = function(bufnr)
+	local gs = package.loaded.gitsigns
+
+	local function map(mode, l, r, opts)
+		opts = opts or {}
+		opts.buffer = bufnr
+		vim.keymap.set(mode, l, r, opts)
+	end
+
+	-- Navigation
+	map("n", "<leader>gj", function()
+		if vim.wo.diff then
+			return "]c"
+		end
+		vim.schedule(function()
+			gs.next_hunk()
+		end)
+		return "<Ignore>"
+	end, { expr = true })
+
+	map("n", "<leader>gk", function()
+		if vim.wo.diff then
+			return "[c"
+		end
+		vim.schedule(function()
+			gs.prev_hunk()
+		end)
+		return "<Ignore>"
+	end, { expr = true })
+
+	map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>")
+	map("n", "<leader>gS", gs.stage_buffer)
+	map("n", "<leader>gu", gs.undo_stage_hunk)
+	map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>")
+	map("n", "<leader>gR", gs.reset_buffer)
+	map("n", "<leader>gp", gs.preview_hunk)
+	map("n", "<leader>gb", function()
+		gs.blame_line({ full = true })
+	end)
+	map("n", "<leader>gd", gs.diffthis)
+	map("n", "<leader>gD", function()
+		gs.diffthis("~")
+	end)
+	-- toggle
+	map("n", "<leader>gtd", gs.toggle_deleted)
+	map("n", "<leader>gtb", gs.toggle_current_line_blame)
+	-- Text object
+	map({ "o", "x" }, "ig", ":<C-U>Gitsigns select_hunk<CR>")
+end
 
 return pluginKeys
