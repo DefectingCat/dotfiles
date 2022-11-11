@@ -35,7 +35,12 @@ return packer.startup({
 		use("szw/vim-maximizer") -- maximizs and restore current window
 		use({ "akinsho/toggleterm.nvim" })
 		-- surround
-		use("ur4ltz/surround.nvim")
+		use({
+			"ur4ltz/surround.nvim",
+			config = function()
+				require("surround").setup({ mappings_style = "surround" })
+			end,
+		})
 
 		-- text
 		-- use 'tpope/vim-surround'
@@ -142,6 +147,12 @@ return packer.startup({
 
 		-- MDX
 		use("jxnblk/vim-mdx-js")
+		-- use({
+		-- 	"iamcco/markdown-preview.nvim",
+		-- 	run = function()
+		-- 		vim.fn["mkdp#util#install"]()
+		-- 	end,
+		-- })
 
 		if packer_bootstrap then
 			require("packer").sync()
