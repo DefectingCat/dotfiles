@@ -147,6 +147,7 @@ nvim_lsp["cssls"].setup({
 	on_attach = on_attach,
 })
 
+-- tailwindcss
 nvim_lsp.tailwindcss.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -157,6 +158,7 @@ nvim_lsp.tailwindcss.setup({
 -- 	on_attach = on_attach,
 -- })
 
+-- rust
 rust.setup({
 	server = {
 		capabilities = capabilities,
