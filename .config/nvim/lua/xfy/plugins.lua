@@ -27,9 +27,21 @@ return packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
 
+		-- UIs
 		use("Mofiqul/dracula.nvim") -- Color scheme
 		use("nvim-lualine/lualine.nvim") -- Statusline
 		use("nvim-lua/plenary.nvim") -- Common utilities
+		-- use("echasnovski/mini.map") -- Mini map
+		use("petertriho/nvim-scrollbar")
+		use({
+			"kevinhwang91/nvim-hlslens",
+			config = function()
+				-- require('hlslens').setup() is not required
+				require("scrollbar.handlers.search").setup({
+					-- hlslens config overrides
+				})
+			end,
+		})
 
 		-- terminal & window
 		use("szw/vim-maximizer") -- maximizs and restore current window
