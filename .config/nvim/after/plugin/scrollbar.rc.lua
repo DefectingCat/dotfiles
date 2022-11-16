@@ -3,7 +3,7 @@ if not status then
 	return
 end
 
-local colors = require("dracula").colors()
+-- local colors = require("dracula").colors()
 scrollbar.setup({
 	handlers = {
 		diagnostic = true,
