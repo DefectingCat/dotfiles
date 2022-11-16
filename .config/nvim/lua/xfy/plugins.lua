@@ -78,6 +78,7 @@ return packer.startup({
 		-- formatting & linting
 		use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnos
 		use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+		use("gpanders/editorconfig.nvim") -- editor config
 
 		-- managing & installing lsp servers, linters & formatters
 		use("williamboman/mason.nvim")
