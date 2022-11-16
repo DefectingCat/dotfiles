@@ -31,7 +31,7 @@ return packer.startup({
 		use("Mofiqul/dracula.nvim") -- Color scheme
 		use("nvim-lualine/lualine.nvim") -- Statusline
 		use("nvim-lua/plenary.nvim") -- Common utilities
-		-- use("echasnovski/mini.map") -- Mini map
+		use("akinsho/nvim-bufferline.lua")
 		use("petertriho/nvim-scrollbar")
 		use({
 			"kevinhwang91/nvim-hlslens",
@@ -54,11 +54,7 @@ return packer.startup({
 			end,
 		})
 
-		-- text
-		-- use 'tpope/vim-surround'
-
 		-- autocompletion
-		--
 		use("hrsh7th/nvim-cmp") -- Completion
 		use("hrsh7th/cmp-vsnip")
 		use("hrsh7th/cmp-path") -- { name = 'path' }
@@ -95,7 +91,6 @@ return packer.startup({
 			-- 	require("nvim-treesitter.install").update({ with_sync = true })
 			-- end,
 		})
-		-- use("p00f/nvim-ts-rainbow")
 
 		use("kyazdani42/nvim-web-devicons") -- File icons
 		use({
@@ -104,18 +99,9 @@ return packer.startup({
 				{ "nvim-telescope/telescope-live-grep-args.nvim" },
 			},
 		})
-		-- use 'nvim-telescope/telescope-file-browser.nvim'
 		use("windwp/nvim-autopairs")
 		use("windwp/nvim-ts-autotag")
 		use("norcalli/nvim-colorizer.lua")
-		use({
-			"iamcco/markdown-preview.nvim",
-			run = function()
-				vim.fn["mkdp#util#install"]()
-			end,
-		})
-
-		use("akinsho/nvim-bufferline.lua")
 
 		-- git intergation
 		use("lewis6991/gitsigns.nvim")
@@ -148,23 +134,8 @@ return packer.startup({
 		use("terrortylor/nvim-comment")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
 
-		-- function doc
-		use({
-			"kkoomen/vim-doge",
-			run = ":call doge#install()",
-		})
-
-		-- Display image in editor
-		-- use({ "edluffy/hologram.nvim" })
-
 		-- MDX
 		use("jxnblk/vim-mdx-js")
-		-- use({
-		-- 	"iamcco/markdown-preview.nvim",
-		-- 	run = function()
-		-- 		vim.fn["mkdp#util#install"]()
-		-- 	end,
-		-- })
 
 		if packer_bootstrap then
 			require("packer").sync()
