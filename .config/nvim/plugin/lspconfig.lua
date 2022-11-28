@@ -161,6 +161,12 @@ nvim_lsp.tailwindcss.setup({
 	on_attach = on_attach,
 })
 
+-- python
+nvim_lsp.pylsp.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- nvim_lsp.rust_analyzer.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = on_attach,
@@ -200,11 +206,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 
 -- Diagnostic symbols in the sign column (gutter)
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+-- for type, icon in pairs(signs) do
+-- 	local hl = "DiagnosticSign" .. type
+-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+-- end
 
 vim.diagnostic.config({
 	virtual_text = {
