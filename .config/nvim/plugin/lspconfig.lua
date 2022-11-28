@@ -138,7 +138,15 @@ typescript.setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
+		root_dir = nvim_lsp.util.root_pattern("package.json"),
 	},
+})
+
+-- Deno
+nvim_lsp.denols.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 })
 
 -- configure css server
