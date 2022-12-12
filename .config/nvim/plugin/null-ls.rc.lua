@@ -42,20 +42,20 @@ null_ls.setup({
 		}), -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.rustfmt, -- rust formatter
-		-- diagnostics.eslint_d.with({ -- js/ts linter
-		-- 	-- only enable eslint if root has .eslintrc.js
-		-- 	condition = function(utils)
-		-- 		return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
-		-- 	end,
+		diagnostics.eslint_d.with({ -- js/ts linter
+			-- only enable eslint if root has .eslintrc.js
+			condition = function(utils)
+				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
+			end,
+		}),
+		-- diagnostics.eslint.with({
+		-- 	prefer_local = "node_modules/.bin",
 		-- }),
 		formatting.black.with({ extra_args = { "--fast" } }), -- python pip install black
 		-- Diagnostics  ---------------------
-		diagnostics.eslint.with({
-			prefer_local = "node_modules/.bin",
-		}),
 		-- code actions ---------------------
 		-- code_actions.gitsigns,
-		code_actions.eslint.with({
+		code_actions.eslint_d.with({
 			prefer_local = "node_modules/.bin",
 		}),
 	},
