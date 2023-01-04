@@ -30,7 +30,7 @@ telescope.setup({
 	},
 })
 
-vim.keymap.set("n", ";f", function()
+vim.keymap.set("n", "<C-p>", function()
 	builtin.find_files({
 		no_ignore = false,
 		hidden = true,
