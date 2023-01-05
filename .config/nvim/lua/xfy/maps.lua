@@ -48,6 +48,7 @@ keymap.set("n", "te", ":tabedit<Return>")
 keymap.set("n", "ss", ":split<Return><C-w>w")
 keymap.set("n", "sv", ":vsplit<Return><C-w>w")
 keymap.set("n", "sw", ":bd<Return>")
+keymap.set("n", "<C-w>", ":bd<Return>")
 keymap.set("n", "sx", ":close<CR>") -- close current split window
 -- Move window
 -- keymap.set("n", "<Space>", "<C-w>w")
