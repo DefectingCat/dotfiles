@@ -22,11 +22,11 @@ mason.setup()
 mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
+		"lua_ls",
 		"tsserver",
 		"html",
 		"cssls",
 		"tailwindcss",
-		"sumneko_lua",
 		"rust_analyzer",
 		"pylsp",
 	},
