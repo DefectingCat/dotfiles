@@ -1,0 +1,111 @@
+let mapleader=" "
+
+""" Plugins  --------------------------------
+Plug 'easymotion/vim-easymotion'
+""" Plug 'preservim/nerdtree'
+set NERDTree
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+"""s Plugin settings -------------------------
+""" let g:EasyMotion_override_acejump = 0
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set scrolloff=5
+set clipboard+=unnamed
+set clipboard+=idea-put
+set scrolloff=5
+set number relativenumber
+set incsearch
+set hls
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+let g:EasyMotion_smartcase = 1
+""" Mappings --------------------------------
+map <leader><leader> <Plug>(easymotion-s)
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+""" map <leader><leader>l <Plug>(easymotion-lineforward)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+""" map <leader><leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+nnoremap <leader>nh :nohl<CR>
+xnoremap p "_dP
+noremap gb viw
+nnoremap gh :action QuickJavaDoc<cr>
+nnoremap <leader>r :action RenameElement<CR>
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nnoremap <C-j> :action GotoNextError<CR>
+nnoremap <C-k> :action GotoPreviousError<CR>
+""" Switch windows
+nnoremap <leader>h <c-w>h
+nnoremap <leader>l <c-w>l
+""" nnoremap <leader>j <c-w>j
+""" nnoremap <leader>k <c-w>k
+""" nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+""" nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap ;r :action FindInPath<CR>
+nnoremap <C-p> :action GotoFile<CR>
+""" Switch tabs
+nmap <C-i> :action NextTab<CR>
+nmap <C-o> :action PreviousTab<CR>
+""" nmap gh :action ShowErrorDescription<CR>
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+sethandler <C-2> a:vim
+sethandler <C-;> a:vim
+sethandler <C-S-;> a:vim
+sethandler <C-2> a:vim
+sethandler <C-;> a:vim
+sethandler <C-S-;> a:vim
+sethandler <C-A> a:ide
+sethandler <C-B> a:vim
+sethandler <C-C> a:ide
+sethandler <C-D> a:vim
+sethandler <C-E> a:ide
+sethandler <C-F> a:ide
+sethandler <C-G> a:vim
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-R> a:vim
+sethandler <C-S> a:ide
+sethandler <C-T> a:vim
+sethandler <C-U> a:vim
+sethandler <C-V> a:vim
+sethandler <C-W> a:ide
+sethandler <C-Y> a:vim
