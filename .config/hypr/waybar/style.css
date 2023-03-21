@@ -23,10 +23,13 @@ window#waybar.hidden {
   background: none;
 }
 
-.modules-left, .modules-center, .modules-right {
+.modules-left,
+.modules-center,
+.modules-right {
   background: @theme_base_color;
   border: 3px solid @overlay0;
   padding: 0px 5px;
+  border-radius: 6px;
 }
 
 .modules-center {
@@ -157,7 +160,7 @@ window#waybar.hidden {
 }
 
 #custom-waybar-mpris {
-  color:@lavender;
+  color: @lavender;
 }
 
 #network {
