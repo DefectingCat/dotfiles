@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
-	"modules-center": ["river/tags"],
+	"modules-center": ["wlr/workspaces"],
 	"modules-right": ["custom/updates","custom/wallpaper","backlight","pulseaudio","clock", "battery","custom/power"],
 	
 	"pulseaudio": {
@@ -14,9 +14,21 @@
 			"default": ["", "", ""]
 		}
 	},
-  "river/tags": {
-		"num-tags": 6
-   },
+"wlr/workspaces": {
+  "format": "{icon}",
+  "on-click": "activate",
+  "format-icons": {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "urgent": "",
+    "active": "",
+    "default": ""
+  },
+  "sort-by-number": true
+},
 	"network": {
 		"tooltip": false,
 		"format-wifi": "  {essid}",
