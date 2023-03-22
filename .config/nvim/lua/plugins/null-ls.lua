@@ -16,7 +16,7 @@ return {
           formatting.stylua,
           formatting.rustfmt, -- rust formatter
           formatting.black,
-          formatting.prettier.with({
+          formatting.prettierd.with({
             filetypes = {
               "javascript",
               "javascriptreact",
