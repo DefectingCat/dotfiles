@@ -9,7 +9,7 @@
   "gtk-layer-shell": true,
   "margin": 5,
 
-  "modules-left": ["wlr/workspaces", "custom/uptime", "custom/waybar-mpris"],
+  "modules-left": ["image#album-art", "wlr/workspaces", "custom/uptime", "custom/waybar-mpris"],
   "modules-center": ["hyprland/window"],
   "modules-right":  ["idle_inhibitor", "backlight", "pulseaudio", "custom/updater", "tray", "clock"],
 }

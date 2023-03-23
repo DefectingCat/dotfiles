@@ -67,6 +67,7 @@ window#waybar.hidden {
 
 #idle_inhibitor {
   color: @blue;
+  margin-right: 2px;
 }
 
 #backlight {
@@ -95,6 +96,7 @@ window#waybar.hidden {
 
 #clock {
   color: @yellow;
+  margin-right: 4px;
 }
 
 #cpu {
