@@ -1,4 +1,9 @@
 {
+  "image#album-art": {
+    "path": "$HOME/.config/hypr/waybar/images/endeavouros-icon.png",
+    "size": 32,
+  },
+
   "backlight": {
     "interval": 30,
     "align": 0,
