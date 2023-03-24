@@ -15,7 +15,7 @@ return {
           -- formatting.prettierd,
           formatting.stylua,
           formatting.rustfmt, -- rust formatter
-          formatting.black,
+          formatting.black, -- python formatter
           formatting.prettierd.with({
             filetypes = {
               "javascript",
@@ -33,6 +33,7 @@ return {
               "markdown",
               "markdown.mdx",
               "graphql",
+              "dockerfile",
             },
             -- npm i -g @prettier/plugin-xml prettier-plugin-toml typescript-styled-plugin
             extra_filetypes = {
@@ -48,7 +49,7 @@ return {
           --     return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
           --   end,
           -- }),
-
+          diagnostics.hadolint,
           code_actions.eslint_d.with({
             prefer_local = "node_modules/.bin",
           }),
