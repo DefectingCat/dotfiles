@@ -57,10 +57,14 @@ return {
         "flake8", -- python lsp
         "rustfmt",
         "rust-analyzer",
-        "tailwindcss-language-server",
-        "python-lsp-server",
         "css-lsp",
         "vue-language-server",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "python-lsp-server",
+        "prettier",
+        "prettier",
+        "hadolint", -- dockerfile formatter
       },
     },
   },
