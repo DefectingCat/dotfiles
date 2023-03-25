@@ -83,7 +83,6 @@ return {
         "markdown",
         "markdown_inline",
         "python",
-        "query",
         "regex",
         "tsx",
         "typescript",
@@ -91,6 +90,7 @@ return {
         "yaml",
         "jsdoc",
         "toml",
+        "rust",
       },
     },
     config = function(_, opts)

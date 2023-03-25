@@ -37,7 +37,7 @@ return {
             },
             -- npm i -g @prettier/plugin-xml prettier-plugin-toml typescript-styled-plugin
             extra_filetypes = {
-              "toml",
+              -- "toml",
               "svg",
             },
           }), -- js/ts formatter
