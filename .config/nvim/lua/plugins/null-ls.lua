@@ -10,6 +10,7 @@ return {
       local diagnostics = nls.builtins.diagnostics -- to setup linters
       local code_actions = nls.builtins.code_actions
       return {
+        -- debug = true,
         sources = {
           -- formator
           -- formatting.prettierd,
