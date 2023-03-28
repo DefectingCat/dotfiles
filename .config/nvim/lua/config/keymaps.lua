@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x')
 -- $跳到行尾不带空格 (交换$ 和 g_)
