@@ -63,8 +63,11 @@ return {
         "tailwindcss-language-server",
         "python-lsp-server",
         "prettier",
-        "prettier",
-        "hadolint", -- dockerfile formatter
+        "prettierd",
+        "docker-compose-language-service",
+        "dockerfile-language-server",
+        "hadolint", -- dockerfile linter
+        "taplo", -- toml formatter
       },
     },
   },
