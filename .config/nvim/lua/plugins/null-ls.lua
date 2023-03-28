@@ -10,10 +10,9 @@ return {
       local diagnostics = nls.builtins.diagnostics -- to setup linters
       local code_actions = nls.builtins.code_actions
       return {
-        -- debug = true,
+        debug = true,
         sources = {
           -- formator
-          -- formatting.prettierd,
           formatting.stylua,
           formatting.rustfmt, -- rust formatter
           formatting.black, -- python formatter
@@ -34,23 +33,21 @@ return {
               "markdown",
               "markdown.mdx",
               "graphql",
-              "dockerfile",
             },
-            -- npm i -g @prettier/plugin-xml prettier-plugin-toml typescript-styled-plugin
+            -- npm i -g @prettier/plugin-xml typescript-styled-plugin
             extra_filetypes = {
-              -- "toml",
               "svg",
             },
           }), -- js/ts formatter
           -- diagnostics
-          diagnostics.flake8,
+          diagnostics.flake8, -- pythone lsp
           -- diagnostics.eslint_d.with({ -- js/ts linter
           --   -- only enable eslint if root has .eslintrc.js
           --   condition = function(utils)
           --     return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
           --   end,
           -- }),
-          diagnostics.hadolint,
+          diagnostics.hadolint, -- dockerfile linter
           code_actions.eslint_d.with({
             prefer_local = "node_modules/.bin",
           }),
