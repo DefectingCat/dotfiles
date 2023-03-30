@@ -1,9 +1,11 @@
 return {
   {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({})
-    end,
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+      },
+    },
   },
 
   {
