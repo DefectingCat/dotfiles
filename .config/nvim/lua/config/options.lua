@@ -8,3 +8,6 @@ opt.iskeyword:append("-")
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 20
+
+-- neovide
+opt.guifont = "JetBrainsMono Nerd Font:h16"
