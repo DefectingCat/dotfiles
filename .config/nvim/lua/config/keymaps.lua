@@ -34,4 +34,4 @@ keymap.set("n", "gb", "viw")
 -- keymap.set("n", "<C-.>", "<cmd>Lspsaga code_action<CR>", opts)
 
 -- Comment
--- keymap.set("", "<C-/>", "gcc")
+-- keymap.set("n", "<C-/>", "gcip")

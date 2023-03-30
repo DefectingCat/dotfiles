@@ -6,17 +6,26 @@ return {
     end,
   },
 
-  -- {
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        width = 33,
+      },
+    },
+  },
+
+  -- theme
+  -- { "catppuccin/nvim", name = "catppuccin" },
   -- add dracula
   -- { "Mofiqul/dracula.nvim" },
 
-  -- Configure LazyVim to load dracula
+  -- Configure LazyVim to load theme
   -- {
   --   "LazyVim/LazyVim",
   --   opts = {
   --     colorscheme = "dracula",
   --   },
-  -- },
   -- },
 
   {
