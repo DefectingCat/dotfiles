@@ -35,3 +35,6 @@ keymap.set("n", "gb", "viw")
 
 -- Comment
 -- keymap.set("n", "<C-/>", "gcip")
+
+-- Telescope
+keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>")
