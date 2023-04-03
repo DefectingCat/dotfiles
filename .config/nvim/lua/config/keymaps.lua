@@ -27,8 +27,11 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Select current world
 keymap.set("n", "gb", "viw")
 
--- Terminal
-keymap.set("", "<Esc>", "<C-><C-n>", { noremap = true })
+-- LSP
+-- keymap.set("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+-- keymap.set("n", "<C-k>", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+-- keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
+-- keymap.set("n", "<C-.>", "<cmd>Lspsaga code_action<CR>", opts)
 
 -- Comment
 -- keymap.set("n", "<C-/>", "gcip")
