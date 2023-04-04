@@ -52,7 +52,6 @@ return {
     opts = {
       ensure_installed = {
         "stylua", -- lua lsp
-        "shellcheck",
         "shfmt", -- shell formatter
         "flake8", -- python lsp
         "rustfmt",
@@ -62,12 +61,12 @@ return {
         "typescript-language-server",
         "tailwindcss-language-server",
         "python-lsp-server",
-        "prettier",
         "prettierd",
         "docker-compose-language-service",
         "dockerfile-language-server",
         "hadolint", -- dockerfile linter
         "taplo", -- toml formatter
+        "xmlformatter", -- xml svg formatter
       },
     },
   },
