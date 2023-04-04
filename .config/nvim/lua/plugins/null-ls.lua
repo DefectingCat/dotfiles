@@ -34,11 +34,13 @@ return {
               "markdown.mdx",
               "graphql",
             },
-            -- npm i -g @prettier/plugin-xml typescript-styled-plugin
-            extra_filetypes = {
+          }), -- js/ts formatter
+          formatting.xmlformat.with({
+            filetypes = {
+              "xml",
               "svg",
             },
-          }), -- js/ts formatter
+          }),
           -- diagnostics
           diagnostics.flake8, -- pythone lsp
           -- diagnostics.eslint_d.with({ -- js/ts linter
