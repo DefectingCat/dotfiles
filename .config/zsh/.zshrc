@@ -91,6 +91,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Custom scripts
+source ~/.config/rua-scripts/git-push.sh
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -103,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias ll="ls -lhtr"
+alias python="python3"
 
 # Environmental variables
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node

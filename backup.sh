@@ -13,3 +13,6 @@ cp -a ~/.zshrc .config/zsh/
 
 rm -rf .config/ranger
 cp -aR ~/.config/ranger .config/
+
+rm -rf .config/tmux/tmux.conf
+cp -aR ~/.tmux/tmux.conf .config/tmux
