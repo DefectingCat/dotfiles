@@ -18,17 +18,17 @@ return {
   },
 
   -- theme
-  -- { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim", name = "catppuccin" },
   -- add dracula
   -- { "Mofiqul/dracula.nvim" },
 
   -- Configure LazyVim to load theme
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "dracula",
-  --   },
-  -- },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-mocha",
+    },
+  },
 
   {
     "petertriho/nvim-scrollbar",
