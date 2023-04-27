@@ -1,5 +1,12 @@
 return {
   {
+    "s1n7ax/nvim-window-picker",
+    config = function()
+      require("window-picker").setup()
+    end,
+  },
+
+  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       user_default_options = {
