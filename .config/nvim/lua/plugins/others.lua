@@ -12,6 +12,10 @@ return {
       { "<leader>d", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+    cmd = "DiffviewOpen",
+  },
   -- {
   --   "karb94/neoscroll.nvim",
   --   config = function()
