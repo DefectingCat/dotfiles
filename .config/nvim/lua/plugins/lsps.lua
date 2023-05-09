@@ -16,17 +16,19 @@ return {
   {
     "neovim/nvim-lspconfig",
     init = function()
-      local diagnostic_goto = require("lazyvim.plugins.lsp.keymaps").diagnostic_goto
+      -- local diagnostic_goto = require("lazyvim.plugins.lsp.keymaps").diagnostic_goto
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- change a keymap
-      keys[#keys + 1] = { "<C-j>", diagnostic_goto(true), desc = "Next Diagnostic" }
-      keys[#keys + 1] = { "<C-k>", diagnostic_goto(false), desc = "Prev Diagnostic" }
+      -- keys[#keys + 1] = { "<C-j>", diagnostic_goto(true), desc = "Next Diagnostic" }
+      -- keys[#keys + 1] = { "<C-k>", diagnostic_goto(false), desc = "Prev Diagnostic" }
       keys[#keys + 1] =
         { "<C-.>", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
+      -- keys[#keys + 1] =
+      --   { "<Leader-a>", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
       keys[#keys + 1] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
       -- disable a keymap
-      keys[#keys + 1] = { "]d", false }
-      keys[#keys + 1] = { "[d", false }
+      -- keys[#keys + 1] = { "]d", false }
+      -- keys[#keys + 1] = { "[d", false }
       keys[#keys + 1] = { "K", false }
       -- add a keymap
       -- keys[#keys + 1] = { "H", "<cmd>echo 'hello'<cr>" }
@@ -120,4 +122,52 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
+  -- dap integration
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   keys = {
+  --     {
+  --       "<leader>de",
+  --       function()
+  --         require("dap.ui.widgets").centered_float(require("dap.ui.widgets").expression, { border = "none" })
+  --       end,
+  --       desc = "Eval",
+  --       mode = { "n", "v" },
+  --     },
+  --     {
+  --       "<leader>dwf",
+  --       function()
+  --         require("dap.ui.widgets").centered_float(require("dap.ui.widgets").frames, { border = "none" })
+  --       end,
+  --       desc = "Frames",
+  --     },
+  --     {
+  --       "<leader>dws",
+  --       function()
+  --         require("dap.ui.widgets").centered_float(require("dap.ui.widgets").scopes, { border = "none" })
+  --       end,
+  --       desc = "Scopes",
+  --     },
+  --     {
+  --       "<leader>dwt",
+  --       function()
+  --         require("dap.ui.widgets").centered_float(require("dap.ui.widgets").threads, { border = "none" })
+  --       end,
+  --       desc = "Threads",
+  --     },
+  --   },
+  --   opts = function(_, opts)
+  --     require("dap").defaults.fallback.terminal_win_cmd = "enew | set filetype=dap-terminal"
+  --   end,
+  -- },
+
+  -- core language specific extension modules
+  { import = "lazyvim.plugins.extras.lang.typescript" },
+  { import = "lazyvim.plugins.extras.lang.json" },
+  { import = "lazyvim.plugins.extras.dap.nlua" },
+
+  -- custom language specific extension modules
+  { import = "plugins.extras.lang.rust" },
+  -- { import = "plugins.extras.lang.nodejs" },
 }
