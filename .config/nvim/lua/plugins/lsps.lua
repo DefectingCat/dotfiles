@@ -69,6 +69,7 @@ return {
         "hadolint", -- dockerfile linter
         "taplo", -- toml formatter
         "xmlformatter", -- xml svg formatter
+        "eslint_d",
       },
     },
   },
