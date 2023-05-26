@@ -70,6 +70,7 @@ return {
         "taplo", -- toml formatter
         "xmlformatter", -- xml svg formatter
         "eslint_d",
+        "deno",
       },
     },
   },
@@ -126,5 +127,6 @@ return {
 
   -- custom language specific extension modules
   { import = "plugins.extras.lang.rust" },
+  -- { import = "plugins.extras.lang.deno" },
   -- { import = "plugins.extras.lang.nodejs" },
 }
