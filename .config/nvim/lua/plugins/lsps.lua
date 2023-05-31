@@ -1,17 +1,4 @@
 return {
-  -- {
-  --   "glepnir/lspsaga.nvim",
-  --   branch = "main",
-  --   config = function()
-  --     require("lspsaga").setup({})
-  --   end,
-  --   requires = {
-  --     { "nvim-tree/nvim-web-devicons" },
-  --     --Please make sure you install markdown and markdown_inline parser
-  --     { "nvim-treesitter/nvim-treesitter" },
-  --   },
-  -- },
-
   -- LSP keymaps
   {
     "neovim/nvim-lspconfig",
@@ -33,20 +20,6 @@ return {
       -- add a keymap
       -- keys[#keys + 1] = { "H", "<cmd>echo 'hello'<cr>" }
     end,
-    -- opts = {
-    --   servers = { eslint = {}, tailwindcss = {} },
-    --   setup = {
-    --     eslint = function()
-    --       require("lazyvim.util").on_attach(function(client)
-    --         if client.name == "eslint" then
-    --           client.server_capabilities.documentFormattingProvider = true
-    --         elseif client.name == "tsserver" then
-    --           client.server_capabilities.documentFormattingProvider = false
-    --         end
-    --       end)
-    --     end,
-    --   },
-    -- },
   },
 
   {
@@ -122,6 +95,70 @@ return {
         maintainers = { "@mskelton" },
       }
       require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+    },
+    opts = function(_, opts)
+      -- local cmp_kinds = {
+      --   Text = "  ",
+      --   Method = "  ",
+      --   Function = "  ",
+      --   Constructor = "  ",
+      --   Field = "  ",
+      --   Variable = "  ",
+      --   Class = "  ",
+      --   Interface = "  ",
+      --   Module = "  ",
+      --   Property = "  ",
+      --   Unit = "  ",
+      --   Value = "  ",
+      --   Enum = "  ",
+      --   Keyword = "  ",
+      --   Snippet = "  ",
+      --   Color = "  ",
+      --   File = "  ",
+      --   Reference = "  ",
+      --   Folder = "  ",
+      --   EnumMember = "  ",
+      --   Constant = "  ",
+      --   Struct = "  ",
+      --   Event = "  ",
+      --   Operator = "  ",
+      --   TypeParameter = "  ",
+      -- }
+
+      local function border(hl_name)
+        return {
+          { "╭", hl_name },
+          { "─", hl_name },
+          { "╮", hl_name },
+          { "│", hl_name },
+          { "╯", hl_name },
+          { "─", hl_name },
+          { "╰", hl_name },
+          { "│", hl_name },
+        }
+      end
+      opts.window = {
+        completion = {
+          border = border("CmpBorder"),
+          winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+        },
+        documentation = {
+          border = border("CmpDocBorder"),
+        },
+      }
+      -- original LazyVim kind icon formatter
+      local format_kinds = opts.formatting.format
+      opts.formatting.format = function(entry, item)
+        format_kinds(entry, item) -- add icons
+        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+      end
     end,
   },
 
