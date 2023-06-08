@@ -43,7 +43,7 @@ return {
         "taplo", -- toml formatter
         "xmlformatter", -- xml svg formatter
         "eslint_d",
-        "deno",
+        -- "deno",
       },
     },
   },
