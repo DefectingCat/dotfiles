@@ -54,6 +54,7 @@ return {
       ensure_installed = {
         "bash",
         "css",
+        "scss",
         "html",
         "javascript",
         "json",
@@ -70,6 +71,7 @@ return {
         "jsdoc",
         "toml",
         "rust",
+        "vue",
       },
     },
     config = function(_, opts)
