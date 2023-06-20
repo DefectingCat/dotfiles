@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # Custom scripts
-source ~/.config/rua-scripts/git-push.sh
+# source ~/.config/rua-scripts/git-push.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -109,8 +109,9 @@ alias ll="ls -lhtr"
 alias python="python3"
 
 # Environmental variables
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-
+export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
+export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
+ 
 # source /home/xfy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/nvm/init-nvm.sh
 
@@ -133,6 +134,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
