@@ -106,7 +106,6 @@ source $ZSH/oh-my-zsh.sh
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias ll="ls -lhtr"
-alias python="python3"
 
 # Environmental variables
 export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
@@ -136,3 +135,7 @@ export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# export PATH="${HOME}/.pyenv/shims:${PATH}"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
