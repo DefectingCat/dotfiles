@@ -1,18 +1,18 @@
 #!/bin/bash
 
 rm -rf .config/nvim
-cp -aR ~/.config/nvim .config/
+cp -aR ~/.config/nvim ./
 
 rm -rf .config/kitty
-cp -aR ~/.config/kitty .config/
+cp -aR ~/.config/kitty ./
 
 rm -rf .config/neofetch
-cp -aR ~/.config/neofetch .config/
+cp -aR ~/.config/neofetch ./
 
-cp -a ~/.zshrc .config/zsh/
+cp -a ~/.zshrc .zsh/
 
 rm -rf .config/ranger
-cp -aR ~/.config/ranger .config/
+cp -aR ~/.config/ranger ./
 
 rm -rf .config/tmux/tmux.conf
-cp -aR ~/.tmux/tmux.conf .config/tmux
+cp -aR ~/.tmux/tmux.conf .tmux
