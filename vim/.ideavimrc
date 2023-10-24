@@ -60,7 +60,7 @@ nnoremap <C-l> <c-w>l
 """ nnoremap <leader>j <c-w>j
 """ nnoremap <leader>k <c-w>k
 """ nnoremap <leader>e :action ActivateProjectToolWindow<CR>
-""" nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap ;r :action FindInPath<CR>
 nnoremap <C-p> :action GotoFile<CR>
 """ Switch tabs
