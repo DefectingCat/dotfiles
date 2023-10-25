@@ -61,8 +61,8 @@ nnoremap <C-l> <c-w>l
 """ nnoremap <leader>k <c-w>k
 """ nnoremap <leader>e :action ActivateProjectToolWindow<CR>
 nnoremap <leader>e :NERDTreeToggle<CR>
-nnoremap ;r :action FindInPath<CR>
-nnoremap <C-p> :action GotoFile<CR>
+""" nnoremap ;r :action FindInPath<CR>
+"" nnoremap <C-p> :action GotoFile<CR>
 """ Switch tabs
 nmap <S-l> :action NextTab<CR>
 nmap <s-h> :action PreviousTab<CR>
@@ -78,6 +78,9 @@ nmap <s-h> :action PreviousTab<CR>
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
+"" Debug
+nnoremap <leader>d :action ToggleLineBreakpoint<CR>
+nnoremap <leader><leader>r :action Run<CR>
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 
