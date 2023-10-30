@@ -49,7 +49,9 @@ nnoremap <leader>nh :nohl<CR>
 xnoremap p "_dP
 "" Code
 noremap gb viw
-nnoremap gh :action QuickJavaDoc<cr>
+"" nnoremap gh :action QuickJavaDoc<cr>
+nmap gh <Action>(ShowHoverInfo)
+"" nmap gy <Action>(ShowErrorDescription)
 nnoremap <leader>r :action RenameElement<CR>
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
