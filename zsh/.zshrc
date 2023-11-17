@@ -110,7 +110,7 @@ alias ll="ls -lhtr"
 # Environmental variables
 export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
- 
+
 # source /home/xfy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/nvm/init-nvm.sh
 
@@ -121,7 +121,7 @@ export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 export NVM_DIR="$HOME/.nvm"
@@ -139,4 +139,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+# ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+#
+export http_proxy="socks5://localhost:10808"
+export https_proxy="socks5://localhost:10808"
