@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf nvim/lua/custom
-cp -aR ~/.config/nvim/lua/custom/ ./
+cp -aR ~/.config/nvim/lua/custom/ ./nvim/lua/
 
 rm -rf kitty
 cp -aR ~/.config/kitty ./

@@ -76,6 +76,7 @@ M.rua = {
     ["<C-a>"] = { "gg<S-v>G" },
     -- $ 跳到行尾不带空格
     ["$"] = { "g_" },
+    -- motion
     ["f"] = {
       function()
         local hop = require "hop"
@@ -103,6 +104,14 @@ M.rua = {
         local directions = require("hop.hint").HintDirection
         hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
       end,
+    },
+
+    -- term
+    ["<A-o>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
     },
   },
   v = {
