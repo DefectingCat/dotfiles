@@ -13,7 +13,7 @@ local opts = {
     formatting.golines,
     -- JavaScript
     formatting.prettierd,
-    diagnostics.eslint,
+    diagnostics.eslint_d,
     -- Lua
     formatting.stylua,
     -- XML and SVG
