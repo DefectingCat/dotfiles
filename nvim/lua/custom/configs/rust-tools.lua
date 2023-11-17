@@ -5,6 +5,20 @@ local options = {
   server = {
     on_attach = on_attach,
     capabilities = capabilities,
+    settings = {
+      ["rust-analyzer"] = {
+        checkOnSave = {
+          command = "clippy",
+        },
+      },
+      check = {
+        command = "clippy",
+        features = "all",
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
   },
 }
 

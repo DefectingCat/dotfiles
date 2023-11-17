@@ -128,30 +128,7 @@ local plugins = {
       return require "custom.configs.rust-tools"
     end,
     config = function(_, opts)
-      local rt = require "rust-tools"
-      rt.setup {
-        dap = {
-          -- adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-        server = {
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = {
-                features = "all",
-              },
-              -- Add clippy lints for Rust.
-              checkOnSave = true,
-              check = {
-                command = "clippy",
-                features = "all",
-              },
-              procMacro = {
-                enable = true,
-              },
-            },
-          },
-        },
-      }
+      require("rust-tools").setup(opts)
     end,
   },
   {
