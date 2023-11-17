@@ -13,7 +13,9 @@ local opts = {
     formatting.golines,
     -- JavaScript
     formatting.prettierd,
-    diagnostics.eslint_d,
+    diagnostics.eslint_d.with {
+      only_local = "node_modules/.bin",
+    },
     -- Lua
     formatting.stylua,
     -- XML and SVG
@@ -25,7 +27,7 @@ local opts = {
     },
     diagnostics.hadolint, -- dockerfile linter
     code_actions.eslint_d.with {
-      prefer_local = "node_modules/.bin",
+      only_local = "node_modules/.bin",
     },
   },
   on_attach = function(client, bufnr)

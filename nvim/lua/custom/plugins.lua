@@ -29,7 +29,6 @@ local plugins = {
         -- javascript
         "html-lsp",
         "prettierd",
-        "eslint_d",
         "xmlformatter", -- xml svg formatter
         "vue-language-server",
         "typescript-language-server",
@@ -234,6 +233,15 @@ local plugins = {
         },
       }
     end,
+  },
+  -- ui
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+      },
+    },
   },
 
   -- {
