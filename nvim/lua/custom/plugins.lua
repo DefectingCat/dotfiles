@@ -6,7 +6,7 @@ local plugins = {
     { import = "nvcommunity.git.diffview" },
     { import = "nvcommunity.git.lazygit" },
     { import = "nvcommunity.lsp.prettyhover" },
-    -- { import = "nvcommunity.lsp.mason-lspconfig" },
+    { import = "nvcommunity.lsp.mason-lspconfig" },
   },
 
   -- LSP, formatter, linter
@@ -22,11 +22,22 @@ local plugins = {
     opts = {
       ensure_installed = {
         "lua-language-server",
+        "stylua",
+        -- rust
+        "rust-analyzer",
+        "taplo", -- toml formatter
+        -- javascript
         "html-lsp",
         "prettierd",
-        "stylua",
-        "rust-analyzer",
         "eslint_d",
+        "xmlformatter", -- xml svg formatter
+        "vue-language-server",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        -- docker
+        "docker-compose-language-service",
+        "dockerfile-language-server",
+        "hadolint", -- dockerfile linter
       },
     },
   },
@@ -46,9 +57,13 @@ local plugins = {
         "tsx",
         "json",
         "vue",
+        "markdown",
+        "markdown_inline",
+        "jsdoc",
 
         -- low level
         "rust",
+        "toml",
         "go",
       },
     },
@@ -62,6 +77,9 @@ local plugins = {
   },
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+    },
     opts = function()
       local M = require "plugins.configs.cmp"
       M.completion.completeopt = "menu,menuone,noselect"
@@ -70,6 +88,34 @@ local plugins = {
         select = false,
       }
       table.insert(M.sources, { name = "crates" })
+      -- cmp window
+      local function border(hl_name)
+        return {
+          { "╭", hl_name },
+          { "─", hl_name },
+          { "╮", hl_name },
+          { "│", hl_name },
+          { "╯", hl_name },
+          { "─", hl_name },
+          { "╰", hl_name },
+          { "│", hl_name },
+        }
+      end
+      M.window = {
+        completion = {
+          border = border "CmpBorder",
+          winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+        },
+        documentation = {
+          border = border "CmpDocBorder",
+        },
+      }
+      -- original LazyVim kind icon formatter
+      local format_kinds = M.formatting.format
+      M.formatting.format = function(entry, item)
+        format_kinds(entry, item) -- add icons
+        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+      end
       return M
     end,
   },
@@ -82,7 +128,30 @@ local plugins = {
       return require "custom.configs.rust-tools"
     end,
     config = function(_, opts)
-      require("rust-tools").setup(opts)
+      local rt = require "rust-tools"
+      rt.setup {
+        dap = {
+          -- adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+        },
+        server = {
+          settings = {
+            ["rust-analyzer"] = {
+              cargo = {
+                features = "all",
+              },
+              -- Add clippy lints for Rust.
+              checkOnSave = true,
+              check = {
+                command = "clippy",
+                features = "all",
+              },
+              procMacro = {
+                enable = true,
+              },
+            },
+          },
+        },
+      }
     end,
   },
   {
