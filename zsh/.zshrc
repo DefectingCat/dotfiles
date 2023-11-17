@@ -142,5 +142,5 @@ eval "$(pyenv init -)"
 # ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 #
-export http_proxy="socks5://localhost:10808"
-export https_proxy="socks5://localhost:10808"
+export http_proxy="http://localhost:10809"
+export https_proxy="http://localhost:10809"
