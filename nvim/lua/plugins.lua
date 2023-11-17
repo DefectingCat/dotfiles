@@ -89,27 +89,27 @@ local plugins = {
       }
       table.insert(M.sources, { name = "crates" })
       -- cmp window
-      local function border(hl_name)
-        return {
-          { "╭", hl_name },
-          { "─", hl_name },
-          { "╮", hl_name },
-          { "│", hl_name },
-          { "╯", hl_name },
-          { "─", hl_name },
-          { "╰", hl_name },
-          { "│", hl_name },
-        }
-      end
-      M.window = {
-        completion = {
-          border = border "CmpBorder",
-          winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-        },
-        documentation = {
-          border = border "CmpDocBorder",
-        },
-      }
+      -- local function border(hl_name)
+      --   return {
+      --     { "╭", hl_name },
+      --     { "─", hl_name },
+      --     { "╮", hl_name },
+      --     { "│", hl_name },
+      --     { "╯", hl_name },
+      --     { "─", hl_name },
+      --     { "╰", hl_name },
+      --     { "│", hl_name },
+      --   }
+      -- end
+      -- M.window = {
+      --   completion = {
+      --     border = border "CmpBorder",
+      --     winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+      --   },
+      --   documentation = {
+      --     border = border "CmpDocBorder",
+      --   },
+      -- }
       -- original LazyVim kind icon formatter
       local format_kinds = M.formatting.format
       M.formatting.format = function(entry, item)
@@ -236,6 +236,26 @@ local plugins = {
     "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup {}
+    end,
+  },
+  -- term
+  {
+    "NvChad/nvterm",
+    config = function()
+      require("nvterm").setup {
+        terminals = {
+          type_opts = {
+            float = {
+              relative = "editor",
+              row = 0.1,
+              col = 0.1,
+              width = 0.8,
+              height = 0.8,
+              border = "single",
+            },
+          },
+        },
+      }
     end,
   },
 
