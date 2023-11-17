@@ -83,6 +83,7 @@ M.rua = {
         local directions = require("hop.hint").HintDirection
         hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = false }
       end,
+      "Hop motion search in current line after cursor",
     },
     ["F"] = {
       function()
@@ -90,6 +91,7 @@ M.rua = {
         local directions = require("hop.hint").HintDirection
         hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = false }
       end,
+      "Hop motion search in current line before cursor",
     },
     ["<leader>w"] = {
       function()
@@ -97,6 +99,7 @@ M.rua = {
         local directions = require("hop.hint").HintDirection
         hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false }
       end,
+      "Hop motion search words after cursor",
     },
     ["<leader>b"] = {
       function()
@@ -104,6 +107,7 @@ M.rua = {
         local directions = require("hop.hint").HintDirection
         hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
       end,
+      "Hop motion search words before cursor",
     },
 
     -- term
@@ -116,6 +120,39 @@ M.rua = {
   },
   v = {
     ["$"] = { "g_" },
+    -- motion
+    ["f"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = false }
+      end,
+      "Hop motion search in current line after cursor",
+    },
+    ["F"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = false }
+      end,
+      "Hop motion search in current line before cursor",
+    },
+    ["<leader>w"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false }
+      end,
+      "Hop motion search words after cursor",
+    },
+    ["<leader>b"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
+      end,
+      "Hop motion search words before cursor",
+    },
   },
 }
 
