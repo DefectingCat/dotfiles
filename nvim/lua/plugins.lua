@@ -85,7 +85,7 @@ local plugins = {
       M.completion.completeopt = "menu,menuone,noselect"
       M.mapping["<CR>"] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
-        select = false,
+        select = true,
       }
       table.insert(M.sources, { name = "crates" })
       -- cmp window
