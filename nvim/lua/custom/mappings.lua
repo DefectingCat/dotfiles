@@ -16,6 +16,10 @@ M.dap = {
   plugin = true,
   n = {
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
+    ["<leader>dr"] = {
+      "<cmd> DapContinue <CR>",
+      "Run or continue the debugger",
+    },
     ["<leader>dus"] = {
       function()
         local widgets = require "dap.ui.widgets"
@@ -67,6 +71,42 @@ M.rua = {
       end,
       "LSP hover",
     },
+
+    ["gb"] = { "viw" },
+    ["<C-a>"] = { "gg<S-v>G" },
+    -- $ 跳到行尾不带空格
+    ["$"] = { "g_" },
+    ["f"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = false }
+      end,
+    },
+    ["F"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = false }
+      end,
+    },
+    ["<leader>w"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false }
+      end,
+    },
+    ["<leader>b"] = {
+      function()
+        local hop = require "hop"
+        local directions = require("hop.hint").HintDirection
+        hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
+      end,
+    },
+  },
+  v = {
+    ["$"] = { "g_" },
   },
 }
 
