@@ -21,7 +21,7 @@ RUN rm -rf yay \
   && git clone https://github.com/DefectingCat/dotfiles \
   && chmod +x /home/${USER}/dotfiles/zsh/install.sh \
   && cp -aR /home/${USER}/dotfiles/zsh/zshrc-linux /home/${USER}/.zshrc \
-  && ./home/${USER}/dotfiles/zsh/install.sh \
+  && /home/${USER}/dotfiles/zsh/install.sh \
   && git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 \
   && cp -aR /home/${USER}/dotfiles/nvim/lua/custom /home/${USER}/.config/nvim/lua/
 
