@@ -9,7 +9,7 @@ cp -aR ~/.config/kitty ./
 rm -rf neofetch
 cp -aR ~/.config/neofetch ./
 
-cp -a ~/.zshrc zsh/
+cp -a ~/.zshrc zsh/zshrc
 
 rm -rf ranger
 cp -aR ~/.config/ranger ./
