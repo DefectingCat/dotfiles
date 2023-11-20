@@ -117,6 +117,20 @@ M.rua = {
       end,
       "Toggle horizontal term",
     },
+
+    -- arrange buffer
+    ["<leader>pl"] = {
+      function()
+        require("nvchad.tabufline").move_buf(1)
+      end,
+      "Move buffer right",
+    },
+    ["<leader>ph"] = {
+      function()
+        require("nvchad.tabufline").move_buf(-1)
+      end,
+      "Move buffer left",
+    },
   },
   v = {
     ["$"] = { "g_" },
@@ -173,31 +187,6 @@ M.whichkey = {
       end,
       "Which-key query lookup",
     },
-  },
-}
-
-M.workspace = {
-  plugin = true,
-
-  ["<leader>ma"] = {
-    function()
-      vim.lsp.buf.add_workspace_folder()
-    end,
-    "Add workspace folder",
-  },
-
-  ["<leader>mr"] = {
-    function()
-      vim.lsp.buf.remove_workspace_folder()
-    end,
-    "Remove workspace folder",
-  },
-
-  ["<leader>ml"] = {
-    function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end,
-    "List workspace folders",
   },
 }
 
