@@ -168,6 +168,10 @@ M.rua = {
       "Hop motion search words before cursor",
     },
   },
+  -- term
+  t = {
+    ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+  },
 }
 
 M.whichkey = {
