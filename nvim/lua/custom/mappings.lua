@@ -156,4 +156,59 @@ M.rua = {
   },
 }
 
+M.whichkey = {
+  plugin = true,
+
+  n = {
+    ["<leader>K"] = {
+      function()
+        vim.cmd "WhichKey"
+      end,
+      "Which-key all keymaps",
+    },
+    ["<leader>k"] = {
+      function()
+        local input = vim.fn.input "WhichKey: "
+        vim.cmd("WhichKey " .. input)
+      end,
+      "Which-key query lookup",
+    },
+  },
+}
+
+M.workspace = {
+  plugin = true,
+
+  ["<leader>ma"] = {
+    function()
+      vim.lsp.buf.add_workspace_folder()
+    end,
+    "Add workspace folder",
+  },
+
+  ["<leader>mr"] = {
+    function()
+      vim.lsp.buf.remove_workspace_folder()
+    end,
+    "Remove workspace folder",
+  },
+
+  ["<leader>ml"] = {
+    function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end,
+    "List workspace folders",
+  },
+}
+
+M.disabled = {
+  n = {
+    ["<leader>wa"] = "",
+    ["<leader>wr"] = "",
+    ["<leader>wl"] = "",
+    ["<leader>wK"] = "",
+    ["<leader>wk"] = "",
+  },
+}
+
 return M
