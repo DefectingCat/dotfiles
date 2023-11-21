@@ -144,3 +144,5 @@ eval "$(pyenv init -)"
 #
 export http_proxy="http://localhost:10809"
 export https_proxy="http://localhost:10809"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
