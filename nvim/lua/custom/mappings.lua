@@ -1,5 +1,16 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    ["<leader>wa"] = "",
+    ["<leader>wr"] = "",
+    ["<leader>wl"] = "",
+    ["<leader>wK"] = "",
+    ["<leader>wk"] = "",
+    ["<leader>cm"] = "",
+  },
+}
+
 M.crates = {
   plugin = true,
   n = {
@@ -205,15 +216,17 @@ M.whichkey = {
   },
 }
 
-M.disabled = {
-  n = {
-    ["<leader>wa"] = "",
-    ["<leader>wr"] = "",
-    ["<leader>wl"] = "",
-    ["<leader>wK"] = "",
-    ["<leader>wk"] = "",
-    ["<leader>cm"] = "",
-  },
+M.lspconfig = {
+  plugin = true,
+
+  --[[ n = {
+    ["<leader>ca"] = {
+      function()
+        vim.ui.select(vim.lsp.buf.code_action)
+      end,
+      "LSP code action",
+    },
+  }, ]]
 }
 
 return M
