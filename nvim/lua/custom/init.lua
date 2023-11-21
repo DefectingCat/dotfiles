@@ -43,6 +43,15 @@ autocmd("BufEnter", {
       + "r" -- But do continue when pressing enter.
   end,
 })
+-- Highlight on yank
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
+})
 
 vim.g.dap_virtual_text = true
 vim.wo.relativenumber = true
