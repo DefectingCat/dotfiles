@@ -170,7 +170,7 @@ M.rua = {
   },
   -- term
   t = {
-    ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+    --[[ ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" }, ]]
   },
 }
 
@@ -180,6 +180,8 @@ M.telescope = {
   n = {
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
     ["<leader>gd"] = { "<cmd> DiffviewOpen <CR>", "Open diff view" },
+    ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit" },
+    ["<leader>gf"] = { "<cmd> LazyGitFilterCurrentFile <CR>", "Open LazyGit fitler current file" },
   },
 }
 
