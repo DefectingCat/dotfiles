@@ -174,6 +174,15 @@ M.rua = {
   },
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    ["<leader>gd"] = { "<cmd> DiffviewOpen <CR>", "Open diff view" },
+  },
+}
+
 M.whichkey = {
   plugin = true,
 
@@ -201,6 +210,7 @@ M.disabled = {
     ["<leader>wl"] = "",
     ["<leader>wK"] = "",
     ["<leader>wk"] = "",
+    ["<leader>cm"] = "",
   },
 }
 
