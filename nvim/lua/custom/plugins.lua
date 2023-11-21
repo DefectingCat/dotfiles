@@ -87,28 +87,6 @@ local plugins = {
         select = true,
       }
       table.insert(M.sources, { name = "crates" })
-      -- cmp window
-      -- local function border(hl_name)
-      --   return {
-      --     { "╭", hl_name },
-      --     { "─", hl_name },
-      --     { "╮", hl_name },
-      --     { "│", hl_name },
-      --     { "╯", hl_name },
-      --     { "─", hl_name },
-      --     { "╰", hl_name },
-      --     { "│", hl_name },
-      --   }
-      -- end
-      -- M.window = {
-      --   completion = {
-      --     border = border "CmpBorder",
-      --     winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-      --   },
-      --   documentation = {
-      --     border = border "CmpDocBorder",
-      --   },
-      -- }
       -- original LazyVim kind icon formatter
       local format_kinds = M.formatting.format
       M.formatting.format = function(entry, item)
@@ -186,6 +164,10 @@ local plugins = {
     end,
   },
 
+  -- telescope, code action ui
+  {
+    "stevearc/dressing.nvim",
+  },
   -- motion, UI and others
   {
     "phaazon/hop.nvim",
