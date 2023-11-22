@@ -108,6 +108,13 @@ alias ll="ls -lhtr"
 # Environmental variables
 export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# rust
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+# p10k
+export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # source /home/xfy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/nvm/init-nvm.sh
@@ -121,6 +128,3 @@ export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
