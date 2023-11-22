@@ -129,6 +129,9 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end,
   },
+  {
+    "b0o/schemastore.nvim",
+  },
 
   -- debug
   {
