@@ -59,6 +59,7 @@ local plugins = {
         "markdown",
         "markdown_inline",
         "jsdoc",
+        "scss",
 
         -- low level
         "rust",
