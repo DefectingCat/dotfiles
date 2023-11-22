@@ -193,6 +193,12 @@ M.telescope = {
     ["<leader>gd"] = { "<cmd> DiffviewOpen <CR>", "Open diff view" },
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit" },
     ["<leader>gf"] = { "<cmd> LazyGitFilterCurrentFile <CR>", "Open LazyGit fitler current file" },
+    ["<leader>fd"] = {
+      function()
+        require("telescope.builtin").diagnostics()
+      end,
+      "Find Diagnostics",
+    },
   },
 }
 
@@ -227,6 +233,18 @@ M.lspconfig = {
       "LSP code action",
     },
   }, ]]
+
+  n = {
+    ["<leader>cb"] = {
+      function()
+        vim.ui.select()
+      end,
+    },
+    ["<leader>co"] = {
+      "<cmd> OrganizeImports <CR>",
+      "Organize imports",
+    },
+  },
 }
 
 return M
