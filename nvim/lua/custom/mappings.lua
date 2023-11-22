@@ -233,13 +233,7 @@ M.lspconfig = {
       "LSP code action",
     },
   }, ]]
-
   n = {
-    ["<leader>cb"] = {
-      function()
-        vim.ui.select()
-      end,
-    },
     ["<leader>co"] = {
       "<cmd> OrganizeImports <CR>",
       "Organize imports",
