@@ -166,7 +166,13 @@ local plugins = {
 
   -- telescope, code action ui
   {
-    "stevearc/dressing.nvim",
+    "nvim-telescope/telescope.nvim",
+    opts = function()
+      require "custom.configs.telescope"
+    end,
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
   },
   -- motion, UI and others
   {
