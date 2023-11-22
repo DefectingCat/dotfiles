@@ -20,11 +20,10 @@
 --
 
 local opt = vim.opt
-local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", {
-  clear = true,
-})
 local autocmd = vim.api.nvim_create_autocmd
-
+local user_command = vim.api.nvim_create_user_command
+vim.g.dap_virtual_text = true
+vim.wo.relativenumber = true
 -- opt.iskeyword:append("-")
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -34,6 +33,9 @@ opt.wildignore:append { "*/node_modules/*" }
 opt.clipboard:append { "unnamedplus" }
 
 ---- 用o换行不要延续注释
+local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", {
+  clear = true,
+})
 autocmd("BufEnter", {
   group = myAutoGroup,
   pattern = "*",
@@ -45,7 +47,7 @@ autocmd("BufEnter", {
 })
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -53,5 +55,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
-vim.g.dap_virtual_text = true
-vim.wo.relativenumber = true
+-- Copy file path
+user_command("Cppath", function()
+  local path = vim.fn.expand "%:p"
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+user_command("CpRelPath", function()
+  local path = vim.fn.expand "%"
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
