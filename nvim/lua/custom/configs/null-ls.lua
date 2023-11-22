@@ -14,7 +14,7 @@ local opts = {
     -- JavaScript
     formatting.prettierd,
     diagnostics.eslint_d.with {
-      only_local = "node_modules/.bin",
+      prefer_local = "node_modules/.bin",
     },
     -- Lua
     formatting.stylua,
@@ -27,7 +27,7 @@ local opts = {
     },
     diagnostics.hadolint, -- dockerfile linter
     code_actions.eslint_d.with {
-      only_local = "node_modules/.bin",
+      prefer_local = "node_modules/.bin",
     },
   },
   on_attach = function(client, bufnr)
