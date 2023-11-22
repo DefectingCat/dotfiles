@@ -5,3 +5,6 @@
 
 rm -rf nvim/lua/custom
 cp -aR ~/.config/nvim/lua/custom ./nvim/lua/
+
+rm -rf ./zsh/zshrc-linux
+cp -aR ~/.zshrc ./zsh/zshrc-linux
