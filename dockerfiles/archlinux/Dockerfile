@@ -19,10 +19,18 @@ WORKDIR /home/${USER}
 RUN rm -rf yay \
   && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
   && git clone https://github.com/DefectingCat/dotfiles \
+  # ohmyzsh
   && chmod +x /home/${USER}/dotfiles/zsh/install.sh \
   && cp -aR /home/${USER}/dotfiles/zsh/zshrc-linux /home/${USER}/.zshrc \
   && /home/${USER}/dotfiles/zsh/install.sh \
   && git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 \
-  && cp -aR /home/${USER}/dotfiles/nvim/lua/custom /home/${USER}/.config/nvim/lua/
+  && cp -aR /home/${USER}/dotfiles/nvim/lua/custom /home/${USER}/.config/nvim/lua/ \
+  # nvm
+  && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash \
+  && export NVM_DIR="/home/${USER}/.nvm" \
+  && \. "$NVM_DIR/nvm.sh" \
+  && nvm install --lts \
+  # rustc
+  && curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 ENTRYPOINT ["/bin/zsh"]
