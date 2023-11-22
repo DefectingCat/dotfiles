@@ -127,6 +127,9 @@ export https_proxy="http://localhost:10809"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# lazygit config location and theme
+export CONFIG_DIR="$HOME/.config/lazygit"
+export LG_CONFIG_FILE="$CONFIG_DIR/config.yml,$CONFIG_DIR/mocha-pink.yml"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
