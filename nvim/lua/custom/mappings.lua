@@ -60,6 +60,39 @@ M.dap_go = {
   },
 }
 
+M.lspsaga = {
+  n = {
+    ["<C-.>"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "󰅱 Code Action",
+    },
+    ["gf"] = {
+      function()
+        vim.cmd "Lspsaga lsp_finder"
+      end,
+      " Go to definition",
+    },
+    ["gt"] = {
+      "<CMD>Lspsaga goto_definition<CR>",
+      " Go to definition",
+    },
+    ["<leader>lp"] = {
+      "<CMD>Lspsaga peek_definition<CR>",
+      " Peek definition",
+    },
+    ["gh"] = {
+      function()
+        --[[ vim.lsp.buf.hover() ]]
+        require("pretty_hover").hover()
+      end,
+      "󱙼 Hover lsp",
+    },
+    ["gr"] = { "<CMD>Telescope lsp_references<CR>", " Lsp references" },
+  },
+}
+
 M.rua = {
   n = {
     ["<S-l>"] = {
@@ -68,22 +101,12 @@ M.rua = {
       end,
       "Goto next buffer",
     },
-
     ["<S-h>"] = {
       function()
         require("nvchad.tabufline").tabuflinePrev()
       end,
       "Goto prev buffer",
     },
-
-    ["gh"] = {
-      function()
-        vim.lsp.buf.hover()
-      end,
-      "LSP hover",
-    },
-
-    ["gb"] = { "viw" },
     ["<C-a>"] = { "gg<S-v>G" },
     -- $ 跳到行尾不带空格
     ["$"] = { "g_" },
@@ -182,6 +205,17 @@ M.rua = {
   -- term
   t = {
     --[[ ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" }, ]]
+  },
+}
+
+M.trouble = {
+  n = {
+    ["<leader>xx"] = { "<cmd>TroubleToggle<CR>" },
+    ["<leader>xw"] = { "<cmd>TroubleToggle workspace_diagnostics<CR>" },
+    ["<leader>xd"] = { "<cmd>TroubleToggle document_diagnostics<CR>" },
+    ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<CR>" },
+    ["<leader>xl"] = { "<cmd>TroubleToggle loclist<CR>" },
+    ["gR"] = { "<cmd>TroubleToggle lsp_references<CR>" },
   },
 }
 

@@ -40,6 +40,13 @@ local plugins = {
       },
     },
   },
+  --[[ {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require "custom.configs.lspsaga"
+    end,
+  }, ]]
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -131,6 +138,12 @@ local plugins = {
   },
   {
     "b0o/schemastore.nvim",
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble", "TroubleRefresh" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
   },
 
   -- debug
@@ -279,9 +292,11 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     opts = {
+      enhanced_diff_hl = true,
       view = {
         merge_tool = {
           layout = "diff3_mixed",
+          disable_diagnostics = true,
         },
       },
     },
