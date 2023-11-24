@@ -37,17 +37,15 @@ M.ui = {
       "⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣",
     },
 
-    --[[ header = {
-      "           ▄ ▄                   ",
-      "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-      "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-      "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-      "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-      "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-      "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-      "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-      "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
-    }, ]]
+    extended_integrations = {
+      "dap",
+      "hop",
+      "rainbowdelimiters",
+      "codeactionmenu",
+      "todo",
+      "trouble",
+      "notify",
+    },
 
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
@@ -73,6 +71,18 @@ M.ui = {
     selected_item_bg = "colored", -- colored / simple
   },
 }
+
+--[[ M.gitsigns = {
+  signs = {
+    add = { text = " " },
+    change = { text = " " },
+    delete = { text = " " },
+    topdelete = { text = " " },
+    changedelete = { text = " " },
+    untracked = { text = " " },
+  },
+} ]]
+
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
