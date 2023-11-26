@@ -1,5 +1,4 @@
 #!/bin/bash
-
 rm -rf ./nvim/lua/custom
 cp -aR ~/.config/nvim/lua/custom ./nvim/lua/
 
@@ -22,3 +21,9 @@ cp -aR ~/.ideavimrc ./ideavim/
 
 rm -rf ./lazygit/
 cp -aR ~/.config/lazygit ./
+
+rm -rf ./yabai/
+cp -aR ~/.config/yabai/ ./yabai/
+
+rm -rf ./skhd/
+cp -aR ~/.config/skhd/ ./skhd/
