@@ -131,7 +131,7 @@ M.rua = {
       function()
         local hop = require "hop"
         local directions = require("hop.hint").HintDirection
-        hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false }
+        hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false, hint_offset = -1 }
       end,
       "Hop motion search words after cursor",
     },
@@ -139,7 +139,7 @@ M.rua = {
       function()
         local hop = require "hop"
         local directions = require("hop.hint").HintDirection
-        hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
+        hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 }
       end,
       "Hop motion search words before cursor",
     },
