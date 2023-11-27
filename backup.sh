@@ -27,3 +27,6 @@ cp -aR ~/.config/yabai/ ./yabai/
 
 rm -rf ./skhd/
 cp -aR ~/.config/skhd/ ./skhd/
+
+rm -rf ./sketchbar/
+cp -aR ~/.config/sketchybar/ ./sketchbar
