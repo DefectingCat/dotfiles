@@ -235,33 +235,13 @@ local plugins = {
     lazy = true,
     event = "VeryLazy",
   },
-  --[[ {
-    "echasnovski/mini.pairs",
-    event = "VeryLazy",
-    opts = {},
-    keys = {
-      {
-        "<leader>up",
-        function()
-          vim.g.minipairs_disable = not vim.g.minipairs_disable
-        end,
-        desc = "Toggle auto pairs",
-      },
-    },
-  }, ]]
   {
-    "echasnovski/mini.surround",
-    opts = {
-      mappings = {
-        add = "gsa", -- Add surrounding in Normal and Visual modes
-        delete = "gsd", -- Delete surrounding
-        find = "gsf", -- Find surrounding (to the right)
-        find_left = "gsF", -- Find surrounding (to the left)
-        highlight = "gsh", -- Highlight surrounding
-        replace = "gsr", -- Replace surrounding
-        update_n_lines = "gsn", -- Update `n_lines`
-      },
-    },
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
   },
   -- comment string
   {
