@@ -165,6 +165,14 @@ M.rua = {
       end,
       "Move buffer left",
     },
+
+    -- notify
+    ["<leader>un"] = {
+      function()
+        require("notify").dismiss { silent = true, pending = true }
+      end,
+      "Dismiss all Notifications",
+    },
   },
   v = {
     ["$"] = { "g_" },
