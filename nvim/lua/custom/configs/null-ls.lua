@@ -22,6 +22,7 @@ local opts = {
     formatting.gofmt,
     formatting.goimports_reviser,
     formatting.golines,
+    formatting.taplo,
     -- JavaScript
     formatting.prettierd,
     diagnostics.eslint_d.with {
