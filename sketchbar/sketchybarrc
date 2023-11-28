@@ -32,6 +32,10 @@ bar=(
   y_offset=-5
   margin=-2
   topmost=window
+  # corner_radius=9
+  # margin=5
+  # blur_radius=20
+  # notch_width=0
 )
 
 sketchybar --bar "${bar[@]}"

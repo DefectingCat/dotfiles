@@ -224,10 +224,40 @@ local plugins = {
   {
     "windwp/nvim-ts-autotag",
   },
+  -- auto pairs
   {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    "echasnovski/mini.pairs",
     event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "<leader>up",
+        function()
+          --[[ local Util = require "lazy.core.util" ]]
+          vim.g.minipairs_disable = not vim.g.minipairs_disable
+          --[[ if vim.g.minipairs_disable then
+            Util.warn("Disabled auto pairs", { title = "Option" })
+          else
+            Util.info("Enabled auto pairs", { title = "Option" })
+          end ]]
+        end,
+        desc = "Toggle auto pairs",
+      },
+    },
+  },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "gsa", -- Add surrounding in Normal and Visual modes
+        delete = "gsd", -- Delete surrounding
+        find = "gsf", -- Find surrounding (to the right)
+        find_left = "gsF", -- Find surrounding (to the left)
+        highlight = "gsh", -- Highlight surrounding
+        replace = "gsr", -- Replace surrounding
+        update_n_lines = "gsn", -- Update `n_lines`
+      },
+    },
   },
   -- comment string
   {
