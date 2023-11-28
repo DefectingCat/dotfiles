@@ -73,6 +73,9 @@ local plugins = {
         "toml",
         "go",
       },
+      autotag = {
+        enable = true,
+      },
     },
   },
   {
@@ -220,12 +223,19 @@ local plugins = {
   },
   {
     "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
   },
   {
     "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-ts-autotag").setup {}
+    end,
+    lazy = true,
+    event = "VeryLazy",
   },
-  -- auto pairs
-  {
+  --[[ {
     "echasnovski/mini.pairs",
     event = "VeryLazy",
     opts = {},
@@ -233,18 +243,12 @@ local plugins = {
       {
         "<leader>up",
         function()
-          --[[ local Util = require "lazy.core.util" ]]
           vim.g.minipairs_disable = not vim.g.minipairs_disable
-          --[[ if vim.g.minipairs_disable then
-            Util.warn("Disabled auto pairs", { title = "Option" })
-          else
-            Util.info("Enabled auto pairs", { title = "Option" })
-          end ]]
         end,
         desc = "Toggle auto pairs",
       },
     },
-  },
+  }, ]]
   {
     "echasnovski/mini.surround",
     opts = {
