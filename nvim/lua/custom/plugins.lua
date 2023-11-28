@@ -40,13 +40,6 @@ local plugins = {
       },
     },
   },
-  --[[ {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = function()
-      require "custom.configs.lspsaga"
-    end,
-  }, ]]
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -91,6 +84,7 @@ local plugins = {
       { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
     },
     opts = function()
+      ---@diagnostic disable-next-line: different-requires
       local M = require "plugins.configs.cmp"
       M.completion.completeopt = "menu,menuone,noselect"
       M.mapping["<CR>"] = cmp.mapping.confirm {
@@ -353,14 +347,14 @@ local plugins = {
       },
     },
   },
-  {
-    "kdheepak/lazygit.nvim",
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
 
+  --[[ {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require "custom.configs.lspsaga"
+    end,
+  }, ]]
   -- {
   --   "stevearc/conform.nvim",
   --   opts = {
