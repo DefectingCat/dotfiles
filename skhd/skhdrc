@@ -22,10 +22,10 @@ shift + alt - k : yabai -m window --resize top:0:-20
 shift + alt - l : yabai -m window --resize right:20:0
 
 # Swapping window
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
+# shift + alt - j : yabai -m window --swap south
+# shift + alt - k : yabai -m window --swap north
+# shift + alt - h : yabai -m window --swap west
+# shift + alt - l : yabai -m window --swap east
 # Move window and tile with what already there
 ctrl + alt - j : yabai -m window --warp south
 ctrl + alt - k : yabai -m window --warp north
@@ -38,6 +38,7 @@ shift + alt - 2 : yabai -m window --space 2
 shift + alt - 3 : yabai -m window --space 3
 shift + alt - 4 : yabai -m window --space 4
 shift + alt - 5 : yabai -m window --space 5
+shift + alt - 6 : yabai -m window --space 6
 
 # Turning Yabai related stuff on and off
 ctrl + alt - q : yabai --stop-service; brew services stop sketchybar
