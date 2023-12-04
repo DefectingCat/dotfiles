@@ -13,7 +13,7 @@ function backup_folder() {
 backup_folder ~/.config/nvim/lua/custom ./nvim/lua/ ./nvim/lua/custom/
 
 # kitty
-backup_folder ~/.config/kitty/ ./ ./kitty/
+backup_folder ~/.config/kitty ./ ./kitty/
 
 # neofetch
 backup_folder ~/.config/neofetch ./ ./neofetch/

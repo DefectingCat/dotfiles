@@ -33,10 +33,21 @@ local plugins = {
         "vue-language-server",
         "typescript-language-server",
         "tailwindcss-language-server",
+        "eslint_d",
+        "css-lsp",
+        "eslint-lsp",
+        "json-lsp",
+        "yaml-language-server",
+        "ymlfmt",
         -- docker
         "docker-compose-language-service",
         "dockerfile-language-server",
         "hadolint", -- dockerfile linter
+        -- bash
+        "bash-language-server",
+        "shellcheck",
+        "shellharden",
+        "shfmt",
       },
     },
   },

@@ -29,6 +29,10 @@ local opts = {
       prefer_local = "node_modules/.bin",
       condition = eslint_condition,
     },
+    code_actions.eslint_d.with {
+      prefer_local = "node_modules/.bin",
+      condition = eslint_condition,
+    },
     -- Lua
     formatting.stylua,
     -- XML and SVG
@@ -38,11 +42,13 @@ local opts = {
         "svg",
       },
     },
-    diagnostics.hadolint, -- dockerfile linter
-    code_actions.eslint_d.with {
-      prefer_local = "node_modules/.bin",
-      condition = eslint_condition,
-    },
+    -- Docker
+    diagnostics.hadolint,
+    -- Bash
+    diagnostics.shellcheck,
+    code_actions.shellcheck,
+    formatting.shellharden,
+    formatting.shfmt,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
