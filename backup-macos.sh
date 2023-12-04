@@ -9,32 +9,32 @@ function backup_folder() {
 	cp -aR "$1" "$2"
 }
 
-# rm -rf ./nvim/lua/custom
-# cp -aR ~/.config/nvim/lua/custom ./nvim/lua/
+# neovim
 backup_folder ~/.config/nvim/lua/custom ./nvim/lua/ ./nvim/lua/custom/
 
-# rm -rf ./kitty
-# cp -aR ~/.config/kitty ./
-#
-# rm -rf ./neofetch
-# cp -aR ~/.config/neofetch ./
-#
-# cp -aR ~/.zshrc zsh/zshrc
-#
-# rm -rf ./ranger
-# cp -aR ~/.config/ranger ./
-#
-# rm -rf ./tmux/tmux.conf
-# cp -aR ~/.tmux/tmux.conf ./tmux
-#
-# rm -rf ./lazygit/
-# cp -aR ~/.config/lazygit ./
-#
-# rm -rf ./yabai/
-# cp -aR ~/.config/yabai ./
-#
-# rm -rf ./skhd/
-# cp -aR ~/.config/skhd ./
-#
-# rm -rf ./sketchybar/
-# cp -aR ~/.config/sketchybar ./
+# kitty
+backup_folder ~/.config/kitty/ ./ ./kitty/
+
+# neofetch
+backup_folder ~/.config/neofetch ./ ./neofetch/
+
+# zshrc
+backup_folder ~/.zshrc ./zsh/zshrc
+
+# ranger
+backup_folder ~/.config/ranger ./ ./ranger/
+
+# tmux
+backup_folder ~/.tmux/tmux.conf ./tmux/ ./tmux/tmux.conf
+
+# lazygit
+backup_folder ~/.config/lazygit ./ ./lazygit/
+
+# yabai
+backup_folder ~/.config/yabai ./ ./yabai/
+
+# skhd
+backup_folder ~/.config/skhd ./ ./skhd/
+
+# sketchybar
+backup_folder ~/.config/sketchybar ./ ./sketchybar/
