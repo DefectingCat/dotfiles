@@ -122,6 +122,9 @@ eval "$(pyenv init -)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# lazygit config location and theme
+export CONFIG_DIR="$HOME/.config/lazygit"
+export LG_CONFIG_FILE="$CONFIG_DIR/config.yml,$CONFIG_DIR/mocha-pink.yml"
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
