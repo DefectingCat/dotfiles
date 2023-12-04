@@ -1,10 +1,8 @@
 #!/bin/bash
+source ./bash.sh
 
-# rm -rf .config/hypr
-# cp -aR ~/.config/hypr .config/
+# neovim
+backup_folder ~/.config/nvim/lua/custom ./nvim/lua/ ./nvim/lua/custom/
 
-rm -rf nvim/lua/custom
-cp -aR ~/.config/nvim/lua/custom ./nvim/lua/
-
-rm -rf ./zsh/zshrc-linux
-cp -aR ~/.zshrc ./zsh/zshrc-linux
+# zsh
+backup_folder ~/.zshrc ./zsh/zshrc-linux
