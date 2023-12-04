@@ -120,8 +120,6 @@ export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 # proxy
 export http_proxy="http://localhost:10809"
 export https_proxy="http://localhost:10809"
-# source /home/xfy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/nvm/init-nvm.sh
 # pyenv
 # export PATH="${HOME}/.pyenv/shims:${PATH}"
 export PYENV_ROOT="$HOME/.pyenv"
