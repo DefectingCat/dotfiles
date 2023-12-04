@@ -1,7 +1,7 @@
 FROM archlinux
 
 RUN pacman -Syu --noconfirm \
-  && pacman -S --needed base-devel git zsh vim neovim fzf ripgrep --noconfirm
+  && pacman -S --needed base-devel git zsh vim neovim fzf ripgrep lazygit --noconfirm
 
 ARG USER=xfy
 RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
@@ -20,9 +20,9 @@ RUN rm -rf yay \
   && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
   && git clone https://github.com/DefectingCat/dotfiles \
   # ohmyzsh
-  && chmod +x /home/${USER}/dotfiles/zsh/install.sh \
+  && chmod +x /home/${USER}/dotfiles/zsh/install-plugins.sh \
   && cp -aR /home/${USER}/dotfiles/zsh/zshrc-linux /home/${USER}/.zshrc \
-  && /home/${USER}/dotfiles/zsh/install.sh \
+  && /home/${USER}/dotfiles/zsh/install-plugins.sh \
   && git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 \
   && cp -aR /home/${USER}/dotfiles/nvim/lua/custom /home/${USER}/.config/nvim/lua/ \
   # nvm
@@ -31,6 +31,8 @@ RUN rm -rf yay \
   && \. "$NVM_DIR/nvm.sh" \
   && nvm install --lts \
   # rustc
-  && curl https://sh.rustup.rs -sSf | sh -s -- -y
+  && curl https://sh.rustup.rs -sSf | sh -s -- -y \
+  # lazygit
+  && cp -aR /home/${USER}/dotfiles/lazygit/ /home/${USER}/.config
 
 ENTRYPOINT ["/bin/zsh"]
