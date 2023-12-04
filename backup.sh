@@ -16,17 +16,14 @@ cp -aR ~/.config/ranger ./
 rm -rf ./tmux/tmux.conf
 cp -aR ~/.tmux/tmux.conf ./tmux
 
-rm -rf ideavim/.ideavimrc
-cp -aR ~/.ideavimrc ./ideavim/
-
 rm -rf ./lazygit/
 cp -aR ~/.config/lazygit ./
 
 rm -rf ./yabai/
-cp -aR ~/.config/yabai/ ./yabai/
+cp -aR ~/.config/yabai ./
 
 rm -rf ./skhd/
-cp -aR ~/.config/skhd/ ./skhd/
+cp -aR ~/.config/skhd ./
 
-rm -rf ./sketchbar/
-cp -aR ~/.config/sketchybar/ ./sketchbar
+rm -rf ./sketchybar/
+cp -aR ~/.config/sketchybar ./
