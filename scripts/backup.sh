@@ -4,8 +4,10 @@ source ./scripts/bash.sh
 # neovim
 backup_folder ~/.config/nvim/lua/custom ./nvim/lua/ ./nvim/lua/custom/
 
-# kitty
-backup_folder ~/.config/kitty ./ ./kitty/
+if [[ $OSTYPE == "darwin"* ]]; then
+	# kitty
+	backup_folder ~/.config/kitty ./ ./kitty/
+fi
 
 # neofetch
 backup_folder ~/.config/neofetch ./ ./neofetch/
