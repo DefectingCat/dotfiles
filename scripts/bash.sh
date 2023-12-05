@@ -6,5 +6,10 @@ function backup_folder() {
 		rm -rf "$3"
 	fi
 
-	cp -aR "$1" "$2"
+	if [ -d "$1" ]; then
+		echo "straing copy $1 to $2"
+		cp -aR "$1" "$2"
+	else
+		echo "$1 not exist, skip"
+	fi
 }
