@@ -10,7 +10,7 @@ alias ll="ls -lhtr"
 # node
 export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
-if [[ $OSTYPE == "linux-gun"* ]]; then
+if [[ $OSTYPE == "linux"* ]]; then
   export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 fi
@@ -34,7 +34,7 @@ eval "$(pyenv init -)"
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
 # linux
-if [[ $OSTYPE == "linux-gun"* ]]; then
+if [[ $OSTYPE == "linux"* ]]; then
   export GPG_TTY=$(tty)
   export NODE_OPTIONS="--max-old-space-size=8192"
   export PATH=$PATH:~/.cargo/bin
