@@ -5,8 +5,7 @@ local plugins = {
     "NvChad/nvcommunity",
     { import = "nvcommunity.git.diffview" },
     { import = "nvcommunity.git.lazygit" },
-    { import = "nvcommunity.lsp.prettyhover" },
-    { import = "nvcommunity.lsp.mason-lspconfig" },
+    --[[ { import = "nvcommunity.lsp.prettyhover" }, ]]
   },
 
   -- LSP, formatter, linter
@@ -18,7 +17,7 @@ local plugins = {
     end,
   },
   {
-    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
         "lua-language-server",
@@ -49,7 +48,11 @@ local plugins = {
         "shellharden",
         "shfmt",
       },
+      automatic_installation = true,
     },
+  },
+  {
+    "williamboman/mason.nvim",
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -58,7 +61,6 @@ local plugins = {
         -- defaults
         "vim",
         "lua",
-
         -- web dev
         "html",
         "css",
@@ -71,7 +73,6 @@ local plugins = {
         "markdown_inline",
         "jsdoc",
         "scss",
-
         -- low level
         "rust",
         "toml",
@@ -315,7 +316,7 @@ local plugins = {
         command_palette = true, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
+        lsp_doc_border = true, -- add a border to hover docs and signature help
       },
     },
   },
