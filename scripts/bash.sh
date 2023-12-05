@@ -6,7 +6,7 @@ function backup_folder() {
 		rm -rf "$3"
 	fi
 
-	if [ -d "$1" ]; then
+	if [ -r "$1" ]; then
 		echo "straing copy $1 to $2"
 		cp -aR "$1" "$2"
 	else
