@@ -6,7 +6,7 @@ RUN pacman -Syu --noconfirm \
 ARG USER=xfy
 RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
 	&& echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
-	&& chmod 0440 /etc/sudoers.d/${USER} \
+  && chmod 0440 /etc/sudoers.d/${USER} \
   && usermod -s "$(which zsh)" ${USER}
 USER ${USER}
 WORKDIR /home/${USER} 
