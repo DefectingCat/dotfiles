@@ -27,6 +27,9 @@ backup_folder ~/.config/rua-scripts ./
 # lazygit
 backup_folder ~/.config/lazygit ./ ./lazygit/
 
+# hyprland
+backup_folder ~/.config/hypr ./ ./hypr
+
 if [[ $OSTYPE == "darwin"* ]]; then
 	# yabai
 	backup_folder ~/.config/yabai ./ ./yabai/
