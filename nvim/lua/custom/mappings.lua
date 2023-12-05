@@ -237,6 +237,18 @@ M.telescope = {
     ["<leader>gf"] = { "<cmd> LazyGitFilterCurrentFile <CR>", "Open LazyGit fitler current file" },
     ["<leader>gh"] = { "<cmd> DiffviewFileHistory % <CR>", "Open current file history" },
     ["<leader>gc"] = { "<cmd> DiffviewClose <CR>", "Close Diffview" },
+    ["<leader>fc"] = {
+      function()
+        require("telescope.builtin").command_history()
+      end,
+      "Search command history",
+    },
+    ["<leader>fr"] = {
+      function()
+        require("telescope.builtin").resume()
+      end,
+      "Resume last search",
+    },
     ["<leader>fd"] = {
       function()
         require("telescope.builtin").diagnostics()
