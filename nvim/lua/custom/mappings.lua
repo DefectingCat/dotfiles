@@ -84,8 +84,8 @@ M.lspsaga = {
     },
     ["gh"] = {
       function()
-        --[[ vim.lsp.buf.hover() ]]
-        require("pretty_hover").hover()
+        vim.lsp.buf.hover()
+        --[[ require("pretty_hover").hover() ]]
       end,
       "󱙼 Hover lsp",
     },
@@ -240,6 +240,12 @@ M.telescope = {
         require("telescope.builtin").diagnostics()
       end,
       "Find Diagnostics",
+    },
+    ["<leader>fn"] = {
+      function()
+        require("telescope").extensions.notify.notify()
+      end,
+      "View notify history",
     },
   },
 }

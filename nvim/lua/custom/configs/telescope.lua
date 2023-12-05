@@ -22,6 +22,8 @@ local options = {
   },
 }
 
-require("telescope").load_extension "ui-select"
+local telescope = require "telescope"
+telescope.load_extension "ui-select"
+telescope.load_extension "notify"
 
 return options
