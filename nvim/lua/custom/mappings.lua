@@ -235,6 +235,8 @@ M.telescope = {
     ["<leader>gd"] = { "<cmd> DiffviewOpen <CR>", "Open diff view" },
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit" },
     ["<leader>gf"] = { "<cmd> LazyGitFilterCurrentFile <CR>", "Open LazyGit fitler current file" },
+    ["<leader>gh"] = { "<cmd> DiffviewFileHistory % <CR>", "Open current file history" },
+    ["<leader>gc"] = { "<cmd> DiffviewClose <CR>", "Close Diffview" },
     ["<leader>fd"] = {
       function()
         require("telescope.builtin").diagnostics()
