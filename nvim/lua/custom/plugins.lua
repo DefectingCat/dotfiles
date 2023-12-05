@@ -5,7 +5,7 @@ local plugins = {
     "NvChad/nvcommunity",
     { import = "nvcommunity.git.diffview" },
     { import = "nvcommunity.git.lazygit" },
-    --[[ { import = "nvcommunity.lsp.prettyhover" }, ]]
+    { import = "nvcommunity.lsp.prettyhover" },
   },
 
   -- LSP, formatter, linter
@@ -308,6 +308,12 @@ local plugins = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
+        },
+        hover = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
         },
       },
       -- you can enable a preset for easier configuration

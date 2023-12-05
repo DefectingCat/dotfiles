@@ -84,8 +84,8 @@ M.lspsaga = {
     },
     ["gh"] = {
       function()
-        vim.lsp.buf.hover()
-        --[[ require("pretty_hover").hover() ]]
+        --[[ vim.lsp.buf.hover() ]]
+        require("pretty_hover").hover()
       end,
       "󱙼 Hover lsp",
     },
