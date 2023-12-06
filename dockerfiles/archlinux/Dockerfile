@@ -21,10 +21,9 @@ RUN rm -rf yay \
   && git clone https://github.com/DefectingCat/dotfiles \
   # ohmyzsh
   && chmod +x /home/${USER}/dotfiles/zsh/install-plugins.sh \
-  && cp -aR /home/${USER}/dotfiles/zsh/zshrc-linux /home/${USER}/.zshrc \
   && /home/${USER}/dotfiles/zsh/install-plugins.sh \
   && git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 \
-  && cp -aR /home/${USER}/dotfiles/nvim/lua/custom /home/${USER}/.config/nvim/lua/ \
+  && /home/${USER}/dotfiles/scripts/update.sh \
   # nvm
   && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash \
   && export NVM_DIR="/home/${USER}/.nvm" \
