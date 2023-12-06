@@ -17,4 +17,9 @@ RUN export USER="${USER}" \
   && chmod +x /home/${USER}/dotfiles/scripts/* \
   && /home/${USER}/dotfiles/scripts/install-archlinux.sh
 
+WORKDIR /home/${USER}/dotfiles
+RUN scripts/update.sh
+
+WORKDIR /home/${USER} 
+
 ENTRYPOINT ["/bin/zsh"]

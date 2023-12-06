@@ -29,5 +29,6 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 echo "install rustup done"
 
 chmod +x /home/"$USER"/dotfiles/scripts/update.sh
-/home/"$USER"/dotfiles/scripts/update.sh
+cd /home/"$USER"/dotfiles/ || exit
+./scripts/update.sh
 echo "install all done"
