@@ -34,6 +34,7 @@ local plugins = {
         "tailwindcss-language-server",
         "eslint_d",
         "css-lsp",
+        "cssmodules-language-server",
         "eslint-lsp",
         "json-lsp",
         "yaml-language-server",
