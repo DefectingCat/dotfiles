@@ -1,7 +1,9 @@
 FROM archlinux
 
 RUN pacman -Syu --noconfirm \
-  && pacman -S --needed base-devel git zsh vim neovim fzf ripgrep lazygit go --noconfirm
+  && pacman -S --needed base-devel git zsh vim neovim fzf\
+  ripgrep lazygit go ranger openssh \
+  --noconfirm
 
 ARG USER=xfy
 RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
