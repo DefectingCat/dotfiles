@@ -2,6 +2,7 @@
 source ./scripts/bash.sh
 # zsh
 backup_folder ./zsh/zshrc ~/.zshrc
+backup_folder ./zsh/p10k.zsh ~/.p10k.zsh
 # neovim
 backup_folder ./nvim/lua/custom ~/.config/nvim/lua/ ~/.config/nvim/lua/custom/
 # neofetch
