@@ -32,6 +32,8 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+# disbale powerlevel10k configuration
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # linux
 if [[ $OSTYPE == "linux"* ]]; then
