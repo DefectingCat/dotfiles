@@ -2,7 +2,7 @@ FROM archlinux
 
 RUN pacman -Syu --noconfirm \
   && pacman -S --needed base-devel git zsh vim neovim fzf\
-  ripgrep lazygit go ranger openssh pyenv nvm \
+  ripgrep lazygit go ranger openssh pyenv \
   --noconfirm
 
 ARG USER=xfy
