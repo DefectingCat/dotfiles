@@ -1,3 +1,5 @@
 **/*/packer_compiled.lua
-.DS_Store
+**/*/*.log
+**/*/.DS_Store
 lazygit/state.yml
+
