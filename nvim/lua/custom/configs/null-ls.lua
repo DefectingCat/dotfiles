@@ -7,6 +7,7 @@ local code_actions = null_ls.builtins.code_actions
 
 local eslint_condition = function(utils)
   return utils.root_has_file {
+    ".eslintcache",
     ".eslintrc",
     ".eslintrc.js",
     ".eslintrc.cjs",
