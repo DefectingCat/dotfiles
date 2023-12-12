@@ -15,8 +15,6 @@ backup_folder ~/.tmux/tmux.conf ./tmux/ ./tmux/tmux.conf
 backup_folder ~/.config/rua-scripts ./ ./rua-scripts
 # lazygit
 backup_folder ~/.config/lazygit ./ ./lazygit/
-# btop
-backup_folder ~/.config/btop ./ ./btop
 
 if [[ $OSTYPE == "linux"* ]]; then
 	# hyprland
@@ -24,6 +22,8 @@ if [[ $OSTYPE == "linux"* ]]; then
 fi
 
 if [[ $OSTYPE == "darwin"* ]]; then
+	# btop
+	backup_folder ~/.config/btop ./ ./btop
 	# kitty
 	backup_folder ~/.config/kitty ./ ./kitty/
 	# yabai
