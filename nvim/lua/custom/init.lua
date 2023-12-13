@@ -9,3 +9,4 @@ vim.fn.sign_define(
 require "custom.utils.autocmd"
 require "custom.utils.usercmd"
 require "custom.utils.options"
+require "custom.utils.neovide"

@@ -81,5 +81,7 @@ yabai -m rule --add label="QQ Music" app="^QQ音乐$" manage=off
 yabai -m rule --add label="QQ" app="^QQ$" manage=off
 yabai -m rule --add label="Docker" app="^Docker$" manage=off
 yabai -m rule --add label="Element" app="^Element$" manage=off
+yabai -m rule --add label="JetBrains Toolbox" app="^JetBrains Toolbox$" manage=off
+yabai -m rule --add app="^(Safari|SandboxBroker|eteams|Web App)$" manage=off
 
 echo "yabai configuration loaded.."
