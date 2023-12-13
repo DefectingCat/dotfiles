@@ -249,6 +249,12 @@ M.telescope = {
       end,
       "Resume last search",
     },
+    ["<leader>ft"] = {
+      function()
+        require("telescope.builtin").filetypes()
+      end,
+      "Set current filetype",
+    },
     ["<leader>fd"] = {
       function()
         require("telescope.builtin").diagnostics()
