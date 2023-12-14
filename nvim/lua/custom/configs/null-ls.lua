@@ -50,6 +50,10 @@ local opts = {
     code_actions.shellcheck,
     formatting.shellharden,
     formatting.shfmt,
+    -- sql
+    formatting.sqlfluff.with {
+      extra_args = { "--dialect", "postgres" }, -- change to your dialect
+    },
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
