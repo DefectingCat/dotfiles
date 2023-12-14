@@ -296,6 +296,15 @@ local plugins = {
   },
   -- ui
   {
+    "rcarriga/nvim-notify",
+    opts = {
+      fps = 120,
+      render = "wrapped-compact",
+      stages = "slide",
+      top_down = false,
+    },
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
