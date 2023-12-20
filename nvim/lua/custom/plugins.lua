@@ -56,6 +56,9 @@ local plugins = {
       },
       automatic_installation = true,
     },
+    config = function(_, opts)
+      require("mason-lspconfig").setup(opts)
+    end,
   },
   {
     "williamboman/mason.nvim",
