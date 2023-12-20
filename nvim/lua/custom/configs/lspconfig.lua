@@ -12,6 +12,12 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 
+require("mason-lspconfig").setup_handlers {
+  function(server)
+    lspconfig[server].setup {}
+  end,
+}
+
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -90,39 +96,4 @@ lspconfig.yamlls.setup {
       schemas = require("schemastore").yaml.schemas(),
     },
   },
-}
-
-lspconfig.bashls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.docker_compose_language_service.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.dockerls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.html.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.cssls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.cssmodules_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.sqlls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
 }
