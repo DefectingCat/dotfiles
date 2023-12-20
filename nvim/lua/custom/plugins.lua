@@ -17,37 +17,42 @@ local plugins = {
     end,
   },
   {
+
+    "jay-babu/mason-null-ls.nvim",
+    config = function()
+      require("mason-null-ls").setup {
+        ensure_installed = {
+          "stylua",
+          "taplo", -- toml formatter
+          "prettierd",
+          "xmlformatter", -- xml svg formatter
+          "eslint_d",
+          "ymlfmt",
+          "shellcheck",
+          "shellharden",
+          "shfmt",
+        },
+      }
+    end,
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        -- rust
-        "rust-analyzer",
-        "taplo", -- toml formatter
-        -- javascript
-        "html-lsp",
-        "prettierd",
-        "xmlformatter", -- xml svg formatter
-        "vue-language-server",
-        "typescript-language-server",
-        "tailwindcss-language-server",
-        "eslint_d",
-        "css-lsp",
-        "cssmodules-language-server",
-        "eslint-lsp",
-        "json-lsp",
-        "yaml-language-server",
-        "ymlfmt",
-        -- docker
-        "docker-compose-language-service",
-        "dockerfile-language-server",
-        "hadolint", -- dockerfile linter
-        -- bash
-        "bash-language-server",
-        "shellcheck",
-        "shellharden",
-        "shfmt",
+        "lua_ls",
+        "rust_analyzer",
+        "html",
+        "vuels",
+        "tsserver",
+        "tailwindcss",
+        "eslint",
+        "cssls",
+        "cssmodules_ls",
+        "jsonls",
+        "yamlls",
+        "docker_compose_language_service",
+        "dockerls",
+        "bashls",
       },
       automatic_installation = true,
     },
