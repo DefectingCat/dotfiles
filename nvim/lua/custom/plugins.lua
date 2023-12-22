@@ -18,6 +18,7 @@ local plugins = {
   },
   {
     "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("mason-null-ls").setup {
         ensure_installed = {
@@ -31,6 +32,7 @@ local plugins = {
           "shellharden",
           "shfmt",
         },
+        automatic_installation = true,
       }
     end,
   },
@@ -68,6 +70,7 @@ local plugins = {
       ensure_installed = {
         -- defaults
         "vim",
+        "vimdoc",
         "lua",
         -- web dev
         "html",
