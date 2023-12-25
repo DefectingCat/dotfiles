@@ -205,6 +205,11 @@ local plugins = {
   {
     "nvim-telescope/telescope-ui-select.nvim",
   },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build =
+    "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+  },
   -- motion, UI and others
   {
     "phaazon/hop.nvim",
@@ -215,9 +220,6 @@ local plugins = {
       hop.setup { keys = "etovxqpdygfblzhckisuran" }
     end,
   },
-  -- {
-  --   "mg979/vim-visual-multi",
-  -- },
   {
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
@@ -317,17 +319,6 @@ local plugins = {
       top_down = false,
     },
   },
-  --[[ {
-    "mrded/nvim-lsp-notify",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = "rcarriga/nvim-notify",
-    config = function()
-      require("lsp-notify").setup {
-        notify = require "notify",
-        icons = false,
-      }
-    end,
-  }, ]]
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -422,18 +413,6 @@ local plugins = {
       require "custom.configs.lspsaga"
     end,
   }, ]]
-  -- {
-  --   "stevearc/conform.nvim",
-  --   opts = {
-  --     formatters_by_ft = {
-  --       lua = { "stylua" },
-  --       -- Conform will run multiple formatters sequentially
-  --       python = { "isort", "black" },
-  --       -- Use a sub-list to run only the first available formatter
-  --       javascript = { { "prettierd", "prettier" } },
-  --     },
-  --   },
-  -- },
 }
 
 return plugins
