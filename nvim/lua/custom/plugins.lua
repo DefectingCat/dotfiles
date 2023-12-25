@@ -317,7 +317,7 @@ local plugins = {
       top_down = false,
     },
   },
-  {
+  --[[ {
     "mrded/nvim-lsp-notify",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = "rcarriga/nvim-notify",
@@ -327,7 +327,7 @@ local plugins = {
         icons = false,
       }
     end,
-  },
+  }, ]]
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -338,7 +338,7 @@ local plugins = {
     opts = {
       lsp = {
         message = {
-          enabled = false,
+          enabled = true,
         },
         progress = {
           enabled = false,
