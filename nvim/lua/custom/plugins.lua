@@ -224,7 +224,9 @@ local plugins = {
     dependencies = {
       "smoka7/hydra.nvim",
     },
-    opts = {},
+    opts = {
+      hint_config = false,
+    },
     cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
     keys = {
       {
@@ -235,6 +237,7 @@ local plugins = {
       },
     },
   },
+
   {
     "jxnblk/vim-mdx-js",
   },
@@ -315,6 +318,17 @@ local plugins = {
     },
   },
   {
+    "mrded/nvim-lsp-notify",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = "rcarriga/nvim-notify",
+    config = function()
+      require("lsp-notify").setup {
+        notify = require "notify",
+        icons = false,
+      }
+    end,
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -323,6 +337,12 @@ local plugins = {
     },
     opts = {
       lsp = {
+        message = {
+          enabled = false,
+        },
+        progress = {
+          enabled = false,
+        },
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
