@@ -363,6 +363,7 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     event = "BufReadPost",
+    opts = {},
   },
   {
     "chikko80/error-lens.nvim",
