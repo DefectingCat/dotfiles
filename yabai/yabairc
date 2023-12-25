@@ -82,6 +82,7 @@ yabai -m rule --add label="QQ" app="^QQ$" manage=off
 yabai -m rule --add label="Docker" app="^Docker$" manage=off
 yabai -m rule --add label="Docker" app="^Docker Desktop$" manage=off
 yabai -m rule --add label="Element" app="^Element$" manage=off
+yabai -m rule --add label="Chrome" app="^Google Chrome$" title="^DevTools" manage=off
 yabai -m rule --add label="JetBrains Toolbox" app="^JetBrains Toolbox$" manage=off
 yabai -m rule --add app="^(Safari|SandboxBroker|eteams|Web App)$" manage=off
 yabai -m rule --add app="^Obsidian$" manage=off
