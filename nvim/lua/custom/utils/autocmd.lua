@@ -1,5 +1,14 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- set markdown highlight for mdx file
+autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.mdx" },
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_option(buf, "filetype", "markdown")
+  end,
+})
+
 -- Disbale diagnostic for files in node_modules
 autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
@@ -49,8 +58,8 @@ autocmd("BufEnter", {
   pattern = "*",
   callback = function()
     vim.opt.formatoptions = vim.opt.formatoptions
-      - "o" -- O and o, don't continue comments
-      + "r" -- But do continue when pressing enter.
+        - "o" -- O and o, don't continue comments
+        + "r" -- But do continue when pressing enter.
   end,
 })
 

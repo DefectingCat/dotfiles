@@ -66,33 +66,9 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        -- defaults
-        "vim",
-        "vimdoc",
-        "lua",
-        -- web dev
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "json",
-        "vue",
-        "markdown",
-        "markdown_inline",
-        "jsdoc",
-        "scss",
-        -- low level
-        "rust",
-        "toml",
-        "go",
-      },
-      autotag = {
-        enable = true,
-      },
-    },
+    opts = function()
+      return "custom.configs.treesitter"
+    end,
   },
   {
     "nvimtools/none-ls.nvim",
