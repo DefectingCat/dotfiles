@@ -173,6 +173,12 @@ M.rua = {
       end,
       "Dismiss all Notifications",
     },
+
+    -- markdown preview
+    ["<leader>pm"] = {
+      "<cmd> MarkdownPreview <CR>",
+      "Preview Markdown file",
+    },
   },
   v = {
     ["$"] = { "g_" },
