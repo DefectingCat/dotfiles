@@ -96,6 +96,15 @@ M.lspsaga = {
 
 M.rua = {
   n = {
+    ["<tab>"] = {
+      "<CMD> tabNext <CR>",
+      "Goto next tab",
+    },
+    ["<S-tab>"] = {
+      "<CMD> tabprevious",
+      "Goto prev tab",
+    },
+
     ["<S-l>"] = {
       function()
         require("nvchad.tabufline").tabuflineNext()
