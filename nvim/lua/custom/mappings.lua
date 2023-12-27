@@ -68,7 +68,7 @@ M.lspsaga = {
       end,
       "󰅱 Code Action",
     },
-    ["gf"] = {
+    --[[ ["gf"] = {
       function()
         vim.cmd "Lspsaga lsp_finder"
       end,
@@ -81,7 +81,7 @@ M.lspsaga = {
     ["<leader>lp"] = {
       "<CMD>Lspsaga peek_definition<CR>",
       " Peek definition",
-    },
+    }, ]]
     ["gh"] = {
       function()
         --[[ vim.lsp.buf.hover() ]]
@@ -90,6 +90,7 @@ M.lspsaga = {
       "󱙼 Hover lsp",
     },
     ["gr"] = { "<CMD>Telescope lsp_references<CR>", " Lsp references" },
+    ["gd"] = { "<CMD>Telescope lsp_definitions <CR>", " Lsp definitions" },
   },
 }
 
