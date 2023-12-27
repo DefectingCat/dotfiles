@@ -3,7 +3,6 @@ local M = {}
 
 M.ui = {
   transparency = true,
-  lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   theme = "catppuccin",
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
