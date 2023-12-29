@@ -87,5 +87,7 @@ yabai -m rule --add label="JetBrains Toolbox" app="^JetBrains Toolbox$" manage=o
 yabai -m rule --add app="^(Safari|SandboxBroker|eteams|Web App)$" manage=off
 yabai -m rule --add app="^Obsidian$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^FileZilla$" manage=off
 
 echo "yabai configuration loaded.."
