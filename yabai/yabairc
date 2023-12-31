@@ -89,5 +89,10 @@ yabai -m rule --add app="^Obsidian$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^FileZilla$" manage=off
+yabai -m rule --add app="^IINA$" manage=off
+yabai -m rule --add app="^The Unarchiver$" manage=off
+yabai -m rule --add app="^Telegram$" manage=off
+yabai -m rule --add app="^PlayCover$" manage=off
+yabai -m rule --add app="^START$" manage=off
 
 echo "yabai configuration loaded.."
