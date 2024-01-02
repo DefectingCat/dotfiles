@@ -14,7 +14,10 @@ end
 
 require("mason-lspconfig").setup_handlers {
   function(server)
-    lspconfig[server].setup {}
+    lspconfig[server].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
   end,
 }
 
