@@ -17,13 +17,25 @@ local plugins = {
     end,
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("mason-nvim-dap").setup {
+        ensure_installed = {
+          "codelldb",
+        },
+        automatic_installation = true,
+      }
+    end,
+  },
+  {
     "jay-babu/mason-null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("mason-null-ls").setup {
         ensure_installed = {
           "stylua",
-          "taplo",        -- toml formatter
+          "taplo", -- toml formatter
           "prettierd",
           "xmlformatter", -- xml svg formatter
           "eslint_d",
@@ -216,8 +228,7 @@ local plugins = {
   },
   {
     "nvim-telescope/telescope-fzf-native.nvim",
-    build =
-    "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
   },
   -- motion, UI and others
   {
@@ -358,11 +369,11 @@ local plugins = {
       },
       -- you can enable a preset for easier configuration
       presets = {
-        bottom_search = true,         -- use a classic bottom cmdline for search
-        command_palette = true,       -- position the cmdline and popupmenu together
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = true,        -- add a border to hover docs and signature help
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true, -- add a border to hover docs and signature help
       },
     },
   },
