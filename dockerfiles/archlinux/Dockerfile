@@ -16,9 +16,10 @@ RUN rm -rf /home/${USER}/dotfiles \
 
 RUN chown -R "${USER}":"${USER}" /home/"${USER}"
 USER ${USER}
+COPY --chown=${USER} . /home/${USER}/dotfiles
 RUN export USER="${USER}" \
-  && git clone https://github.com/DefectingCat/dotfiles \
   && chmod +x /home/${USER}/dotfiles/scripts/* \
+  && /home/${USER}/dotfiles/scripts/install-yay.sh \
   && /home/${USER}/dotfiles/scripts/install-archlinux.sh
 
 WORKDIR /home/${USER}/dotfiles
