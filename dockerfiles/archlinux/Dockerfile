@@ -12,7 +12,7 @@ RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
   && usermod -s "$(which zsh)" ${USER}
 WORKDIR /home/${USER} 
 RUN rm -rf /home/${USER}/dotfiles \
-  && rm -rf  /home/${USER}/yay
+  && rm -rf /home/${USER}/yay
 
 RUN chown -R "${USER}":"${USER}" /home/"${USER}"
 USER ${USER}
