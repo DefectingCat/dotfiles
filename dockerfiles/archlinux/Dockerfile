@@ -1,7 +1,7 @@
 FROM archlinux
 
-RUN pacman -Syu --noconfirm \
-  && pacman -S --needed base-devel git zsh vim neovim fzf\
+# RUN pacman -Syu --noconfirm \
+RUN pacman -S --needed base-devel git zsh vim neovim fzf \
   ripgrep lazygit go ranger openssh pyenv \
   --noconfirm
 
@@ -10,7 +10,7 @@ RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
 	&& echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
   && chmod 0440 /etc/sudoers.d/${USER} \
   && usermod -s "$(which zsh)" ${USER}
-WORKDIR /home/${USER} 
+WORKDIR /home/${USER}
 RUN rm -rf /home/${USER}/dotfiles \
   && rm -rf /home/${USER}/yay
 
@@ -25,6 +25,6 @@ RUN export USER="${USER}" \
 WORKDIR /home/${USER}/dotfiles
 RUN scripts/update.sh
 
-WORKDIR /home/${USER} 
+WORKDIR /home/${USER}
 
 ENTRYPOINT ["/bin/zsh"]
