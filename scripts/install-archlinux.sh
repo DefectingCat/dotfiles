@@ -1,10 +1,5 @@
 #!/bin/bash
 
-source ./install-yay.sh
-
-# install yay
-install_yay
-
 cd /home/"$USER"/ || exit
 
 # ohmyzsh
