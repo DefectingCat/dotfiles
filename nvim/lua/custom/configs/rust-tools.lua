@@ -20,6 +20,7 @@ local options = {
     capabilities = capabilities,
     settings = {
       ["rust-analyzer"] = {
+        standalone = true,
         cargo = {
           allFeatures = true,
           loadOutDirsFromCheck = true,
@@ -29,6 +30,31 @@ local options = {
           allFeatures = true,
           command = "clippy",
           extraArgs = { "--no-deps" },
+        },
+        files = {
+          excludeDirs = {
+            ".flatpak-builder",
+            "_build",
+            ".dart_tool",
+            ".flatpak-builder",
+            ".git",
+            ".gitlab",
+            ".gitlab-ci",
+            ".gradle",
+            ".idea",
+            ".next",
+            ".project",
+            ".scannerwork",
+            ".settings",
+            ".venv",
+            "archetype-resources",
+            "bin",
+            "hooks",
+            "node_modules",
+            "po",
+            "screenshots",
+            "target",
+          },
         },
       },
       check = {
