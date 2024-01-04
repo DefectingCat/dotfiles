@@ -423,6 +423,20 @@ local plugins = {
           disable_diagnostics = true,
         },
       },
+      keymaps = {
+        view = {
+          ["<tab>"] = false,
+        },
+        file_panel = {
+          ["<tab>"] = false,
+        },
+        file_history_panel = {
+          ["<tab>"] = false,
+        },
+        option_panel = {
+          ["<tab>"] = false,
+        },
+      },
     },
   },
 
