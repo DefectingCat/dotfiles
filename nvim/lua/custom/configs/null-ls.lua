@@ -25,7 +25,9 @@ local opts = {
     formatting.golines,
     formatting.taplo,
     -- JavaScript
-    formatting.prettierd,
+    formatting.prettierd.with {
+      prefer_local = "node_modules/.bin",
+    },
     diagnostics.eslint_d.with {
       prefer_local = "node_modules/.bin",
       condition = eslint_condition,
