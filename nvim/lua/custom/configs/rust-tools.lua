@@ -60,6 +60,7 @@ local options = {
       check = {
         command = "clippy",
         features = "all",
+        extraArgs = { "--no-deps" },
       },
       procMacro = {
         enable = true,
