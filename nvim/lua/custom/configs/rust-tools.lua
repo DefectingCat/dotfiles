@@ -28,8 +28,7 @@ local options = {
         },
         checkOnSave = {
           allFeatures = true,
-          command = "clippy",
-          extraArgs = { "--no-deps" },
+          --[[ command = "clippy", ]]
         },
         files = {
           excludeDirs = {
