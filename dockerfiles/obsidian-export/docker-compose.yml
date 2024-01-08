@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "81:80"
+      # - "443:443"
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./docs:/usr/share/nginx/html
