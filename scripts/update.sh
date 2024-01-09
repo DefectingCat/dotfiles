@@ -15,6 +15,8 @@ backup_folder ./lazygit ~/.config/ ~/.config/lazygit/
 backup_folder ./rua-scripts ~/.config/
 # btop
 backup_folder ./btop ~/.config/
+# tmux
+backup_folder ./tmux/tmux.conf ~/.tmux/
 
 if [[ $OSTYPE == "linux"* ]]; then
 	# hyprland
