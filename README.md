@@ -2,18 +2,17 @@
 
 - neovim
 - tmux
-- ideavim
 - kitty
-- powershell
 - zsh
-
-![](./screenshots/macos.png)
+- powershell
+- ideavim
 
 ## Screenshots
 
 <details>
   <summary>Screenshots</summary>
 
+![](./screenshots/macos.png)
 ![](./screenshots/on-macos-1.png)
 ![](./screenshots/macos-2.png)
 ![](./screenshots/macos-3.png)
@@ -24,7 +23,7 @@
 
 ### vim
 
-Base on lazyvim.
+Base on nvchad.
 
 ### tmux
 
