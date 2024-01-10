@@ -74,17 +74,6 @@ local options = {
   dap = {
     adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
   },
-  tools = {
-    on_initialized = function()
-      vim.cmd [[
-              augroup RustLSP
-                autocmd CursorHold                      *.rs silent! lua vim.lsp.buf.document_highlight()
-                autocmd CursorMoved,InsertEnter         *.rs silent! lua vim.lsp.buf.clear_references()
-                autocmd BufEnter,CursorHold,InsertLeave *.rs silent! lua vim.lsp.codelens.refresh()
-              augroup END
-            ]]
-    end,
-  },
 }
 
 return options
