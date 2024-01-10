@@ -189,6 +189,16 @@ M.rua = {
       "<cmd> MarkdownPreview <CR>",
       "Preview Markdown file",
     },
+
+    -- window split
+    ["<leader>|"] = {
+      "<cmd> vs <CR>",
+      "Split window vertically",
+    },
+    ["<leader>_"] = {
+      "<cmd> sp <CR>",
+      "Split window horizontally",
+    },
   },
   v = {
     ["$"] = { "g_" },
@@ -228,6 +238,12 @@ M.rua = {
   },
   -- term
   t = {
+    ["<A-o>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
     --[[ ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" }, ]]
   },
 }
