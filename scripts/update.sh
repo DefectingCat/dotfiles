@@ -17,6 +17,9 @@ backup_folder ./rua-scripts ~/.config/
 backup_folder ./btop ~/.config/
 # tmux
 backup_folder ./tmux/tmux.conf ~/.tmux/
+backup_folder ~/.tmux/renew_env.sh ~/tmux/
+backup_folder ~/.tmux/tmux.remote.conf ~/tmux/
+backup_folder ~/.tmux/yank.sh ~/tmux/
 
 if [[ $OSTYPE == "linux"* ]]; then
 	# hyprland
