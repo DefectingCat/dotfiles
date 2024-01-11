@@ -1,0 +1,9 @@
+{
+  "update_check": false,
+  "font_size": 16,
+  "font_face": "JetBrains Mono,Consolas,'PingFang SC Regular'",
+  "color_scheme": "Catppuccin Mocha.sublime-color-scheme",
+  "theme": "Adaptive.sublime-theme",
+  "ignored_packages": [],
+  "vintage_start_in_command_mode": true
+}
