@@ -100,6 +100,7 @@ local plugins = {
         "rust",
         "toml",
         "go",
+        "gomod",
       },
       autotag = {
         enable = true,
@@ -268,7 +269,6 @@ local plugins = {
       },
     },
   },
-
   {
     "jxnblk/vim-mdx-js",
   },
