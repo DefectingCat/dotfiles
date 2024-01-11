@@ -17,6 +17,9 @@ backup_folder ~/.config/rua-scripts ./ ./rua-scripts
 backup_folder ~/.config/lazygit ./ ./lazygit/
 # tmux
 backup_folder ~/.tmux/tmux.conf ./tmux/tmux.conf ./tmux/tmux.conf
+backup_folder ~/.tmux/renew_env.sh ./tmux/renew_env.sh ./tmux/renew_env.sh
+backup_folder ~/.tmux/tmux.remote.conf ./tmux/tmux.remote.conf ./tmux/tmux.remote.conf
+backup_folder ~/.tmux/yank.sh ./tmux/yank.sh ./tmux/yank.sh
 
 if [[ $OSTYPE == "linux"* ]]; then
 	# hyprland
