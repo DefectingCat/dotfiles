@@ -199,6 +199,20 @@ M.rua = {
       "<cmd> sp <CR>",
       "Split window horizontally",
     },
+
+    -- spectre search
+    ["<leader>ss"] = {
+      '<cmd>lua require("spectre").toggle()<CR>',
+      "Toggle Spectre",
+    },
+    ["<leader>sw"] = {
+      '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+      "Spectre search current word",
+    },
+    ["<leader>sp"] = {
+      '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+      "Spectre search on current file",
+    },
   },
   v = {
     ["$"] = { "g_" },
@@ -234,6 +248,12 @@ M.rua = {
         hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
       end,
       "Hop motion search words before cursor",
+    },
+
+    -- spectre search
+    ["<leader>sw"] = {
+      '<esc><cmd>lua require("spectre").open_visual()<CR>',
+      "Spectre search current word",
     },
   },
   -- term
