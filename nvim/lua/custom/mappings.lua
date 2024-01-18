@@ -361,4 +361,13 @@ M.lspconfig = {
   },
 }
 
+M.nvimtree = {
+  plugin = true,
+
+  n = {
+    -- toggle
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+  },
+}
+
 return M
