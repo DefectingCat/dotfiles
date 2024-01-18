@@ -1,7 +1,7 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require "null-ls"
 
-local formatting = null_ls.builtins.formatting -- to setup formatters
+local formatting = null_ls.builtins.formatting   -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 local code_actions = null_ls.builtins.code_actions
 
@@ -45,8 +45,6 @@ local opts = {
         "svg",
       },
     },
-    -- Docker
-    diagnostics.hadolint,
     -- Bash
     diagnostics.shellcheck,
     code_actions.shellcheck,
