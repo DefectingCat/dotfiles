@@ -43,6 +43,10 @@ local plugins = {
           "shellcheck",
           "shellharden",
           "shfmt",
+          "goimports",
+          "goimports-reviser",
+          "golines",
+          "gopls",
         },
         automatic_installation = true,
       }
