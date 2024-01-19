@@ -267,8 +267,8 @@ local plugins = {
     keys = {
       {
         mode = { "v", "n" },
-        --[[ "<Leader>m", ]]
-        "<C-n>",
+        "<Leader>m",
+        --[[ "<C-n>", ]]
         "<cmd>MCstart<cr>",
         desc = "Create a selection for selected text or word under the cursor",
       },
