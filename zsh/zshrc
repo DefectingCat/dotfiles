@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias ll="ls -lhtr"
+alias vim="nvim"
 # Environmental variables
 export EDITOR="nvim"
 # node
