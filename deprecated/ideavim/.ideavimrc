@@ -35,39 +35,32 @@ map Q gq
 
 let g:EasyMotion_smartcase = 1
 """ Mappings --------------------------------
-map <leader><leader> <Plug>(easymotion-s)
+""" map <leader><leader> <Plug>(easymotion-s)
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
-""" map <leader><leader>l <Plug>(easymotion-lineforward)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
-""" map <leader><leader>h <Plug>(easymotion-linebackward)
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fw :action FindInPath<CR>
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
-nnoremap <leader>nh :nohl<CR>
+"" nnoremap <leader>nh :nohl<CR>
+nnoremap <esc> :nohl<CR>
 xnoremap p "_dP
 "" Code
-noremap gb viw
-"" nnoremap gh :action QuickJavaDoc<cr>
 nmap gh <Action>(ShowHoverInfo)
-"" nmap gy <Action>(ShowErrorDescription)
-nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>ra :action RenameElement<CR>
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
-nnoremap <C-j> :action GotoNextError<CR>
-nnoremap <C-k> :action GotoPreviousError<CR>
-nmap gj :action FindUsages<CR>
+nmap ]d :action GotoNextError<CR>
+nmap [d :action GotoPreviousError<CR>
+nmap gr :action FindUsages<CR>
 
 """ Switch windows
 nnoremap <C-h> <c-w>h
 nnoremap <C-l> <c-w>l
-""" nnoremap <leader>j <c-w>j
-""" nnoremap <leader>k <c-w>k
-""" nnoremap <leader>e :action ActivateProjectToolWindow<CR>
 nnoremap <leader>e :NERDTreeToggle<CR>
-""" nnoremap ;r :action FindInPath<CR>
-"" nnoremap <C-p> :action GotoFile<CR>
 """ Switch tabs
 nmap <S-l> :action NextTab<CR>
 nmap <s-h> :action PreviousTab<CR>
@@ -88,8 +81,8 @@ nnoremap <leader>_ :sp<CR>
 "map \b <Action>(ToggleLineBreakpoint)
 
 "" Debug
-nnoremap <leader>d :action ToggleLineBreakpoint<CR>
-nnoremap <leader><leader>r :action Run<CR>
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dr :action Run<CR>
 
 "" Extension
 set keep-english-in-normal
