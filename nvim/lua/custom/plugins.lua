@@ -59,7 +59,7 @@ local plugins = {
         "lua_ls",
         "rust_analyzer",
         "html",
-        "vuels",
+        "volar",
         "tsserver",
         "tailwindcss",
         "eslint",
