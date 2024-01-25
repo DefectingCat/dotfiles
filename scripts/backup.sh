@@ -2,6 +2,8 @@
 source ./scripts/bash.sh
 # neovim
 backup_folder ~/.config/nvim/lua/custom ./nvim/lua/ ./nvim/lua/custom/
+# ideavim
+backup_folder ~/.ideavimrc ./deprecated/ideavim
 # neofetch
 backup_folder ~/.config/neofetch ./ ./neofetch/
 # zshrc
