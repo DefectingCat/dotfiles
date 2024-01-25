@@ -1,7 +1,16 @@
 FROM archlinux
 
-# RUN pacman -Syu --noconfirm \
-RUN pacman -Sy --needed base-devel git zsh vim neovim fzf \
+# RUN pacman -Sy --needed base-devel git zsh vim neovim fzf \
+#   ripgrep lazygit go ranger openssh pyenv \
+#   --noconfirm
+
+RUN echo '' > /etc/pacman.d/mirrorlist \
+  && echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist \
+  && pacman -Syyu --noconfirm \
+  && pacman-key --init \
+  && pacman-key --populate archlinux \
+  && pacman-key --refresh-keys \
+  && pacman -Syy --needed base-devel git zsh vim neovim fzf \
   ripgrep lazygit go ranger openssh pyenv \
   --noconfirm
 
