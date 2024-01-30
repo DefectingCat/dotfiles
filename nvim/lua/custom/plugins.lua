@@ -151,7 +151,7 @@ local plugins = {
     end,
   },
   -- rust
-  {
+  --[[ {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
@@ -161,15 +161,15 @@ local plugins = {
     config = function(_, opts)
       require("rust-tools").setup(opts)
     end,
-  },
-  --[[ {
+  }, ]]
+  {
     "mrcjkb/rustaceanvim",
     version = "^3", -- Recommended
     ft = { "rust" },
     config = function()
       require "custom.configs.rust"
     end,
-  }, ]]
+  },
   {
     "saecki/crates.nvim",
     ft = { "toml" },
