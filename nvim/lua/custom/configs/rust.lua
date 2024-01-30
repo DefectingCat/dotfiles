@@ -14,6 +14,7 @@ vim.g.rustaceanvim = function()
 
   local cfg = require "rustaceanvim.config"
   return {
+    tools = {},
     server = {
       settings = {
         ["rust-analyzer"] = {
