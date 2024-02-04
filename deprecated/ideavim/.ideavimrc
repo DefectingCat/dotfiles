@@ -51,11 +51,15 @@ xnoremap p "_dP
 "" Code
 nmap gh <Action>(ShowHoverInfo)
 nnoremap <leader>ra :action RenameElement<CR>
-nmap <C-n> <Plug>NextWholeOccurrence
-xmap <C-n> <Plug>NextWholeOccurrence
+nmap <leader>m <Plug>NextWholeOccurrence
+xmap <leader>m <Plug>NextWholeOccurrence
 nmap ]d :action GotoNextError<CR>
 nmap [d :action GotoPreviousError<CR>
 nmap gr :action FindUsages<CR>
+nmap <leader>ca :action ShowIntentionActions<CR>
+xmap gb :action CommentByBlockComment<CR>
+nmap <leader>co :action OptimizeImports<CR>
+
 
 """ Switch windows
 nnoremap <C-h> <c-w>h
@@ -64,6 +68,8 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 """ Switch tabs
 nmap <S-l> :action NextTab<CR>
 nmap <s-h> :action PreviousTab<CR>
+nmap <leader>x :q<CR>
+nmap <leader>gg :action ActivateCommitToolWindow<CR>
 """ nmap gh :action ShowErrorDescription<CR>
 
 "" Workspace
