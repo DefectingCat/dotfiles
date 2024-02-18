@@ -55,7 +55,7 @@ local opts = {
       extra_args = { "--dialect", "postgres" }, -- change to your dialect
     },
   },
-  on_attach = function(client, bufnr)
+  --[[ on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
       vim.api.nvim_clear_autocmds {
         group = augroup,
@@ -69,7 +69,7 @@ local opts = {
         end,
       })
     end
-  end,
+  end, ]]
 }
 
 return opts

@@ -36,6 +36,14 @@ eval "$(pyenv init -)"
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 # disbale powerlevel10k configuration
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# golang
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 
 # linux
 if [[ $OSTYPE == "linux"* ]]; then
