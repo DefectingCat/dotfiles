@@ -2,6 +2,7 @@
 local M = {}
 
 M.ui = {
+  lsp_semantic_tokens = false,
   transparency = false,
   theme = "catppuccin",
   statusline = {
