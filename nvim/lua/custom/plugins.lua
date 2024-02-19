@@ -1,5 +1,7 @@
 local cmp = require "cmp"
 
+local overrides = require "custom.configs.overrides"
+
 local plugins = {
   {
     "NvChad/nvcommunity",
@@ -460,6 +462,12 @@ local plugins = {
         },
       },
     },
+  },
+
+  --[[ overrides ]]
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
   },
 
   --[[ {

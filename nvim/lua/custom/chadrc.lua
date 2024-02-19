@@ -59,9 +59,16 @@ M.ui = {
     },
   },
 
+  ---@type Base46HLGroupsList
   hl_override = {
     NvDashAscii = { bg = "NONE", fg = "#85c0dc" },
     NvDashButtons = { bg = "NONE", fg = "#b4befe" },
+    CursorLine = {
+      bg = "#313244",
+    },
+    Search = {
+      bg = "#89dceb",
+    },
   },
 
   -- cmp themeing
