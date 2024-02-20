@@ -7,6 +7,9 @@ alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias ll="ls -lhtr"
 alias vim="nvim"
+alias x86="env /usr/bin/arch -x86_64 /bin/zsh --login"
+alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
+
 # Environmental variables
 export EDITOR="nvim"
 # node
@@ -105,5 +108,3 @@ load-nvmrc() {
 }
 
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
