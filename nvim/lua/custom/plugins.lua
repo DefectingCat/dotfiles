@@ -72,6 +72,7 @@ local plugins = {
         "docker_compose_language_service",
         "dockerls",
         "bashls",
+        "clangd",
       },
       automatic_installation = true,
     },
