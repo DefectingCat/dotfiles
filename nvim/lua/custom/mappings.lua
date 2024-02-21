@@ -101,7 +101,7 @@ M.rua = {
       "Goto next tab",
     },
     ["<S-tab>"] = {
-      "<CMD> tabprevious",
+      "<CMD> tabprevious <CR>",
       "Goto prev tab",
     },
 
@@ -116,6 +116,10 @@ M.rua = {
         require("nvchad.tabufline").tabuflinePrev()
       end,
       "Goto prev buffer",
+    },
+    ["<leader>pa"] = {
+      "<CMD> %bd|e#|bd# <CR>",
+      "Close all other buffers",
     },
     ["<C-a>"] = { "gg<S-v>G" },
     -- $ 跳到行尾不带空格
@@ -270,11 +274,11 @@ M.rua = {
 
 M.trouble = {
   n = {
-    ["<leader>xx"] = { "<cmd>TroubleToggle<CR>" },
-    ["<leader>xw"] = { "<cmd>TroubleToggle workspace_diagnostics<CR>" },
-    ["<leader>xd"] = { "<cmd>TroubleToggle document_diagnostics<CR>" },
-    ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<CR>" },
-    ["<leader>xl"] = { "<cmd>TroubleToggle loclist<CR>" },
+    ["<leader>tx"] = { "<cmd>TroubleToggle<CR>" },
+    ["<leader>tw"] = { "<cmd>TroubleToggle workspace_diagnostics<CR>" },
+    ["<leader>td"] = { "<cmd>TroubleToggle document_diagnostics<CR>" },
+    ["<leader>tq"] = { "<cmd>TroubleToggle quickfix<CR>" },
+    ["<leader>tl"] = { "<cmd>TroubleToggle loclist<CR>" },
     ["gR"] = { "<cmd>TroubleToggle lsp_references<CR>" },
   },
 }
