@@ -14,12 +14,16 @@ vim.g.rustaceanvim = function()
 
   local cfg = require "rustaceanvim.config"
   return {
-    tools = {},
+    tools = {
+      hover_actions = {
+        replace_builtin_hover = false,
+      },
+    },
     server = {
       settings = {
         ["rust-analyzer"] = {
           standalone = true,
-          cargo = {
+          --[[ cargo = {
             allFeatures = true,
             loadOutDirsFromCheck = true,
             runBuildScripts = true,
@@ -27,7 +31,7 @@ vim.g.rustaceanvim = function()
           checkOnSave = {
             allFeatures = true,
             command = "clippy",
-          },
+          }, ]]
           files = {
             excludeDirs = {
               ".flatpak-builder",
@@ -53,6 +57,11 @@ vim.g.rustaceanvim = function()
               "target",
             },
           },
+        },
+        cargo = {
+          allFeatures = true,
+          loadOutDirsFromCheck = true,
+          runBuildScripts = true,
         },
         check = {
           command = "clippy",
