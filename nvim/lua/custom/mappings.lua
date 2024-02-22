@@ -165,6 +165,18 @@ M.rua = {
       end,
       "Toggle horizontal term",
     },
+    ["<D-o>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+    ["<D-i>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
 
     -- arrange buffer
     ["<leader>pl"] = {
@@ -267,6 +279,18 @@ M.rua = {
         require("nvterm.terminal").toggle "horizontal"
       end,
       "Toggle horizontal term",
+    },
+    ["<D-o>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+    ["<D-i>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
     },
     --[[ ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" }, ]]
   },
