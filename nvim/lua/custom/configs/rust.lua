@@ -4,6 +4,7 @@ vim.g.rustaceanvim = function()
   local extension_path = codelldb:get_install_path() .. "/extension/"
   local codelldb_path = extension_path .. "adapter/codelldb"
   local liblldb_path = ""
+
   if vim.loop.os_uname().sysname:find "Windows" then
     liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
   elseif vim.fn.has "mac" == 1 then
@@ -23,15 +24,6 @@ vim.g.rustaceanvim = function()
       settings = {
         ["rust-analyzer"] = {
           standalone = true,
-          --[[ cargo = {
-            allFeatures = true,
-            loadOutDirsFromCheck = true,
-            runBuildScripts = true,
-          },
-          checkOnSave = {
-            allFeatures = true,
-            command = "clippy",
-          }, ]]
           files = {
             excludeDirs = {
               ".flatpak-builder",
@@ -63,19 +55,23 @@ vim.g.rustaceanvim = function()
           loadOutDirsFromCheck = true,
           runBuildScripts = true,
         },
-        check = {
+        --[[ checkOnSave = {
+            allFeatures = true,
+            command = "clippy",
+          }, ]]
+        --[[ check = {
           command = "clippy",
           features = "all",
           extraArgs = { "--no-deps" },
-        },
-        procMacro = {
+        }, ]]
+        --[[ procMacro = {
           enable = true,
           ignored = {
             ["async-trait"] = { "async_trait" },
             ["napi-derive"] = { "napi" },
             ["async-recursion"] = { "async_recursion" },
           },
-        },
+        }, ]]
       },
     },
     dap = {
