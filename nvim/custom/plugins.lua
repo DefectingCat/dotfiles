@@ -1,6 +1,6 @@
-local cmp = require "cmp"
+local cmp = require("cmp")
 
-local overrides = require "custom.configs.overrides"
+local overrides = require("custom.configs.overrides")
 
 local plugins = {
   {
@@ -14,30 +14,30 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end,
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("mason-nvim-dap").setup {
+      require("mason-nvim-dap").setup({
         ensure_installed = {
           "codelldb",
         },
         automatic_installation = true,
-      }
+      })
     end,
   },
   {
     "jay-babu/mason-null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("mason-null-ls").setup {
+      require("mason-null-ls").setup({
         ensure_installed = {
           "stylua",
-          "taplo",        -- toml formatter
+          "taplo",   -- toml formatter
           "prettierd",
           "xmlformatter", -- xml svg formatter
           "eslint_d",
@@ -51,7 +51,7 @@ local plugins = {
           "gopls",
         },
         automatic_installation = true,
-      }
+      })
     end,
   },
   {
@@ -127,7 +127,7 @@ local plugins = {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     opts = function()
-      return require "custom.configs.null-ls"
+      return require("custom.configs.null-ls")
     end,
   },
   {
@@ -137,12 +137,12 @@ local plugins = {
     },
     opts = function()
       ---@diagnostic disable-next-line: different-requires
-      local M = require "plugins.configs.cmp"
+      local M = require("plugins.configs.cmp")
       M.completion.completeopt = "menu,menuone,noselect"
-      M.mapping["<CR>"] = cmp.mapping.confirm {
+      M.mapping["<CR>"] = cmp.mapping.confirm({
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
-      }
+      })
       table.insert(M.sources, { name = "crates" })
       -- original LazyVim kind icon formatter
       local format_kinds = M.formatting.format
@@ -170,20 +170,20 @@ local plugins = {
     version = "^3", -- Recommended
     ft = { "rust" },
     config = function()
-      require "custom.configs.rust"
+      require("custom.configs.rust")
     end,
   },
   {
     "saecki/crates.nvim",
     ft = { "toml" },
     config = function(_, opts)
-      local crates = require "crates"
+      local crates = require("crates")
       crates.setup(opts)
-      require("cmp").setup.buffer {
+      require("cmp").setup.buffer({
         sources = { { name = "crates" } },
-      }
+      })
       crates.show()
-      require("core.utils").load_mappings "crates"
+      require("core.utils").load_mappings("crates")
     end,
   },
   {
@@ -203,8 +203,8 @@ local plugins = {
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap = require "dap"
-      local dapui = require "dapui"
+      local dap = require("dap")
+      local dapui = require("dapui")
       require("dapui").setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -220,8 +220,8 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require "custom.configs.dap"
-      require("core.utils").load_mappings "dap"
+      require("custom.configs.dap")
+      require("core.utils").load_mappings("dap")
     end,
   },
   {
@@ -236,7 +236,7 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     opts = function()
-      require "custom.configs.telescope"
+      require("custom.configs.telescope")
     end,
   },
   {
@@ -257,8 +257,8 @@ local plugins = {
     branch = "v2", -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      local hop = require "hop"
-      hop.setup { keys = "etovxqpdygfblzhckisuran" }
+      local hop = require("hop")
+      hop.setup({ keys = "etovxqpdygfblzhckisuran" })
     end,
   },
   {
@@ -293,7 +293,7 @@ local plugins = {
     "windwp/nvim-ts-autotag",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("nvim-ts-autotag").setup {}
+      require("nvim-ts-autotag").setup({})
     end,
     lazy = true,
     event = "VeryLazy",
@@ -303,7 +303,7 @@ local plugins = {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup {}
+      require("nvim-surround").setup({})
     end,
   },
   -- comment string
@@ -314,7 +314,7 @@ local plugins = {
     "numToStr/Comment.nvim",
     opts = {
       pre_hook = function(ctx)
-        local U = require "Comment.utils"
+        local U = require("Comment.utils")
 
         local location = nil
         if ctx.ctype == U.ctype.block then
@@ -323,10 +323,10 @@ local plugins = {
           location = require("ts_context_commentstring.utils").get_visual_start_location()
         end
 
-        return require("ts_context_commentstring.internal").calculate_commentstring {
+        return require("ts_context_commentstring.internal").calculate_commentstring({
           key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
           location = location,
-        }
+        })
       end,
     },
   },
@@ -334,7 +334,7 @@ local plugins = {
   {
     "NvChad/nvterm",
     config = function()
-      require("nvterm").setup {
+      require("nvterm").setup({
         terminals = {
           type_opts = {
             float = {
@@ -347,7 +347,7 @@ local plugins = {
             },
           },
         },
-      }
+      })
     end,
   },
   -- ui
@@ -390,11 +390,11 @@ local plugins = {
       },
       -- you can enable a preset for easier configuration
       presets = {
-        bottom_search = true,         -- use a classic bottom cmdline for search
-        command_palette = true,       -- position the cmdline and popupmenu together
+        bottom_search = true,     -- use a classic bottom cmdline for search
+        command_palette = true,   -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = true,        -- add a border to hover docs and signature help
+        inc_rename = false,       -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true,    -- add a border to hover docs and signature help
       },
     },
   },
