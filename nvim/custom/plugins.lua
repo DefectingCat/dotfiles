@@ -162,14 +162,14 @@ local plugins = {
       require("rust-tools").setup(opts)
     end,
   }, ]]
-  {
+  --[[ {
     "mrcjkb/rustaceanvim",
     version = "^3", -- Recommended
-    ft = { "rust" },
+    ft = "rust",
     config = function()
       require("custom.configs.rust")
     end,
-  },
+  }, ]]
   {
     "saecki/crates.nvim",
     ft = { "toml" },

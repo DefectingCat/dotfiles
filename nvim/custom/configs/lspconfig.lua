@@ -1,8 +1,8 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
+local lspconfig = require("lspconfig")
+local util = require("lspconfig/util")
 
 local function organize_imports()
   local params = {
@@ -12,16 +12,66 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 
-require("mason-lspconfig").setup_handlers {
+require("mason-lspconfig").setup_handlers({
   function(server)
-    lspconfig[server].setup {
+    lspconfig[server].setup({
       on_attach = on_attach,
       capabilities = capabilities,
-    }
+    })
   end,
-}
+})
 
-lspconfig.tsserver.setup {
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      standalone = true,
+      files = {
+        excludeDirs = {
+          ".flatpak-builder",
+          "_build",
+          ".dart_tool",
+          ".flatpak-builder",
+          ".git",
+          ".gitlab",
+          ".gitlab-ci",
+          ".gradle",
+          ".idea",
+          ".next",
+          ".project",
+          ".scannerwork",
+          ".settings",
+          ".venv",
+          "archetype-resources",
+          "bin",
+          "hooks",
+          "node_modules",
+          "po",
+          "screenshots",
+          "target",
+          "out",
+          "../out",
+          "../node_modules",
+          "../.next",
+        },
+      },
+    },
+    procMacro = {
+      enable = true,
+      ignored = {
+        ["async-trait"] = { "async_trait" },
+        ["napi-derive"] = { "napi" },
+        ["async-recursion"] = { "async_recursion" },
+      },
+    },
+    check = {
+      allTargets = false,
+    },
+  },
+})
+
+lspconfig.tsserver.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   init_options = {
@@ -35,9 +85,9 @@ lspconfig.tsserver.setup {
       description = "Organize Imports",
     },
   },
-}
+})
 
-lspconfig.pylsp.setup {
+lspconfig.pylsp.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "python" },
@@ -51,9 +101,9 @@ lspconfig.pylsp.setup {
       },
     },
   },
-}
+})
 
-lspconfig.gopls.setup {
+lspconfig.gopls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { "gopls" },
@@ -71,9 +121,9 @@ lspconfig.gopls.setup {
       },
     },
   },
-}
+})
 
-lspconfig.jsonls.setup {
+lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -82,9 +132,9 @@ lspconfig.jsonls.setup {
       validate = { enable = true },
     },
   },
-}
+})
 
-lspconfig.yamlls.setup {
+lspconfig.yamlls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -99,4 +149,4 @@ lspconfig.yamlls.setup {
       schemas = require("schemastore").yaml.schemas(),
     },
   },
-}
+})
