@@ -1,19 +1,19 @@
 vim.g.rustaceanvim = function()
-  local mason_registry = require "mason-registry"
-  local codelldb = mason_registry.get_package "codelldb"
+  local mason_registry = require("mason-registry")
+  local codelldb = mason_registry.get_package("codelldb")
   local extension_path = codelldb:get_install_path() .. "/extension/"
   local codelldb_path = extension_path .. "adapter/codelldb"
   local liblldb_path = ""
 
-  if vim.loop.os_uname().sysname:find "Windows" then
+  if vim.loop.os_uname().sysname:find("Windows") then
     liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
-  elseif vim.fn.has "mac" == 1 then
+  elseif vim.fn.has("mac") == 1 then
     liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
   else
     liblldb_path = extension_path .. "lldb/lib/liblldb.so"
   end
 
-  local cfg = require "rustaceanvim.config"
+  local cfg = require("rustaceanvim.config")
   return {
     tools = {
       hover_actions = {
@@ -47,31 +47,24 @@ vim.g.rustaceanvim = function()
               "po",
               "screenshots",
               "target",
+              "out",
+              "../out",
+              "../node_modules",
+              "../.next",
             },
           },
         },
-        cargo = {
-          allFeatures = true,
-          loadOutDirsFromCheck = true,
-          runBuildScripts = true,
-        },
-        --[[ checkOnSave = {
-            allFeatures = true,
-            command = "clippy",
-          }, ]]
-        --[[ check = {
-          command = "clippy",
-          features = "all",
-          extraArgs = { "--no-deps" },
-        }, ]]
-        --[[ procMacro = {
-          enable = true,
+        procMacro = {
+          enable = false,
           ignored = {
             ["async-trait"] = { "async_trait" },
             ["napi-derive"] = { "napi" },
             ["async-recursion"] = { "async_recursion" },
           },
-        }, ]]
+        },
+        check = {
+          allTargets = false,
+        },
       },
     },
     dap = {
