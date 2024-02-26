@@ -37,12 +37,8 @@ local plugins = {
       require("mason-null-ls").setup({
         ensure_installed = {
           "stylua",
-          "taplo",   -- toml formatter
           "prettierd",
-          "xmlformatter", -- xml svg formatter
-          "eslint_d",
           "ymlfmt",
-          "shellcheck",
           "shellharden",
           "shfmt",
           "goimports",
@@ -73,6 +69,7 @@ local plugins = {
         "dockerls",
         "bashls",
         "clangd",
+        "lemminx",
       },
       automatic_installation = true,
     },
