@@ -6,6 +6,7 @@
 ln -s ~/dotfiles/nvim/custom/ ~/.config/nvim/lua
 # zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 # tmux
 ln -s ~/dotfiles/tmux/ ~/.tmux
 # scripts
