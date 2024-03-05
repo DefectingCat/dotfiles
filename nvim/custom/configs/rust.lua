@@ -13,13 +13,18 @@ vim.g.rustaceanvim = function()
     liblldb_path = extension_path .. "lldb/lib/liblldb.so"
   end
 
+  -- keymap
+  local bufnr = vim.api.nvim_get_current_buf()
+  vim.keymap.set("n", "<leader>ca", function()
+    --[[ vim.cmd.RustLsp("codeAction") -- supports rust-analyzer's grouping ]]
+    vim.lsp.buf.code_action()
+  end, { silent = true, buffer = bufnr })
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { silent = true, buffer = bufnr })
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { silent = true, buffer = bufnr })
+
   local cfg = require("rustaceanvim.config")
   return {
-    tools = {
-      hover_actions = {
-        replace_builtin_hover = false,
-      },
-    },
+    tools = {},
     server = {
       settings = {
         ["rust-analyzer"] = {
