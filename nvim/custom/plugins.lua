@@ -151,17 +151,6 @@ local plugins = {
     end,
   },
   -- rust
-  --[[ {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = function()
-      return require "custom.configs.rust-tools"
-    end,
-    config = function(_, opts)
-      require("rust-tools").setup(opts)
-    end,
-  }, ]]
   {
     "mrcjkb/rustaceanvim",
     version = "^3", -- Recommended
@@ -196,10 +185,17 @@ local plugins = {
     ft = "go",
     config = function(_, opts)
       require("gopher").setup(opts)
-      --[[ require("core.utils").load_mappings("gopher") ]]
     end,
     build = function()
       vim.cmd([[silent! GoInstallDeps]])
+    end,
+  },
+  {
+    "dreamsofcode-io/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
     end,
   },
   {
@@ -479,14 +475,6 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-
-  --[[ {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = function()
-      require "custom.configs.lspsaga"
-    end,
-  }, ]]
 }
 
 return plugins
