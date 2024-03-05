@@ -33,11 +33,15 @@ M.dap = {
     },
     ["<leader>dus"] = {
       function()
-        local widgets = require "dap.ui.widgets"
+        local widgets = require("dap.ui.widgets")
         local sidebar = widgets.sidebar(widgets.scopes)
         sidebar.open()
       end,
       "Open debugging sidebar",
+    },
+    ["<leader>drr"] = {
+      "<cmd> RustLsp debuggables <CR>",
+      "Run rust debug on current file",
     },
   },
 }
@@ -56,6 +60,20 @@ M.dap_go = {
         require("dap-go").debug_last()
       end,
       "Debug last go test",
+    },
+  },
+}
+
+M.gopher = {
+  plugin = true,
+  n = {
+    ["<leader>gsj"] = {
+      "<cmd> GoTagAdd json <CR>",
+      "Add json struct tags",
+    },
+    ["<leader>gsy"] = {
+      "<cmd> GoTagAdd yaml <CR>",
+      "Add yaml struct tags",
     },
   },
 }
@@ -127,33 +145,33 @@ M.rua = {
     -- motion
     ["f"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = false }
+        hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
       end,
       "Hop motion search in current line after cursor",
     },
     ["F"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = false }
+        hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
       end,
       "Hop motion search in current line before cursor",
     },
     ["<leader>w"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false }
+        hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = false })
       end,
       "Hop motion search words after cursor",
     },
     ["<leader>b"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
+        hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = false })
       end,
       "Hop motion search words before cursor",
     },
@@ -161,19 +179,19 @@ M.rua = {
     -- term
     ["<A-o>"] = {
       function()
-        require("nvterm.terminal").toggle "horizontal"
+        require("nvterm.terminal").toggle("horizontal")
       end,
       "Toggle horizontal term",
     },
     ["<D-o>"] = {
       function()
-        require("nvterm.terminal").toggle "horizontal"
+        require("nvterm.terminal").toggle("horizontal")
       end,
       "Toggle horizontal term",
     },
     ["<D-i>"] = {
       function()
-        require("nvterm.terminal").toggle "float"
+        require("nvterm.terminal").toggle("float")
       end,
       "Toggle floating term",
     },
@@ -195,7 +213,7 @@ M.rua = {
     -- notify
     ["<leader>un"] = {
       function()
-        require("notify").dismiss { silent = true, pending = true }
+        require("notify").dismiss({ silent = true, pending = true })
       end,
       "Dismiss all Notifications",
     },
@@ -235,33 +253,33 @@ M.rua = {
     -- motion
     ["f"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = false }
+        hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
       end,
       "Hop motion search in current line after cursor",
     },
     ["F"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = false }
+        hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
       end,
       "Hop motion search in current line before cursor",
     },
     ["<leader>w"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_words { direction = directions.AFTER_CURSOR, current_line_only = false }
+        hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = false })
       end,
       "Hop motion search words after cursor",
     },
     ["<leader>b"] = {
       function()
-        local hop = require "hop"
+        local hop = require("hop")
         local directions = require("hop.hint").HintDirection
-        hop.hint_words { direction = directions.BEFORE_CURSOR, current_line_only = false }
+        hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = false })
       end,
       "Hop motion search words before cursor",
     },
@@ -276,19 +294,19 @@ M.rua = {
   t = {
     ["<A-o>"] = {
       function()
-        require("nvterm.terminal").toggle "horizontal"
+        require("nvterm.terminal").toggle("horizontal")
       end,
       "Toggle horizontal term",
     },
     ["<D-o>"] = {
       function()
-        require("nvterm.terminal").toggle "horizontal"
+        require("nvterm.terminal").toggle("horizontal")
       end,
       "Toggle horizontal term",
     },
     ["<D-i>"] = {
       function()
-        require("nvterm.terminal").toggle "float"
+        require("nvterm.terminal").toggle("float")
       end,
       "Toggle floating term",
     },
@@ -356,13 +374,13 @@ M.whichkey = {
   n = {
     ["<leader>K"] = {
       function()
-        vim.cmd "WhichKey"
+        vim.cmd("WhichKey")
       end,
       "Which-key all keymaps",
     },
     ["<leader>k"] = {
       function()
-        local input = vim.fn.input "WhichKey: "
+        local input = vim.fn.input("WhichKey: ")
         vim.cmd("WhichKey " .. input)
       end,
       "Which-key query lookup",
