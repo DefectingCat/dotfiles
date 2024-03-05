@@ -55,7 +55,7 @@ vim.g.rustaceanvim = function()
           },
         },
         procMacro = {
-          enable = false,
+          enable = true,
           ignored = {
             ["async-trait"] = { "async_trait" },
             ["napi-derive"] = { "napi" },

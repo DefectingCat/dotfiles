@@ -162,14 +162,14 @@ local plugins = {
       require("rust-tools").setup(opts)
     end,
   }, ]]
-  --[[ {
+  {
     "mrcjkb/rustaceanvim",
     version = "^3", -- Recommended
     ft = "rust",
     config = function()
       require("custom.configs.rust")
     end,
-  }, ]]
+  },
   {
     "saecki/crates.nvim",
     ft = { "toml" },
@@ -188,6 +188,18 @@ local plugins = {
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 1
+    end,
+  },
+  -- golang
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+      --[[ require("core.utils").load_mappings("gopher") ]]
+    end,
+    build = function()
+      vim.cmd([[silent! GoInstallDeps]])
     end,
   },
   {
