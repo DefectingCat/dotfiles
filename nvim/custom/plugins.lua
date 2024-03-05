@@ -153,7 +153,7 @@ local plugins = {
   -- rust
   {
     "mrcjkb/rustaceanvim",
-    version = "^3", -- Recommended
+    version = "^4", -- Recommended
     ft = "rust",
     config = function()
       require("custom.configs.rust")
