@@ -21,7 +21,7 @@ require("mason-lspconfig").setup_handlers({
   end,
 })
 
-lspconfig.rust_analyzer.setup({
+--[[ lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -69,7 +69,7 @@ lspconfig.rust_analyzer.setup({
       allTargets = false,
     },
   },
-})
+}) ]]
 
 lspconfig.tsserver.setup({
   on_attach = on_attach,

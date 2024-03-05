@@ -1,4 +1,4 @@
-local dap = require "dap"
+local dap = require("dap")
 
 dap.adapters["pwa-node"] = {
   type = "server",
@@ -9,7 +9,7 @@ dap.adapters["pwa-node"] = {
   },
 }
 
-for _, language in ipairs { "typescript", "javascript" } do
+for _, language in ipairs({ "typescript", "javascript" }) do
   dap.configurations[language] = {
     {
       type = "pwa-node",
