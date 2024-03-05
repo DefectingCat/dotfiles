@@ -14,6 +14,9 @@ end
 
 require("mason-lspconfig").setup_handlers({
   function(server)
+    if server == "rust_analyzer" then
+      return nil
+    end
     lspconfig[server].setup({
       on_attach = on_attach,
       capabilities = capabilities,
@@ -64,9 +67,6 @@ require("mason-lspconfig").setup_handlers({
         ["napi-derive"] = { "napi" },
         ["async-recursion"] = { "async_recursion" },
       },
-    },
-    check = {
-      allTargets = false,
     },
   },
 }) ]]

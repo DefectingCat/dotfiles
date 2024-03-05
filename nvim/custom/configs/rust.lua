@@ -62,9 +62,6 @@ vim.g.rustaceanvim = function()
             ["async-recursion"] = { "async_recursion" },
           },
         },
-        check = {
-          allTargets = false,
-        },
       },
     },
     dap = {
