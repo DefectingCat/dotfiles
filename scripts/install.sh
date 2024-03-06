@@ -19,3 +19,5 @@ ln -s ~/dotfiles/neofetch/ ~/.config
 ln -s ~/dotfiles/kitty/ ~/.config
 # ranger
 ln -s ~/dotfiles/ranger/ ~/.config
+# sway
+# ln -s ~/dotfiles/sway/ ~/.config
