@@ -2,8 +2,6 @@
 
 # create symbol link for configurations
 
-# nvim
-ln -s ~/dotfiles/nvim/custom/ ~/.config/nvim/lua
 # zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
