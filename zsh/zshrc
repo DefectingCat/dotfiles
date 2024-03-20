@@ -66,9 +66,17 @@ if [[ $OSTYPE == "darwin"* ]]; then
   export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
   export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
   # proxy
-  export http_proxy="http://localhost:10809"
-  export https_proxy="http://localhost:10809"
+  export http_proxy="http://127.0.0.1:10809"
+  export https_proxy="http://127.0.0.1:10809"
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  # Android
+  export PATH="$PATH:/Volumes/SN/SDK/cmdline-tools/bin"
+  export ANDROID_HOME="/Volumes/SN/SDK/Android"
+  export ANDROID_EMULATOR_="$ANDROID_HOME/emulator"
+  export NDK_HOME="$ANDROID_HOME/ndk/26.2.11394342"
+  # Java
+  export JAVA_HOME="/Volumes/SN/SDK/JDK/jdk-17.0.10.jdk/Contents/Home"
+  export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 export RUA_SCRIPT_DIR=~/.config/rua-scripts/
