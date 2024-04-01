@@ -77,6 +77,8 @@ if [[ $OSTYPE == "darwin"* ]]; then
   # Java
   export JAVA_HOME="/Volumes/SN/SDK/JDK/jdk-17.0.10.jdk/Contents/Home"
   export PATH=$JAVA_HOME/bin:$PATH
+  # Flutter
+  export PATH=/Volumes/SN/SDK/flutter/bin:$PATH
 fi
 
 export RUA_SCRIPT_DIR=~/.config/rua-scripts/
