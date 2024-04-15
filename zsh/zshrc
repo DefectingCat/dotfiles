@@ -85,6 +85,7 @@ export RUA_SCRIPT_DIR=~/.config/rua-scripts/
 if [ -r $RUA_SCRIPT_DIR/xdg-startup.sh ]; then
   source ~/.config/rua-scripts/xdg-startup.sh
   source ~/.config/rua-scripts/docker.sh
+  source ~/.config/rua-scripts/show-client.sh
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
