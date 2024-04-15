@@ -4,7 +4,7 @@ set -e
 # Remote machine details
 remote_host="192.168.1.57"
 remote_user="xfy"
-remote_project_dir="/home/xfy/data/Developer/show-client/build"
+remote_project_dir="/home/xfy/pl/Developer/show-client/build"
 local_path="/Volumes/SN/Builds"
 
 # Build the project remotely
@@ -18,6 +18,8 @@ build() {
 # Clean local build artifacts
 clean() {
 	rm -rf "$local_path"/build.tar.gz || exit 1
+	rm -rf "$local_path"/show-client || exit 1
+	mkdir "$local_path"/show-client
 }
 
 # Download build artifacts from remote
