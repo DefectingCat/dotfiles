@@ -79,6 +79,11 @@ if [[ $OSTYPE == "darwin"* ]]; then
   export PATH=/Volumes/SN/SDK/flutter/bin:$PATH
 fi
 
+export LOCAL_SCRIPT_DIR=~/.config/local-scripts/
+if [ -r $LOCAL_SCRIPT_DIR/appimage.sh ]; then
+  source ~/.config/local-scripts/appimage.sh
+fi
+
 export RUA_SCRIPT_DIR=~/.config/rua-scripts/
 if [ -r $RUA_SCRIPT_DIR/xdg-startup.sh ]; then
   source ~/.config/rua-scripts/xdg-startup.sh
