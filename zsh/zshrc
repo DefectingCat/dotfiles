@@ -48,6 +48,11 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
+# php
+export COMPOSER_HOME="$HOME/pl/local/bin/composer"
+export PATH="${COMPOSER_HOME}:${PATH}"
+# doom emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # linux
 if [[ $OSTYPE == "linux"* ]]; then
