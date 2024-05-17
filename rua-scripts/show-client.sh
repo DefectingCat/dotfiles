@@ -43,3 +43,12 @@ build-ly-v2-viewer() {
 	nvm use && yarn && yarn generate-lingyang && sshpass -f ~/passwd/lingyang.txt scp -P 106 -r build/* design@124.70.207.176:/ || exit 1
 	echo "Upload done"
 }
+
+## 正式服务器
+build-pub-v3-viewer() {
+	nvm use && yarn && yarn generate-pub && sshpass -f ~/passwd/lingyang.txt scp -r build/* design_meta@129.211.172.57:/ || exit 1
+	echo "Upload done"
+}
+build-pub-v3-editor() {
+
+}
