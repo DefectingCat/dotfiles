@@ -1,9 +1,9 @@
 FROM ubuntu
 
 WORKDIR /runner
-RUN apt-get update \
-  && apt-get install curl libdigest-sha-perl dotnet-sdk-7.0 \
-  aspnetcore-runtime-6.0 tmux build-essential -y \
+RUN apt-get update -y \
+  && apt-get install -y curl libdigest-sha-perl dotnet-sdk-8.0 \
+  aspnetcore-runtime-8.0 tmux build-essential \
   && useradd --create-home xfy \
   && mkdir actions-runner \
   && chown -R xfy actions-runner
