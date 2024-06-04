@@ -43,7 +43,7 @@ build-ly-v2-viewer() {
 
 ## 正式服务器
 build-pub-v3-viewer() {
-	nvm use && yarn && yarn generate-pub && sshpass -f ~/passwd/lingyang.txt scp -r build/* design_meta@129.211.172.57:/ || exit 1
+	nvm use && yarn && yarn buildviewerpub-rel && scp -r build/* root@129.211.172.57:/home/wwwroot/design_meta/ || exit 1
 	echo "Upload build-pub-v3-viewer done"
 }
 build-pub-v3-editor() {
