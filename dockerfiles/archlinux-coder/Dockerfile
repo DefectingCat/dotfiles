@@ -12,7 +12,7 @@ RUN echo '' > /etc/pacman.d/mirrorlist \
 
 ARG USER=xfy
 RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
-	&& echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
+  && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
   && chmod 0440 /etc/sudoers.d/${USER} \
   && usermod -s "$(which zsh)" ${USER}
 WORKDIR /home/${USER}
@@ -27,9 +27,6 @@ RUN export USER="${USER}" \
   && /home/${USER}/dotfiles/scripts/install-yay.sh \
   && /home/${USER}/dotfiles/scripts/install-archlinux.sh \
   && yay --noconfirm
-
-WORKDIR /home/${USER}/dotfiles
-RUN scripts/update.sh
 
 WORKDIR /home/${USER}
 

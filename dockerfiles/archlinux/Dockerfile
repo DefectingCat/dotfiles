@@ -1,9 +1,5 @@
 FROM archlinux
 
-# RUN pacman -Sy --needed base-devel git zsh vim neovim fzf \
-#   ripgrep lazygit go ranger openssh pyenv \
-#   --noconfirm
-
 RUN echo '' > /etc/pacman.d/mirrorlist \
   && echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist \
   && pacman -Syyu --noconfirm \
@@ -16,7 +12,7 @@ RUN echo '' > /etc/pacman.d/mirrorlist \
 
 ARG USER=xfy
 RUN useradd --groups wheel --no-create-home --shell /bin/zsh ${USER} \
-	&& echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
+  && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
   && chmod 0440 /etc/sudoers.d/${USER} \
   && usermod -s "$(which zsh)" ${USER}
 WORKDIR /home/${USER}
@@ -31,9 +27,6 @@ RUN export USER="${USER}" \
   && /home/${USER}/dotfiles/scripts/install-yay.sh \
   && /home/${USER}/dotfiles/scripts/install-archlinux.sh \
   && yay --noconfirm
-
-WORKDIR /home/${USER}/dotfiles
-RUN scripts/update.sh
 
 WORKDIR /home/${USER}
 
