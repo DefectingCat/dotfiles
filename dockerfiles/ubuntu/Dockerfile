@@ -16,3 +16,20 @@ RUN useradd --groups sudo --no-create-home --shell /bin/bash ${USER} \
   && chmod 0440 /etc/sudoers.d/${USER}
 USER ${USER}
 WORKDIR /home/${USER}
+RUN git clone https://github.com/DefectingCat/dotfiles
+# ohmyzsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN cp -a /home/${USER}/dotfiles/zsh/zshrc /home/${USER}/.zshrc
+RUN cp -a /home/${USER}/dotfiles/zsh/p10k.zsh /home/${USER}/.p10k.zsh
+RUN bash /home/${USER}/dotfiles/zsh/install-plugins.sh
+# nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+# rustup
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+# lazygit
+RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*') \
+  && curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+RUN tar zvxf lazygit.tar.gz lazygit
+RUN sudo install lazygit /usr/local/bin \
+  && rm -rf lazygit \
+  && rm -rf lazygit.tar.gz
