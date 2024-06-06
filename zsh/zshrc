@@ -87,6 +87,9 @@ export LOCAL_SCRIPT_DIR=~/.config/local-scripts/
 if [ -r $LOCAL_SCRIPT_DIR/appimage.sh ]; then
   source ~/.config/local-scripts/appimage.sh
 fi
+if [ -r $LOCAL_SCRIPT_DIR/local.sh ]; then
+  source ~/.config/local-scripts/local.sh
+fi
 
 export RUA_SCRIPT_DIR=~/.config/rua-scripts/
 if [ -r $RUA_SCRIPT_DIR/xdg-startup.sh ]; then
