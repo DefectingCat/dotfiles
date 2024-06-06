@@ -10,6 +10,9 @@ alias vim="nvim"
 alias x86="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
 
+eval "$(fzf --zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
+
 # Environmental variables
 export EDITOR="nvim"
 # node
@@ -131,5 +134,3 @@ load-nvmrc() {
     nvm use default
   fi
 }
-
-add-zsh-hook chpwd load-nvmrc
