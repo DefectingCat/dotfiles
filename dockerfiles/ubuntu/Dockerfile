@@ -13,7 +13,8 @@ RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/
 ARG USER=xfy
 RUN useradd --groups sudo --no-create-home --shell /bin/bash ${USER} \
   && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
-  && chmod 0440 /etc/sudoers.d/${USER}
+  && chmod 0440 /etc/sudoers.d/${USER} \
+  && usermod -s "$(which zsh)" ${USER}
 USER ${USER}
 WORKDIR /home/${USER}
 RUN git clone https://github.com/DefectingCat/dotfiles
@@ -24,6 +25,9 @@ RUN cp -a /home/${USER}/dotfiles/zsh/p10k.zsh /home/${USER}/.p10k.zsh
 RUN bash /home/${USER}/dotfiles/zsh/install-plugins.sh
 # nvm
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+RUN export NVM_DIR="/home/$USER/.nvm" \
+  && \. "$NVM_DIR/nvm.sh" \
+  && nvm install --lts
 # rustup
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 # lazygit
@@ -33,3 +37,5 @@ RUN tar zvxf lazygit.tar.gz lazygit
 RUN sudo install lazygit /usr/local/bin \
   && rm -rf lazygit \
   && rm -rf lazygit.tar.gz
+
+ENTRYPOINT ["/bin/zsh"]
