@@ -23,11 +23,12 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 RUN cp -a /home/${USER}/dotfiles/zsh/zshrc /home/${USER}/.zshrc
 RUN cp -a /home/${USER}/dotfiles/zsh/p10k.zsh /home/${USER}/.p10k.zsh
 RUN bash /home/${USER}/dotfiles/zsh/install-plugins.sh
-# nvm
+# node
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 RUN export NVM_DIR="/home/$USER/.nvm" \
   && \. "$NVM_DIR/nvm.sh" \
-  && nvm install --lts
+  && nvm install --lts \
+  && npm i -g yarn pnpm cgr
 # rustup
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 # lazygit
