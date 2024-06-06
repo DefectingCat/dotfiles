@@ -3,7 +3,7 @@ FROM ubuntu:noble
 RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources \
   && sed -i 's@//.*security.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources \
   && apt-get update -y \
-  && apt-get install -y git ninja-build gettext cmake unzip curl build-essential sudo \
+  && apt-get install -y git ninja-build gettext cmake unzip curl build-essential sudo zsh \
   && cd /opt && git clone --depth 1 https://gitee.com/mirrors/neovim && cd neovim \
   && make CMAKE_BUILD_TYPE=Release \
   && make install \
