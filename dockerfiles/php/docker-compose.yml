@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "4001:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./conf.d/:/etc/nginx/conf.d/
+    links:
+      - php-fpm
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: qwer1234
+
+  php-fpm:
+    image: php:7-fpm
+    volumes:
+      - ./src:/var/www/html
