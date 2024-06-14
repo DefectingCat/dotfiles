@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias ll="ls -lhtr"
+alias vi="/usr/bin/vim"
 alias vim="nvim"
 alias x86="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
