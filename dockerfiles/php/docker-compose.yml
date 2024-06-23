@@ -4,19 +4,21 @@ services:
   web:
     image: nginx:alpine
     ports:
-      - "4001:80"
+      - "4000:80"
     volumes:
       - ./src:/var/www/html
       - ./conf.d/:/etc/nginx/conf.d/
+      - ./nginx.conf:/etc/nginx/nginx.conf
     links:
       - php-fpm
 
   db:
-    image: mysql
+    image: mysql:5.7
+    platform: linux/amd64
     environment:
       MYSQL_ROOT_PASSWORD: qwer1234
 
   php-fpm:
-    image: php:7-fpm
+    image: php:7-fpm-alpine
     volumes:
       - ./src:/var/www/html
