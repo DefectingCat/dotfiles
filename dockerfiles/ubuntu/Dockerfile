@@ -1,9 +1,14 @@
 FROM ubuntu:noble
 
+VOLUME [ "/etc/group" ]
+VOLUME [ "/etc/passwd" ]
+VOLUME [ "/etc/shadow" ]
+VOLUME [ "/etc/sudoers.d" ]
+
 RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources \
   && sed -i 's@//.*security.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources \
   && apt-get update -y \
-  && apt-get install -y git ninja-build gettext cmake unzip curl build-essential sudo zsh htop \
+  && apt-get install -y git ninja-build gettext cmake unzip curl build-essential sudo zsh htop vim \
   # install neovim
   && cd /opt && git clone --depth 1 https://gitee.com/mirrors/neovim && cd neovim \
   && make CMAKE_BUILD_TYPE=Release \
@@ -12,8 +17,12 @@ RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/
   && rm -rf /var/lib/apt/lists/*
 
 ARG USER=xfy
-RUN useradd --groups sudo --no-create-home --shell /bin/bash ${USER} \
-  && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
+ARG USER_ID
+ARG GROUP_ID
+
+# RUN addgroup --gid $GROUP_ID ${USER} \
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID ${USER} \
+  && echo "${USER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER} \
   && chmod 0440 /etc/sudoers.d/${USER} \
   && usermod -s "$(which zsh)" ${USER}
 USER ${USER}
