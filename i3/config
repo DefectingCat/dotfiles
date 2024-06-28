@@ -21,6 +21,8 @@ font pango:monospace 10
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# i3lock-color
+bindsym Mod1+Ctrl+q exec /home/$USER/.config/i3/i3lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -29,7 +31,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id fcitx5 -d
 exec "setxkbmap -option caps:ctrl_modifier"
 exec "feh --bg-scale ~/Pictures/b-007.jpg"
-exec --no-startup-id picom -b
+# exec --no-startup-id picom -b
+exec_always picom -f
+
+# screenshot
+# bindsym Shift+Mod1+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
+# bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,13 +65,13 @@ tiling_drag modifier titlebar
 bindsym Mod1+Return exec kitty
 
 # kill focused window
-bindsym Mod1+Shift+q kill
+bindsym Mod1+q kill
 
 # start dmenu (a program launcher)
 # bindsym Mod1+d exec --no-startup-id dmenu_run
-bindsym Mod1+space exec --no-startup-id dmenu_run
+# bindsym Mod1+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-# bindsym Mod1+d exec "rofi -modi drun,run -show drun"
+bindsym Mod1+space exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
@@ -116,7 +124,7 @@ bindsym Mod1+Shift+space floating toggle
 bindsym Mod1+a focus parent
 
 # focus the child container
-#bindsym Mod1+d focus child
+bindsym Mod1+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym Mod1+Shift+minus move scratchpad
@@ -127,7 +135,7 @@ bindsym Mod1+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
+set $ws1 "1:  Code"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
