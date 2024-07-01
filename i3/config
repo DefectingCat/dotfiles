@@ -29,7 +29,7 @@ bindsym Mod1+Ctrl+q exec /home/$USER/.config/i3/i3lock
 exec --no-startup-id nm-applet
 
 exec --no-startup-id fcitx5 -d
-exec "setxkbmap -option caps:ctrl_modifier"
+exec_always setxkbmap -option caps:ctrl_modifier
 exec "feh --bg-scale ~/Pictures/b-007.jpg"
 # exec --no-startup-id picom -b
 exec_always picom -f
