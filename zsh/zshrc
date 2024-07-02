@@ -50,8 +50,9 @@ if command -v pyenv &> /dev/null; then
 fi
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
-# disbale powerlevel10k configuration
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 # golang
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
@@ -60,6 +61,8 @@ export PATH="$PATH:$GOPATH/bin"
 if command -v goenv &> /dev/null; then
   eval "$(goenv init -)"
 fi
+# disbale powerlevel10k configuration
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # linux
 if [[ $OSTYPE == "linux"* ]]; then
@@ -139,3 +142,4 @@ load-nvmrc() {
     nvm use default
   fi
 }
+
