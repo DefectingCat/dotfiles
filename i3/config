@@ -147,6 +147,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+workspace_layout tabbed
+
 # switch to workspace
 bindsym Mod1+1 workspace number $ws1
 bindsym Mod1+2 workspace number $ws2
