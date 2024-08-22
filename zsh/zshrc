@@ -69,6 +69,12 @@ if [[ $OSTYPE == "linux"* ]]; then
   export GPG_TTY=$(tty)
   export NODE_OPTIONS="--max-old-space-size=8192"
   export PATH=$PATH:~/.cargo/bin
+  export PATH=$HOME/.local/bin:$PATH
+  export OLLAMA_MODELS=/home/xfy/pl/docker/ollama/ollama/
+  export OLLAMA_HOST=0.0.0.0:11434
+  export PATH=$PATH:~/pl/opt/cangjie/bin/
+  export PATH=$PATH:~/pl/opt/cangjie/tools/bin
+  source ~/pl/opt/cangjie/envsetup.sh
 fi
 
 # macos
