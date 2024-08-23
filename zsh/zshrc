@@ -58,6 +58,7 @@ export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
+export GPG_TTY=$(tty)
 if command -v goenv &> /dev/null; then
   eval "$(goenv init -)"
 fi
@@ -66,7 +67,6 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # linux
 if [[ $OSTYPE == "linux"* ]]; then
-  export GPG_TTY=$(tty)
   export NODE_OPTIONS="--max-old-space-size=8192"
   export PATH=$PATH:~/.cargo/bin
   export PATH=$HOME/.local/bin:$PATH
@@ -98,6 +98,9 @@ if [[ $OSTYPE == "darwin"* ]]; then
   export PATH=$JAVA_HOME/bin:$PATH
   # Flutter
   export PATH=/Volumes/SN/SDK/flutter/bin:$PATH
+  # ollama
+  export OLLAMA_MODELS=/Volumes/SN/Ollama/models/
+  export OLLAMA_HOST=0.0.0.0:11434
 fi
 
 export LOCAL_SCRIPT_DIR=~/.config/local-scripts/
