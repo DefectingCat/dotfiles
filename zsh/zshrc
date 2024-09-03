@@ -72,9 +72,9 @@ if [[ $OSTYPE == "linux"* ]]; then
   export PATH=$HOME/.local/bin:$PATH
   export OLLAMA_MODELS=/home/xfy/pl/docker/ollama/ollama/
   export OLLAMA_HOST=0.0.0.0:11434
-  export PATH=$PATH:~/pl/opt/cangjie/bin/
-  export PATH=$PATH:~/pl/opt/cangjie/tools/bin
-  source ~/pl/opt/cangjie/envsetup.sh
+  # export PATH=$PATH:~/pl/opt/cangjie/bin/
+  # export PATH=$PATH:~/pl/opt/cangjie/tools/bin
+  # source ~/pl/opt/cangjie/envsetup.sh
 fi
 
 # macos
