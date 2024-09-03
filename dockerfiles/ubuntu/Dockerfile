@@ -4,6 +4,7 @@ RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/
   && sed -i 's@//.*security.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources \
   && apt-get update -y \
   && apt-get install -y git ninja-build gettext cmake unzip curl build-essential sudo zsh htop vim \
+  python3 python3-pip \
   # install neovim
   && cd /opt && git clone --depth 1 https://gitee.com/mirrors/neovim && cd neovim \
   && make CMAKE_BUILD_TYPE=Release \
@@ -50,5 +51,8 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
   && sudo install lazygit /usr/local/bin \
   && rm -rf lazygit \
   && rm -rf lazygit.tar.gz
+# pypi tsinghua
+RUN pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+# python3 -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade pip \
 
 ENTRYPOINT ["/bin/zsh"]
