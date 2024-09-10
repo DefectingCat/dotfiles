@@ -15,8 +15,9 @@ config.window_padding = {
   bottom = 0,
 }
 config.window_decorations = "NONE"
-config.window_background_opacity = 0.93
+config.window_background_opacity = 0.97
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "Catppuccin Mocha"
+config.font_size = 13
 
 return config
