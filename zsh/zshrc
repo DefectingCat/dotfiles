@@ -36,8 +36,8 @@ fi
 export DVM_DIR="/Users/xfy/.dvm"
 export PATH="$DVM_DIR/bin:$PATH"
 # rust
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 # lazygit config location and theme
 export CONFIG_DIR="$HOME/.config/lazygit"
 export LG_CONFIG_FILE="$CONFIG_DIR/config.yml,$CONFIG_DIR/mocha-pink.yml"
