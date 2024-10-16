@@ -32,9 +32,6 @@ if [[ $OSTYPE == "darwin"* ]]; then
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
-# deno
-export DVM_DIR="/Users/xfy/.dvm"
-export PATH="$DVM_DIR/bin:$PATH"
 # rust
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
@@ -152,8 +149,8 @@ load-nvmrc() {
   fi
 }
 
-# Add deno completions to search path
 if [[ $OSTYPE == "darwin"* ]]; then
+    # Add deno completions to search path
     if [[ ":$FPATH:" != *":/Users/xfy/.zsh/completions:"* ]]; then export FPATH="/Users/xfy/.zsh/completions:$FPATH"; fi
     . "/Users/xfy/.deno/env"
 fi
