@@ -14,6 +14,8 @@ RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/
 
 ARG USER=xfy
 
+COPY ./init.sh /etc/xfy/
+
 RUN useradd --groups sudo --no-create-home --shell /bin/zsh ${USER} \
     && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
     && chmod 0440 /etc/sudoers.d/${USER}
@@ -55,4 +57,4 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
 RUN pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 # python3 -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade pip \
 
-ENTRYPOINT ["/bin/zsh"]
+ENTRYPOINT ["/etc/xfy/init.sh"]
