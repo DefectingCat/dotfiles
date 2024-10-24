@@ -14,8 +14,6 @@ RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/
 
 ARG USER=xfy
 
-COPY ./init.sh /etc/xfy/
-
 RUN useradd --groups sudo --no-create-home --shell /bin/zsh ${USER} \
     && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
     && chmod 0440 /etc/sudoers.d/${USER}
@@ -23,6 +21,7 @@ RUN useradd --groups sudo --no-create-home --shell /bin/zsh ${USER} \
 # RUN usermod -g ${USER_ID} ${USER}
 USER ${USER}
 WORKDIR /home/${USER}
+
 RUN git clone https://github.com/DefectingCat/dotfiles \
     # onmyzsh
     && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  \
@@ -31,7 +30,10 @@ RUN git clone https://github.com/DefectingCat/dotfiles \
     && ln -s /home/${USER}/dotfiles/zsh/p10k.zsh /home/${USER}/.p10k.zsh  \
     && bash /home/${USER}/dotfiles/zsh/install-plugins.sh  \
     # neovim config
-    && git clone https://github.com/DefectingCat/nvim /home/${USER}/.config/nvim
+    && git clone https://github.com/DefectingCat/nvim /home/${USER}/.config/nvim \
+    && nvim --headless "+Lazy! install" +MasonInstallAll +qa \
+    && nvim --headless "+Lazy! install" +qa \
+    && nvim --headless "+Lazy! sync" +qa
 # node
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash \
     && export NVM_DIR="/home/$USER/.nvm" \
@@ -57,4 +59,4 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
 RUN pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 # python3 -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade pip \
 
-ENTRYPOINT ["/etc/xfy/init.sh"]
+ENTRYPOINT ["/bin/zsh"]

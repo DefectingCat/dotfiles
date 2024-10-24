@@ -18,8 +18,9 @@ PROJECT_FOLDER=$1
 
 # -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent
 # -v $HOME_FOLDER:/home/xfy \
+# --user xfy:xfy \
+# --entrypoint=/bin/bash \
 
 docker run --rm -it --name=ubuntu-dev \
-    --user xfy:xfy \
     -v $PROJECT_FOLDER:/app \
     ubuntu-dev
