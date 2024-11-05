@@ -66,45 +66,41 @@
     "file_icons": true,
     "git_status": false
   },
+  "file_scan_exclusions": [
+    // "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ],
   // "proxy": "http://127.0.0.1:10809",
   "ssh_connections": [
     {
       "host": "57",
       "projects": [
         {
-          "paths": [
-            "~/Developer/show-client"
-          ]
+          "paths": ["~/Developer/show-client"]
         },
         {
-          "paths": [
-            "~/Developer/show-client-multiple"
-          ]
+          "paths": ["~/Developer/show-client-multiple"]
         },
         {
-          "paths": [
-            "~/Developer/gorra"
-          ]
+          "paths": ["~/Developer/gorra"]
         },
         {
-          "paths": [
-            "~/Developer/site_operation_platform"
-          ]
+          "paths": ["~/Developer/site_operation_platform"]
         },
         {
-          "paths": [
-            "~/Developer/show-client-v2"
-          ]
+          "paths": ["~/Developer/show-client-v2"]
         },
         {
-          "paths": [
-            "~/Developer/show-library"
-          ]
+          "paths": ["~/Developer/show-library"]
         },
         {
-          "paths": [
-            "~/Developer/venus"
-          ]
+          "paths": ["~/Developer/venus"]
         }
       ]
     }
