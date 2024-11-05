@@ -101,6 +101,9 @@
         },
         {
           "paths": ["~/Developer/venus"]
+        },
+        {
+          "paths": ["~/Developer/react-draggable"]
         }
       ]
     }
