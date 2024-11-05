@@ -1,0 +1,83 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space s s": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "Edtior && vim_mode == visual",
+    "bindings": {
+      "space c a": "editor::ToggleCodeActions" // zed specific
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space e": "workspace::ToggleRightDock",
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "space f m": "editor::Format",
+      "space space": "file_finder::Toggle",
+      "space |": "pane::SplitRight",
+      "space x": "pane::CloseActiveItem",
+      "shift-l": ["workspace::SendKeystrokes", ": bnext enter"],
+      "shift-h": ["workspace::SendKeystrokes", ": bprevious enter"],
+      "space f f": "file_finder::Toggle",
+      "space c a": "editor::ToggleCodeActions", // zed specific
+      "space r n": "editor::Rename",
+      "space g g": [
+        "workspace::SendKeystrokes",
+        ": new center terminal enter lazygit enter"
+      ],
+      "space t x": ["workspace::SendKeystrokes", ": clist enter"],
+      "space t t": ["workspace::SendKeystrokes", ": new center terminal enter"],
+      "space h p": ["workspace::SendKeystrokes", ": toggle hunk diff enter"],
+      "space h r": [
+        "workspace::SendKeystrokes",
+        ": revert selected hunks enter"
+      ],
+      "space c t": [
+        "workspace::SendKeystrokes",
+        ": language selector: toggle enter"
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "BottomDock",
+    "bindings": {
+      "space e": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  }
+]
