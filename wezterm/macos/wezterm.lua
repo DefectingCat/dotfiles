@@ -2,7 +2,8 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+-- config.font = wezterm.font("JetBrains Mono NL")
+config.font = wezterm.font_with_fallback({ "JetBrains Mono NL", "PingFang SC" })
 
 -- ui
 --[[ config.initial_rows = 50 ]]
@@ -26,13 +27,12 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.colors = {
     tab_bar = {
-        background = "rgba(0,0,0,0)"
+        background = "rgba(0,0,0,0)",
     },
 }
 
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "Catppuccin Mocha"
 config.font_size = 16
-
 
 return config
