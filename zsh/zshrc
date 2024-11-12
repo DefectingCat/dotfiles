@@ -159,4 +159,8 @@ fi
 if [[ $OSTYPE == "linux"* ]]; then
     if [[ ":$FPATH:" != *":/home/xfy/.zsh/completions:"* ]]; then export FPATH="/home/xfy/.zsh/completions:$FPATH"; fi
     . "/home/xfy/.deno/env"
+    # Wasmer
+    export WASMER_DIR="/home/xfy/.wasmer"
+    [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 fi
+
