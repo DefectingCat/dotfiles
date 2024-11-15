@@ -31,7 +31,7 @@ RUN git clone https://github.com/DefectingCat/dotfiles \
     && bash /home/${USER}/dotfiles/zsh/install-plugins.sh  \
     # neovim config
     && git clone https://github.com/DefectingCat/nvim /home/${USER}/.config/nvim \
-    && nvim --headless "+Lazy! install" +MasonInstallAll +qa \
+    # && nvim --headless "+Lazy! install" +MasonInstallAll +qa \
     && nvim --headless "+Lazy! install" +qa \
     && nvim --headless "+Lazy! sync" +qa
 # node
