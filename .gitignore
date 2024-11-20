@@ -4,3 +4,4 @@
 lazygit/state.yml
 tmux/plugins
 **/*/mysql
+**/*/.DS_Store
