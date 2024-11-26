@@ -35,6 +35,14 @@ config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "Catppuccin Mocha"
 config.font_size = 16
 
+config.mouse_bindings = {
+    {
+        event = { Up = { streak = 1, button = "Left" } },
+        mods = "NONE",
+        action = wezterm.action.Nop,
+    },
+}
+
 -- keys
 config.keys = {
     { key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
