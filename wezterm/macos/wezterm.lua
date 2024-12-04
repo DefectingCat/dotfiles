@@ -44,8 +44,29 @@ config.mouse_bindings = {
 }
 
 -- keys
+local act = wezterm.action
 config.keys = {
-    { key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+    { key = "l", mods = "ALT", action = act.ShowLauncher },
+    {
+        key = "h",
+        mods = "CTRL|SHIFT",
+        action = act.ActivatePaneDirection("Left"),
+    },
+    {
+        key = "l",
+        mods = "CTRL|SHIFT",
+        action = act.ActivatePaneDirection("Right"),
+    },
+    {
+        key = "k",
+        mods = "CTRL|SHIFT",
+        action = act.ActivatePaneDirection("Up"),
+    },
+    {
+        key = "j",
+        mods = "CTRL|SHIFT",
+        action = act.ActivatePaneDirection("Down"),
+    },
 }
 
 return config
