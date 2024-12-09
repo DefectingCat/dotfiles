@@ -26,7 +26,7 @@ export EDITOR="nvim"
 export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 if command -v fnm >/dev/null 2>&1; then
   eval "$(fnm env --use-on-cd --shell zsh)"
-else
+fi
 export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 # rust
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
