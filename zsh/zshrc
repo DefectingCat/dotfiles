@@ -78,8 +78,8 @@ if [[ $OSTYPE == "darwin"* ]]; then
   export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
   export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
   # proxy
-  export http_proxy="http://127.0.0.1:10809"
-  export https_proxy="http://127.0.0.1:10809"
+  export http_proxy="http://127.0.0.1:7890"
+  export https_proxy="http://127.0.0.1:7890"
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
   # Android
   export PATH="$PATH:/Volumes/SN/SDK/cmdline-tools/bin"
