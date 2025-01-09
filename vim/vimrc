@@ -34,10 +34,10 @@ set encoding=utf-8
 " Whitespace
 set nowrap           " do not automatically wrap on load
 set formatoptions-=t " do not automatically wrap text when typing
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
-" set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 set noshiftround
 
 " Cursor motion
@@ -121,5 +121,6 @@ noremap <leader>tt :term ++curwin<CR>
 noremap <S-l> :bn<CR>
 noremap <S-h> :bp<CR>
 noremap <leader>x :bd<CR>
+noremap <leader>b :ls<CR>:b
 "" save
 noremap <C-s> :w<CR>
