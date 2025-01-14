@@ -4,7 +4,14 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" TODO: Load plugins here (pathogen or vundle)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+call vundle#end()
 
 " Turn on syntax highlighting
 syntax on
@@ -99,12 +106,15 @@ let g:solarized_termtrans=1
 colorscheme nord
 " colorscheme catppuccin_mocha
 
+" plugin
+" nerdtree
+let g:NERDTreeWinPos = "right"
+
 " Mapping
-map <leader>e :Ex<CR> " Open local-directory browser
 map <ESC> :noh<CR>
 noremap - :Ex<CR> " Open local-directory browser
 tnoremap <C-x> <C-\><C-n> " test
-"" siwtch window
+" siwtch window
 map <C-j> <C-w>j
 tnoremap <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -113,17 +123,19 @@ map <C-h> <C-w>h
 tnoremap <C-h> <C-w>h
 map <C-l> <C-w>l
 tnoremap <C-l> <C-w>l
-"" https://stackoverflow.com/questions/5933568/disable-blinking-at-the-first-last-line-of-the-file
+" https://stackoverflow.com/questions/5933568/disable-blinking-at-the-first-last-line-of-the-file
 noremap <expr> k ((line('.')==1)?'':'k')
 noremap <expr> j ((line('.')==line('$'))?'':'j')
-"" term
+" term
 noremap <leader>tt :term ++curwin<CR>
-"" buffer
+" buffer
 noremap <S-l> :bn<CR>
 noremap <S-h> :bp<CR>
 noremap <leader>x :bd<CR>
 noremap <leader>b :ls<CR>:b
-"" save
+" save
 noremap <C-s> :w<CR>
 map <leader>p :set paste<CR>
 map <leader>np :set nopaste<CR>
+" nerdtree
+map <leader>e :NERDTreeToggle<CR> " Open local-directory browser
