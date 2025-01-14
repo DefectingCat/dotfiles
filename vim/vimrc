@@ -101,6 +101,7 @@ colorscheme nord
 
 " Mapping
 map <leader>e :Ex<CR> " Open local-directory browser
+map <ESC> :noh<CR>
 noremap - :Ex<CR> " Open local-directory browser
 tnoremap <C-x> <C-\><C-n> " test
 "" siwtch window
@@ -124,3 +125,5 @@ noremap <leader>x :bd<CR>
 noremap <leader>b :ls<CR>:b
 "" save
 noremap <C-s> :w<CR>
+map <leader>p :set paste<CR>
+map <leader>np :set nopaste<CR>
