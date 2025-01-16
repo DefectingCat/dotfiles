@@ -72,7 +72,7 @@ fi
 
 # macos
 if [[ $OSTYPE == "darwin"* ]]; then
-# rust library
+  # rust library
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
   export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
@@ -105,13 +105,18 @@ if [ -r $LOCAL_SCRIPT_DIR/local.sh ]; then
 fi
 
 export RUA_SCRIPT_DIR=~/.config/rua-scripts/
-if [ -r $RUA_SCRIPT_DIR/xdg-startup.sh ]; then
-  source ~/.config/rua-scripts/xdg-startup.sh
-  source ~/.config/rua-scripts/docker.sh
-  source ~/.config/rua-scripts/show-client.sh
-  source ~/.config/rua-scripts/rua-tag.sh
-  source ~/.config/rua-scripts/ssh-forward.sh
+if [ -d $RUA_SCRIPT_DIR ]; then
+  for script in $RUA_SCRIPT_DIR/*.sh; do
+    source $script
+  done
 fi
+# if [ -r $RUA_SCRIPT_DIR/xdg-startup.sh ]; then
+#   source ~/.config/rua-scripts/xdg-startup.sh
+#   source ~/.config/rua-scripts/docker.sh
+#   source ~/.config/rua-scripts/show-client.sh
+#   source ~/.config/rua-scripts/rua-tag.sh
+#   source ~/.config/rua-scripts/ssh-forward.sh
+# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -126,14 +131,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 if [[ $OSTYPE == "darwin"* ]]; then
-    # Add deno completions to search path
-    if [[ ":$FPATH:" != *":/Users/xfy/.zsh/completions:"* ]]; then export FPATH="/Users/xfy/.zsh/completions:$FPATH"; fi
-    . "/Users/xfy/.deno/env"
+  # Add deno completions to search path
+  if [[ ":$FPATH:" != *":/Users/xfy/.zsh/completions:"* ]]; then export FPATH="/Users/xfy/.zsh/completions:$FPATH"; fi
+  . "/Users/xfy/.deno/env"
 fi
 if [[ $OSTYPE == "linux"* ]]; then
-    if [[ ":$FPATH:" != *":/home/xfy/.zsh/completions:"* ]]; then export FPATH="/home/xfy/.zsh/completions:$FPATH"; fi
-    . "/home/xfy/.deno/env"
-    # Wasmer
-    export WASMER_DIR="/home/xfy/.wasmer"
-    [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+  if [[ ":$FPATH:" != *":/home/xfy/.zsh/completions:"* ]]; then export FPATH="/home/xfy/.zsh/completions:$FPATH"; fi
+  . "/home/xfy/.deno/env"
+  # Wasmer
+  export WASMER_DIR="/home/xfy/.wasmer"
+  [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 fi
