@@ -24,6 +24,19 @@ syntax on
 filetype plugin indent on
 
 let mapleader = " "
+" Cursor shape
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
+let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
+let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
+if &term =~ 'xterm\\|rxvt'
+  let &t_SI = "\e[6 q"   " Use a vertical bar (line) for insert mode
+  let &t_EI = "\e[2 q"   " Use a block cursor for normal mode
+  let &t_SR = "\e[4 q"   " Use underline cursor for replace mode
+endif
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
 
 " Security
 set modelines=0
@@ -142,7 +155,14 @@ noremap <C-s> :w<CR>
 map <leader>p :set paste<CR>
 map <leader>np :set nopaste<CR>
 " nerdtree
-map <leader>e :NERDTreeToggle<CR> " Open local-directory browser
+function MyNerdToggle()
+  if &filetype == 'nerdtree'
+    :NERDTreeToggle
+  else
+    :NERDTreeFind
+  endif
+endfunction
+map <leader>e :call MyNerdToggle()<CR> " Open local-directory browser
 " fzf
 map <leader>ff :Files<CR>
 map <leader>fw :Rg<CR>
