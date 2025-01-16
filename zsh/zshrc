@@ -55,8 +55,16 @@ export GPG_TTY=$(tty)
 if command -v goenv &> /dev/null; then
   eval "$(goenv init -)"
 fi
+
 # disbale powerlevel10k configuration
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+export RUA_SCRIPT_DIR=~/.config/rua-scripts/
+if [ -d $RUA_SCRIPT_DIR ]; then
+  for script in $RUA_SCRIPT_DIR/*.sh; do
+    source $script
+  done
+fi
 
 # linux
 if [[ $OSTYPE == "linux"* ]]; then
@@ -68,6 +76,17 @@ if [[ $OSTYPE == "linux"* ]]; then
   # export PATH=$PATH:~/pl/opt/cangjie/bin/
   # export PATH=$PATH:~/pl/opt/cangjie/tools/bin
   # source ~/pl/opt/cangjie/envsetup.sh
+  if [[ ":$FPATH:" != *":/home/xfy/.zsh/completions:"* ]]; then export FPATH="/home/xfy/.zsh/completions:$FPATH"; fi
+  . "/home/xfy/.deno/env"
+  # Wasmer
+  export WASMER_DIR="/home/xfy/.wasmer"
+  [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+  # rua scripts
+  if [ -d $RUA_SCRIPT_DIR/linux/ ]; then
+    for script in $RUA_SCRIPT_DIR/linux/*.sh; do
+      source $script
+    done
+  fi
 fi
 
 # macos
@@ -94,29 +113,10 @@ if [[ $OSTYPE == "darwin"* ]]; then
   # ollama
   export OLLAMA_MODELS=/Volumes/SN/Ollama/models/
   export OLLAMA_HOST=0.0.0.0:11434
+  # Add deno completions to search path
+  if [[ ":$FPATH:" != *":/Users/xfy/.zsh/completions:"* ]]; then export FPATH="/Users/xfy/.zsh/completions:$FPATH"; fi
+  . "/Users/xfy/.deno/env"
 fi
-
-export LOCAL_SCRIPT_DIR=~/.config/local-scripts/
-if [ -r $LOCAL_SCRIPT_DIR/appimage.sh ]; then
-  source ~/.config/local-scripts/appimage.sh
-fi
-if [ -r $LOCAL_SCRIPT_DIR/local.sh ]; then
-  source ~/.config/local-scripts/local.sh
-fi
-
-export RUA_SCRIPT_DIR=~/.config/rua-scripts/
-if [ -d $RUA_SCRIPT_DIR ]; then
-  for script in $RUA_SCRIPT_DIR/*.sh; do
-    source $script
-  done
-fi
-# if [ -r $RUA_SCRIPT_DIR/xdg-startup.sh ]; then
-#   source ~/.config/rua-scripts/xdg-startup.sh
-#   source ~/.config/rua-scripts/docker.sh
-#   source ~/.config/rua-scripts/show-client.sh
-#   source ~/.config/rua-scripts/rua-tag.sh
-#   source ~/.config/rua-scripts/ssh-forward.sh
-# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -128,17 +128,4 @@ fi
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-if [[ $OSTYPE == "darwin"* ]]; then
-  # Add deno completions to search path
-  if [[ ":$FPATH:" != *":/Users/xfy/.zsh/completions:"* ]]; then export FPATH="/Users/xfy/.zsh/completions:$FPATH"; fi
-  . "/Users/xfy/.deno/env"
-fi
-if [[ $OSTYPE == "linux"* ]]; then
-  if [[ ":$FPATH:" != *":/home/xfy/.zsh/completions:"* ]]; then export FPATH="/home/xfy/.zsh/completions:$FPATH"; fi
-  . "/home/xfy/.deno/env"
-  # Wasmer
-  export WASMER_DIR="/home/xfy/.wasmer"
-  [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 fi
