@@ -114,10 +114,15 @@ if [[ $OSTYPE == "darwin"* ]]; then
   export PATH=/Volumes/SN/SDK/flutter/bin:$PATH
   # ollama
   export OLLAMA_MODELS=/Volumes/SN/Ollama/models/
-  export OLLAMA_HOST=0.0.0.0:11434
+  export OLLAMA_HOST=localhost:11434
   # Add deno completions to search path
   if [[ ":$FPATH:" != *":/Users/xfy/.zsh/completions:"* ]]; then export FPATH="/Users/xfy/.zsh/completions:$FPATH"; fi
   . "/Users/xfy/.deno/env"
+  # The following lines have been added by Docker Desktop to enable Docker CLI completions.
+  fpath=(/Users/xfy/.docker/completions $fpath)
+  autoload -Uz compinit
+  compinit
+  # End of Docker CLI completions
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

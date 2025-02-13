@@ -32,13 +32,16 @@
       "space f f": "file_finder::Toggle",
       "space c a": "editor::ToggleCodeActions", // zed specific
       "space r n": "editor::Rename",
-      "space g g": [
-        "workspace::SendKeystrokes",
-        ": new center terminal enter lazygit enter"
+      "space g l": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
       ],
       "space t x": ["workspace::SendKeystrokes", ": clist enter"],
       "space t t": ["workspace::SendKeystrokes", ": new center terminal enter"],
-      "space h p": ["workspace::SendKeystrokes", ": toggle hunk diff enter"],
+      "space h p": [
+        "workspace::SendKeystrokes",
+        ": toggle selected diff hunks enter"
+      ],
       "space h r": [
         "workspace::SendKeystrokes",
         ": revert selected hunks enter"
@@ -48,7 +51,9 @@
         ": language selector: toggle enter"
       ],
       "alt-k": ["editor::MoveLineUp", { "display_lines": true }],
-      "alt-j": ["editor::MoveLineDown", { "display_lines": true }]
+      "alt-j": ["editor::MoveLineDown", { "display_lines": true }],
+      // lsp
+      "g r": ["workspace::SendKeystrokes", ": find all references enter"]
     }
   },
   {
