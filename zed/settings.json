@@ -44,7 +44,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha (Blur)"
+    "dark": "Catppuccin Mocha"
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -66,6 +66,11 @@
     "file_icons": true,
     "git_status": false
   },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
   "file_scan_exclusions": [
     // "**/.git",
     "**/.svn",
@@ -76,6 +81,13 @@
     "**/.classpath",
     "**/.settings"
   ],
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"]
+      // Or, if there are other language servers you want to use with Python
+      // "language_servers": ["pyright", "ruff"]
+    }
+  },
   // "proxy": "http://127.0.0.1:10809",
   "ssh_connections": [
     {
