@@ -12,6 +12,7 @@ alias vim-update='nvim --headless "+Lazy! update" +qa'
 # alias nvim-update='nvim --headless "+Lazy! sync" +qa'
 alias x86="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
+alias dur="du -h -d 1 2>/dev/null | sort -hr"
 
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
