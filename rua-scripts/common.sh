@@ -13,3 +13,8 @@ mac-update() {
     brew update && brew upgrade && brew cleanup &&
         rustup update && rustup self update
 }
+
+arch-update() {
+    yay --noconfirm &&
+        rustup update && rustup self update && vim-update
+}
