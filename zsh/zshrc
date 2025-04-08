@@ -5,7 +5,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
-alias ll="ls -lhtr"
+# alias ll="ls -lhtr"
+alias ll="lsd -AlhtrF"
 alias vi="/usr/bin/vim"
 alias vim="nvim"
 alias vim-update='nvim --headless "+Lazy! update" +qa'
