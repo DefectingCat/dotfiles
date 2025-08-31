@@ -1,5 +1,6 @@
 ## Source from conf.d before our fish config
-source /usr/share/cachyos-fish-config/conf.d/done.fish
+# source /usr/share/cachyos-fish-config/conf.d/done.fish
+source $HOME/.config/fish/done.fish
 
 ## Set values
 ## Run fastfetch as welcome message
