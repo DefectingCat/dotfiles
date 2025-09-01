@@ -2,7 +2,7 @@
 source $HOME/.config/fish/cachyos.fish
 source $HOME/.config/fish/git.fish
 
-starship init fish | source
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 alias vim="nvim"
 alias icat="kitty +kitten icat"
@@ -25,8 +25,4 @@ set -Ux LC_ALL "en_US.UTF-8"
 set -Ux COLORTERM truecolor
 set -Ux TERM xterm-256color
 
-# overwrite greeting
-# potentially disabling fastfetch
-# function fish_greeting
-#    # smth smth
-# end
+starship init fish | source
