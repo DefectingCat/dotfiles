@@ -80,6 +80,18 @@
   "current_line_highlight": "all",
   "inlay_hints": {
     "enabled": true
+  },
+  // ls -l ~/Library/Application\ Support/Zed/extensions/installed/
+  "auto_install_extensions": {
+    "cargo-tom": true,
+    "catppuccin": true,
+    "catppuccin-blur": true,
+    "catppuccin-icons": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "html": true,
+    "make": true,
+    "toml": true
   }
   // "proxy": "socks5h://127.0.0.1:13659"
 }
