@@ -26,6 +26,7 @@
     "dock": "right"
   },
   "git_panel": {
+    "sort_by_path": true,
     "dock": "right"
   },
   "project_panel": {
@@ -33,7 +34,7 @@
   },
   "vim_mode": true,
   "terminal": {
-    "font_size": 15.0,
+    "font_size": 16.0,
     "font_family": "Maple Mono Normal NF CN",
     "blinking": "on"
   },
@@ -63,11 +64,11 @@
   "show_edit_predictions": true,
   "base_keymap": "VSCode",
   "ui_font_size": 16,
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 15.0,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Mocha",
-    "dark": "One Dark"
+    "light": "Catppuccin Mocha (Blur) [Heavy]",
+    "dark": "Catppuccin Espresso (Blur)"
   },
   "scroll_beyond_last_line": "one_page",
   "vertical_scroll_margin": 3,
@@ -75,5 +76,10 @@
     "inline": {
       "enabled": true
     }
+  },
+  "current_line_highlight": "all",
+  "inlay_hints": {
+    "enabled": true
   }
+  // "proxy": "socks5h://127.0.0.1:13659"
 }
