@@ -58,7 +58,8 @@
   "autosave": "off",
   "buffer_font_family": "Maple Mono Normal NF CN",
   "file_types": {
-    "jsonc": ["*.json"]
+    "jsonc": ["*.json"],
+    "Shell Script": ["sh", "bash", "env", "conf"]
   },
   "linked_edits": true,
   "show_edit_predictions": true,
@@ -92,6 +93,19 @@
     "html": true,
     "make": true,
     "toml": true
-  }
+  },
+  "file_scan_exclusions": [
+    "**/.git/objects",
+    "**/.git/refs",
+    "**/.git/logs",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ]
   // "proxy": "socks5h://127.0.0.1:13659"
 }
