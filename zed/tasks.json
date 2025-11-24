@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Yazi(cwd)",
+    "command": "yazi $ZED_FILE",
+    "env": { "EDITOR": "zed -a" },
+    "hide": "always",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "Yazi(root)",
+    "command": "yazi $ZED_WORKTREE_ROOT",
+    "env": { "EDITOR": "zed -a" },
+    "hide": "always",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "LazyGit",
+    "command": "lazygit -p $ZED_WORKTREE_ROOT",
+    "env": { "EDITOR": "zed -a" },
+    "hide": "always",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  }
+]
