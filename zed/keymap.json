@@ -32,7 +32,7 @@
   {
     "use_key_equivalents": true,
     "bindings": {
-      "cmd-o": "tab_switcher::ToggleAll"
+      "cmd-r": "tab_switcher::ToggleAll"
     }
   },
   {
@@ -40,7 +40,7 @@
     "bindings": {
       "ctrl-/": "workspace::ToggleBottomDock",
       "cmd-e": "workspace::ToggleRightDock",
-      "cmd-o": "tab_switcher::ToggleAll",
+      // "cmd-o": "tab_switcher::ToggleAll",
       "ctrl-s": "workspace::Save"
     }
   },
@@ -131,10 +131,24 @@
       // "cmd-l": "assistant::InlineAssist",
       // "space a t": "workspace::ToggleRightDock",
       // Git
+      "-": [
+        "task::Spawn",
+        {
+          "task_name": "Yazi(cwd)",
+          "reveal_target": "center"
+        }
+      ],
+      "_": [
+        "task::Spawn",
+        {
+          "task_name": "Yazi(root)",
+          "reveal_target": "center"
+        }
+      ],
       "space g g": [
         "task::Spawn",
         {
-          "task_name": "lazygit",
+          "task_name": "LazyGit",
           "reveal_target": "center"
         }
       ],

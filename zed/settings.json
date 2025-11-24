@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "api.rua.plus",
+      "username": "ubuntu",
+      "port": 29888,
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/ubuntu"]
+        }
+      ]
+    }
+  ],
   "git": {
     "inline_blame": {
       "enabled": false
@@ -84,14 +97,17 @@
   },
   // ls -l ~/Library/Application\ Support/Zed/extensions/installed/
   "auto_install_extensions": {
-    "cargo-tom": true,
+    // "cargo-tom": true,
     "catppuccin": true,
     "catppuccin-blur": true,
     "catppuccin-icons": true,
     "dockerfile": true,
+    "fish": true,
     "git-firefly": true,
     "html": true,
+    "less": true,
     "make": true,
+    "tombi": true,
     "toml": true
   },
   "file_scan_exclusions": [
@@ -106,6 +122,37 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings"
-  ]
+  ],
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "cargo": {
+          "allFeatures": true,
+          "buildScripts": {
+            "rebuildOnSave": true
+          }
+        },
+        "procMacro": {
+          "enable": true
+        },
+        // "checkOnSave": {
+        //   "command": "clippy" // rust-analyzer.checkOnSave.command
+        // },
+        "checkOnSave": true,
+        "hover": {
+          "references": {
+            "enabled": true
+          }
+        },
+        "imports": {
+          "prefix": "crate",
+          "preferPrelude": true,
+          "granularity": {
+            "enforce": true
+          }
+        }
+      }
+    }
+  }
   // "proxy": "socks5h://127.0.0.1:13659"
 }
