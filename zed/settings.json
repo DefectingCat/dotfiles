@@ -72,7 +72,7 @@
   "buffer_font_family": "Maple Mono Normal NF CN",
   "file_types": {
     "jsonc": ["*.json"],
-    "Shell Script": ["sh", "bash", "env", "conf"]
+    "Shell Script": ["sh", "bash", "env", "conf", "yarn.lock"]
   },
   "linked_edits": true,
   "show_edit_predictions": true,
@@ -123,6 +123,11 @@
     "**/.classpath",
     "**/.settings"
   ],
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on"
+    }
+  },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
