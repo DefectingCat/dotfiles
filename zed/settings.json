@@ -32,8 +32,12 @@
     "dark": "Catppuccin Mocha"
   },
   "restore_on_startup": "none",
+  "notification_panel": {
+    "button": false
+  },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
+    "button": false
   },
   "outline_panel": {
     "dock": "right"
@@ -62,7 +66,9 @@
   },
   "relative_line_numbers": "enabled",
   "gutter": {
-    "line_numbers": true
+    "line_numbers": true,
+    "min_line_number_digits": 1,
+    "runnables": false
   },
   "minimap": {
     "show": "never"
@@ -131,6 +137,9 @@
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
+        // "rustfmt": {
+        //   "overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"]
+        // },
         "cargo": {
           "allFeatures": true,
           "buildScripts": {
@@ -158,6 +167,6 @@
         }
       }
     }
-  }
-  // "proxy": "socks5h://127.0.0.1:13659"
+  },
+  "proxy": "http://127.0.0.1:10808"
 }
