@@ -62,7 +62,7 @@
     "experimental.show": true
   },
   "tab_bar": {
-    "show": false
+    "show": true
   },
   "relative_line_numbers": "enabled",
   "gutter": {
@@ -87,7 +87,7 @@
   "buffer_font_size": 15.0,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Mocha (Blur) [Heavy]",
+    "light": "Catppuccin Espresso (Blur)",
     "dark": "Catppuccin Espresso (Blur)"
   },
   "scroll_beyond_last_line": "one_page",
@@ -132,9 +132,29 @@
   "languages": {
     "Markdown": {
       "format_on_save": "on"
+    },
+    "TypeScript": {
+      "formatter": [
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": ["--stdin-filepath", "{buffer_path}"]
+          }
+        },
+        {
+          "language_server": {
+            "name": "biome"
+          }
+        }
+      ]
     }
   },
   "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    },
     "rust-analyzer": {
       "initialization_options": {
         // "rustfmt": {
