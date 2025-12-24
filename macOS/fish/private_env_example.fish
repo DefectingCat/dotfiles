@@ -1,4 +1,5 @@
 set -Ux DEEPSEEK_API_KEY
+set -Ux DOUBAO_API_KEY
 
 # huoshan
 set -Ux ANTHROPIC_BASE_URL
