@@ -2,6 +2,9 @@
 # VERSION: 3.0
 SETUVAR --export COLORTERM:truecolor
 SETUVAR --export EDITOR:nvim
+SETUVAR --export HOMEBREW_BREW_GIT_REMOTE:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/git/homebrew/brew\x2egit
+SETUVAR --export HOMEBREW_CORE_GIT_REMOTE:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/git/homebrew/homebrew\x2dcore\x2egit
+SETUVAR --export HOMEBREW_INSTALL_FROM_API:1
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export LC_ALL:en_US\x2eUTF\x2d8
 SETUVAR --export RUSTUP_DIST_SERVER:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/rustup
