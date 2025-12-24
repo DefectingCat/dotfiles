@@ -1,6 +1,7 @@
 # source /usr/share/cachyos-fish-config/cachyos-config.fish
 source $HOME/.config/fish/cachyos.fish
 source $HOME/.config/fish/git.fish
+source $HOME/.config/fish/private_env.fish
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
