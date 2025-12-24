@@ -6,3 +6,4 @@ tmux/plugins
 **/*/mysql
 **/*/.DS_Store
 macOS/fish/private_env.fish
+fish_variables
