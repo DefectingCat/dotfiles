@@ -29,7 +29,7 @@
     }
   },
   "agent": {
-    "dock": "left",
+    "dock": "right",
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "Huoshan",
