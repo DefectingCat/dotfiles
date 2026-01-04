@@ -7,3 +7,4 @@ tmux/plugins
 **/*/.DS_Store
 macOS/fish/private_env.fish
 fish_variables
+macOS/fish/conf.d/private_env.fish
