@@ -7,6 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "language_models": {
+    "openai_compatible": {
+      "Huoshan": {
+        "api_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "available_models": [
+          {
+            "name": "doubao-seed-code-preview-latest",
+            "max_tokens": 256000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 32000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agent": {
+    "dock": "left",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "Huoshan",
+      "model": "doubao-seed-code-preview-latest"
+    },
+    "model_parameters": []
+  },
   "ssh_connections": [
     {
       "host": "api.rua.plus",
@@ -25,7 +55,7 @@
       "enabled": false
     }
   },
-  "disable_ai": true,
+  // "disable_ai": true,
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Mocha",
@@ -88,7 +118,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Espresso (Blur)",
-    "dark": "Catppuccin Espresso (Blur)"
+    "dark": "Catppuccin Mocha"
   },
   "scroll_beyond_last_line": "one_page",
   "vertical_scroll_margin": 3,
@@ -134,6 +164,21 @@
       "format_on_save": "on"
     },
     "TypeScript": {
+      "formatter": [
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": ["--stdin-filepath", "{buffer_path}"]
+          }
+        },
+        {
+          "language_server": {
+            "name": "biome"
+          }
+        }
+      ]
+    },
+    "JavaScript": {
       "formatter": [
         {
           "external": {
