@@ -130,7 +130,7 @@
     "experimental.show": true,
   },
   "tab_bar": {
-    "show": true,
+    "show": false,
   },
   "relative_line_numbers": "enabled",
   "gutter": {

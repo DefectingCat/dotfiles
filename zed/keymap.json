@@ -5,7 +5,7 @@
     "bindings": {
       // "enter": "editor::ConfirmCompletion"
       // "tab": "editor::ConfirmCompletion"
-    }
+    },
   },
   {
     "context": "Editor && mode == full",
@@ -20,20 +20,20 @@
       "cmd-alt-f": "buffer_search::DeployReplace",
       "cmd-alt-l": [
         "buffer_search::Deploy",
-        { "selection_search_enabled": true }
+        { "selection_search_enabled": true },
       ],
       "cmd-e": "workspace::ToggleRightDock",
       "cmd->": "agent::AddSelectionToThread",
       "cmd-<": "assistant::InsertIntoEditor",
       "cmd-alt-e": "editor::SelectEnclosingSymbol",
-      "alt-enter": "editor::OpenSelectionsInMultibuffer"
-    }
+      "alt-enter": "editor::OpenSelectionsInMultibuffer",
+    },
   },
   {
     "use_key_equivalents": true,
     "bindings": {
-      "cmd-r": "tab_switcher::ToggleAll"
-    }
+      "cmd-r": "tab_switcher::ToggleAll",
+    },
   },
   {
     "context": "Workspace",
@@ -41,8 +41,8 @@
       "ctrl-/": "workspace::ToggleBottomDock",
       "cmd-e": "workspace::ToggleRightDock",
       // "cmd-o": "tab_switcher::ToggleAll",
-      "ctrl-s": "workspace::Save"
-    }
+      "ctrl-s": "workspace::Save",
+    },
   },
   // Window's navigation
   {
@@ -52,21 +52,21 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
   },
   {
     "context": "GitPanel",
     "bindings": {
-      "q": "git_panel::Close"
-    }
+      "q": "git_panel::Close",
+    },
   },
   {
     "context": "AgentPanel",
     "bindings": {
       // "ctrl-\\": "workspace::ToggleRightDock",
-      "cmd-e": "workspace::ToggleRightDock"
-    }
+      "cmd-e": "workspace::ToggleRightDock",
+    },
   },
   // File panel (netrw)
   {
@@ -98,9 +98,9 @@
       "v": "project_panel::OpenPermanent",
       "shift-g": "menu::SelectLast",
       "g g": "menu::SelectFirst",
-      "-": "project_panel::SelectParent"
+      "-": "project_panel::SelectParent",
       // "ctrl-6": "pane::AlternateFile"
-    }
+    },
   },
   // Empty pane, set of keybindings that are available when there is no active editor
   {
@@ -108,15 +108,17 @@
     "bindings": {
       // Open file finder
       "space space": "tab_switcher::ToggleAll",
+      "space c k": "language_selector::Toggle",
       // New file
-      // "space f n": "workspace::NewFile",
+      "space f n": "workspace::NewFile",
       // Open recent project
       "space f f": "file_finder::Toggle",
+      "space e": "pane::RevealInProjectPanel",
       // Search in all the files
-      "space s g": "workspace::NewSearch"
+      "space s g": "workspace::NewSearch",
       // Quit zed
       // "space q q": "zed::Quit"
-    }
+    },
   },
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
@@ -125,8 +127,8 @@
       "space r n": "editor::Rename",
       // Chat with AI
       // "space a a": "assistant::ToggleFocus",
-      "ctrl-\\": "workspace::ToggleRightDock",
-      "cmd-k": "workspace::ToggleRightDock",
+      // "ctrl-\\": "workspace::ToggleRightDock",
+      // "cmd-k": "workspace::ToggleRightDock",
       // "space a e": "assistant::InlineAssist",
       // "cmd-l": "assistant::InlineAssist",
       // "space a t": "workspace::ToggleRightDock",
@@ -135,27 +137,28 @@
         "task::Spawn",
         {
           "task_name": "Yazi(cwd)",
-          "reveal_target": "center"
-        }
+          "reveal_target": "center",
+        },
       ],
       "_": [
         "task::Spawn",
         {
           "task_name": "Yazi(root)",
-          "reveal_target": "center"
-        }
+          "reveal_target": "center",
+        },
       ],
       "space g g": [
         "task::Spawn",
         {
           "task_name": "LazyGit",
-          "reveal_target": "center"
-        }
+          "reveal_target": "center",
+        },
       ],
-      "space g h d": "editor::ExpandAllDiffHunks",
-      "space g h D": "git::Diff",
+      // "space g h d": "editor::ExpandAllDiffHunks",
+      "space g h d": "git::Diff",
       "space g h r": "git::Restore",
       "space g h R": "git::RestoreFile",
+      "space g b": "git::Blame",
       // Toggle inlay hints
       "space u i": "editor::ToggleInlayHints",
       // Toggle soft wrap
@@ -166,9 +169,9 @@
       // Open recent project
       "space f p": "projects::OpenRecent",
       // Search word under cursor in current pane
-      "space s w": "buffer_search::Deploy",
+      // "space s w": "buffer_search::Deploy",
       // Search word under cursor in all panes
-      "space s W": "pane::DeploySearch",
+      "space s w": "pane::DeploySearch",
       // Tab things. Almost as good as harpoon.
       // "space 1": ["pane::ActivateItem", 0],
       // "space 2": ["pane::ActivateItem", 1],
@@ -182,7 +185,9 @@
       // "space 0": "pane::ActivateLastItem",
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePreviousItem",
-      // "space space": "tab_switcher::Toggle",
+      "space space": "tab_switcher::Toggle",
+      "space c k": "language_selector::Toggle",
+      "space e": "pane::RevealInProjectPanel",
       // Jump to the previous location
       "space b b": "pane::AlternateFile",
       // Close buffer
@@ -199,7 +204,6 @@
       // Search
       // "space /": "workspace::NewSearch",
       // Git
-      "space g b": "git::Blame",
       "alt-k": ["editor::MoveLineUp", { "display_lines": true }],
       "alt-j": ["editor::MoveLineDown", { "display_lines": true }],
       // LSP & Code actions
@@ -209,12 +213,11 @@
       // Format
       "space c f": "editor::Format",
       // File explorer
-      "space e": "workspace::ToggleLeftDock",
+      // "space e": "workspace::ToggleLeftDock",
       // Telescope
       "space f f": "file_finder::Toggle",
-      "space space": "tab_switcher::ToggleAll",
       // Quit zed
-      "space q q": "zed::Quit",
+      // "space q q": "zed::Quit",
       // Terminal
       "space t": "workspace::ToggleBottomDock",
       // Windows management
@@ -237,16 +240,16 @@
       // Excerpts
       "] q": "editor::MoveToStartOfNextExcerpt",
       "[ q": "editor::MoveToStartOfExcerpt",
-      "g r": ["workspace::SendKeystrokes", ": find all references enter"]
-    }
+      "g r": ["workspace::SendKeystrokes", ": find all references enter"],
+    },
   },
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
       // Line's Motions
       "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp"
-    }
+      "shift-k": "editor::MoveLineUp",
+    },
   },
   // Center the cursor on the screen when scrolling and find all references
   {
@@ -257,15 +260,15 @@
       // "n": ["workspace::SendKeystrokes", "n z z z v"],
       // "shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
       // "shift-g": ["workspace::SendKeystrokes", "shift-g z z"],
-      "g r": "editor::FindAllReferences"
-    }
+      "g r": "editor::FindAllReferences",
+    },
   },
   {
     "context": "vim_operator == d",
     "bindings": {
       "o": "editor::ExpandAllDiffHunks",
-      "r": "git::Restore"
-    }
+      "r": "git::Restore",
+    },
   },
   // {
   //   "context": "vim_mode == normal || vim_mode == visual",
@@ -277,7 +280,7 @@
   {
     "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
     "bindings": {
-      "b": "vim::AnyBrackets"
-    }
-  }
+      "b": "vim::AnyBrackets",
+    },
+  },
 ]
