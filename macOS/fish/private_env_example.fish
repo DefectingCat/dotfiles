@@ -3,3 +3,4 @@ set -Ux DOUBAO_API_KEY xxx
 set -Ux OPENROUTER_API_KEY xxx
 set -Ux GOOGLE_SEARCH_API_KEY xxx
 set -Ux GOOGLE_SEARCH_ENGINE_ID nvim
+set -Ux VOLC_API_KEY xxx
