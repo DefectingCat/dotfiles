@@ -29,16 +29,16 @@
         }
       }
     },
-    "code-plan": {
-      "npm": "@ai-sdk/anthropic",
+    "code-plan-openai": {
+      "npm": "@ai-sdk/openai-compatible",
       "name": "volcengine",
       "options": {
-        "baseURL": "https://ark.cn-beijing.volces.com/api/coding",
+        "baseURL": "https://ark.cn-beijing.volces.com/api/coding/v3",
         "apiKey": "{env:VOLC_API_KEY}"
       },
       "models": {
         "ark-code-latest": {
-          "name": "Auto"
+          "name": "CodePlanAuto"
         }
       }
     }
