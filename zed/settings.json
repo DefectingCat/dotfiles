@@ -1,0 +1,275 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "hard_tabs": false,
+  "toolbar": {
+    "selections_menu": true,
+    "agent_review": true,
+    "breadcrumbs": true,
+    "quick_actions": true,
+    "code_actions": false,
+  },
+  "language_models": {
+    "openai_compatible": {
+      "DoubaoCodeAPI": {
+        "api_url": "https://ark.cn-beijing.volces.com/api/v3",
+        "available_models": [
+          {
+            "name": "ep-20251231164745-sqp9x",
+            "max_tokens": 256000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 32000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+            },
+          },
+          {
+            "name": "ep-20260109093713-ddmm8",
+            "max_tokens": 256000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 32000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+            },
+          },
+        ],
+      },
+      "HuoShan": {
+        "api_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "available_models": [
+          {
+            "name": "doubao-seed-code-preview-latest",
+            "max_tokens": 256000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 32000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "agent": {
+    "default_profile": "write",
+    "dock": "right",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "DoubaoCodeAPI",
+      "model": "ep-20251231164745-sqp9x",
+    },
+    "model_parameters": [],
+  },
+  "ssh_connections": [
+    {
+      "host": "api.rua.plus",
+      "username": "ubuntu",
+      "port": 29888,
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/ubuntu"],
+        },
+      ],
+    },
+  ],
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  // "disable_ai": true,
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
+  "restore_on_startup": "empty_tab",
+  "notification_panel": {
+    "button": false,
+  },
+  "collaboration_panel": {
+    "dock": "right",
+    "button": false,
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "git_panel": {
+    "sort_by_path": true,
+    "dock": "right",
+  },
+  "project_panel": {
+    "dock": "right",
+  },
+  "vim_mode": true,
+  "terminal": {
+    "font_size": 16.0,
+    "font_family": "Maple Mono Normal NF CN",
+    "blinking": "on",
+  },
+  "preview_tabs": {
+    "enabled": false,
+  },
+  "status_bar": {
+    "experimental.show": true,
+  },
+  "tab_bar": {
+    "show": false,
+  },
+  "relative_line_numbers": "enabled",
+  "gutter": {
+    "line_numbers": true,
+    "min_line_number_digits": 1,
+    "runnables": false,
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "cursor_blink": true,
+  "autosave": "off",
+  "buffer_font_family": "Maple Mono Normal NF CN",
+  "file_types": {
+    "jsonc": ["*.json"],
+    "Shell Script": ["sh", "bash", "env", "conf", "yarn.lock"],
+  },
+  "linked_edits": true,
+  "show_edit_predictions": true,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 15.0,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Espresso (Blur)",
+    "dark": "Catppuccin Mocha",
+  },
+  "scroll_beyond_last_line": "one_page",
+  "vertical_scroll_margin": 3,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "current_line_highlight": "all",
+  "inlay_hints": {
+    "enabled": true,
+  },
+  // ls -l ~/Library/Application\ Support/Zed/extensions/installed/
+  "auto_install_extensions": {
+    // "cargo-tom": true,
+    "catppuccin": true,
+    "catppuccin-blur": true,
+    "catppuccin-icons": true,
+    "dockerfile": true,
+    "fish": true,
+    "git-firefly": true,
+    "html": true,
+    "less": true,
+    "make": true,
+    "tombi": true,
+    "toml": true,
+  },
+  "file_scan_exclusions": [
+    "**/.git/objects",
+    "**/.git/refs",
+    "**/.git/logs",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+  ],
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+    },
+    "TypeScript": {
+      "formatter": [
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": ["--stdin-filepath", "{buffer_path}"],
+          },
+        },
+        {
+          "language_server": {
+            "name": "biome",
+          },
+        },
+      ],
+    },
+    "JavaScript": {
+      "formatter": [
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": ["--stdin-filepath", "{buffer_path}"],
+          },
+        },
+        {
+          "language_server": {
+            "name": "biome",
+          },
+        },
+      ],
+    },
+  },
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true,
+      },
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        // "rustfmt": {
+        //   "overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"]
+        // },
+        "cargo": {
+          "allFeatures": true,
+          "buildScripts": {
+            "rebuildOnSave": true,
+          },
+        },
+        "procMacro": {
+          "enable": true,
+        },
+        // "checkOnSave": {
+        //   "command": "clippy" // rust-analyzer.checkOnSave.command
+        // },
+        "checkOnSave": true,
+        "hover": {
+          "references": {
+            "enabled": true,
+          },
+        },
+        "imports": {
+          "prefix": "crate",
+          "preferPrelude": true,
+          "granularity": {
+            "enforce": true,
+          },
+        },
+      },
+    },
+  },
+  // "proxy": "http://127.0.0.1:10808",
+}

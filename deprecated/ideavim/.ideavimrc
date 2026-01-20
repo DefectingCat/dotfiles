@@ -1,0 +1,110 @@
+let mapleader=" "
+
+""" Plugins  --------------------------------
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+"set NERDTree
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+"""s Plugin settings -------------------------
+""" let g:EasyMotion_override_acejump = 0
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set scrolloff=5
+set clipboard+=unnamed
+set clipboard+=idea-put
+set scrolloff=5
+set number relativenumber
+set incsearch
+set hls
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+""" Mappings --------------------------------
+""" map <leader><leader> <Plug>(easymotion-s)
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fw :action FindInPath<CR>
+nnoremap <leader>fa :action SearchEverywhere<CR>
+nnoremap <esc> :nohl<CR>
+xnoremap p "_dP
+"" Code
+nmap gh <Action>(ShowHoverInfo)
+nnoremap <leader>ra :action RenameElement<CR>
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap ]d :action GotoNextError<CR>
+nmap [d :action GotoPreviousError<CR>
+nmap <leader>gr :action FindUsages<CR>
+nmap <leader>ca :action ShowIntentionActions<CR>
+xmap gb :action CommentByBlockComment<CR>
+nmap <leader>co :action OptimizeImports<CR>
+"" Debug and run
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dr :action Debug<CR>
+nmap <leader>rr :action Run<CR>
+
+""" Switch windows
+nnoremap <C-h> <c-w>h
+nnoremap <C-l> <c-w>l
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+""" Switch tabs
+nmap <S-l> :action NextTab<CR>
+nmap <s-h> :action PreviousTab<CR>
+nmap <leader>x :q<CR>
+nmap <leader>gg :action ActivateCommitToolWindow<CR>
+
+"" Workspace
+nnoremap <leader>| :vs<CR>
+nnoremap <leader>_ :sp<CR>
+
+"" Extension
+set keep-english-in-normal
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+sethandler <C-2> a:vim
+sethandler <C-;> a:vim
+sethandler <C-S-;> a:vim
+sethandler <C-2> a:vim
+sethandler <C-;> a:vim
+sethandler <C-S-;> a:vim
+sethandler <C-A> a:ide
+sethandler <C-B> a:vim
+sethandler <C-C> a:ide
+sethandler <C-D> a:vim
+sethandler <C-E> a:ide
+sethandler <C-F> a:ide
+sethandler <C-G> a:vim
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-R> a:vim
+sethandler <C-S> a:ide
+sethandler <C-T> a:vim
+sethandler <C-U> a:vim
+sethandler <C-V> a:vim
+sethandler <C-W> a:ide
+sethandler <C-Y> a:vim

@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  frpc:
+    container_name: frpc
+    build: .
+    restart: on-failure:3
+    network_mode: host
+    ports:
+      - 7000:7000
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      # - /home/xfy/data/dockge/stacks/frpc/frpc.toml:/app/frpc.toml
+networks: {}
