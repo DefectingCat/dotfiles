@@ -4,18 +4,18 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-" status line
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" find files
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-call vundle#end()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'tpope/vim-surround'
+" Plugin 'scrooloose/nerdtree'
+" " status line
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" " find files
+" Plugin 'junegunn/fzf'
+" Plugin 'junegunn/fzf.vim'
+" call vundle#end()
 
 " Turn on syntax highlighting
 syntax on
@@ -120,9 +120,9 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme quiet
+" colorscheme quiet
 " colorscheme base16-default-dark
-" colorscheme catppuccin_mocha
+colorscheme catppuccin_mocha
 
 " plugin
 " nerdtree
