@@ -17,6 +17,7 @@ alias vim-update='nvim --headless "+Lazy! update" +qa'
 alias x86="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
 alias dur="du -h -d 1 2>/dev/null | sort -hr"
+alias lg="lazygit"
 
 set -Ux EDITOR nvim
 # set -Ux http_proxy "socks5://127.0.0.1:13659"
