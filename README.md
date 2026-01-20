@@ -1,11 +1,9 @@
 # xfy's dotfiles
 
-- neovim
 - tmux
 - kitty
-- zsh
-- powershell
-- ideavim
+- fish
+- iterm2
 
 ## Screenshots
 
@@ -19,17 +17,6 @@
 
 </details>
 
-## Key maps
+## vim
 
-### vim
-
-Base on nvchad.
-
-### tmux
-
-| Key   | Description |     |
-| ----- | ----------- | --- |
-| `C-b` | Prefix      |     |
-| `c`   | New window  |     |
-| `h`   | Next Panel  |     |
-| `l`   | Prev Panel  |     |
+Basic vim configuration.
