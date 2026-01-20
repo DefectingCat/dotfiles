@@ -1,0 +1,10 @@
+**/*/packer_compiled.lua
+**/*/*.log
+**/*/.DS_Store
+lazygit/state.yml
+tmux/plugins
+**/*/mysql
+**/*/.DS_Store
+macOS/fish/private_env.fish
+fish_variables
+macOS/fish/conf.d/private_env.fish

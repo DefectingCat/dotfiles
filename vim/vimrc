@@ -1,0 +1,171 @@
+" Don't try to be vi compatible
+set nocompatible
+
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'tpope/vim-surround'
+" Plugin 'scrooloose/nerdtree'
+" " status line
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" " find files
+" Plugin 'junegunn/fzf'
+" Plugin 'junegunn/fzf.vim'
+" call vundle#end()
+
+" Turn on syntax highlighting
+syntax on
+
+" For plugins to load correctly
+filetype plugin indent on
+
+let mapleader = " "
+" Cursor shape
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
+let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
+let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
+if &term =~ 'xterm\\|rxvt'
+  let &t_SI = "\e[6 q"   " Use a vertical bar (line) for insert mode
+  let &t_EI = "\e[2 q"   " Use a block cursor for normal mode
+  let &t_SR = "\e[4 q"   " Use underline cursor for replace mode
+endif
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+" Security
+set modelines=0
+
+" Show line numbers
+set number
+set relativenumber
+
+" Show file stats
+set ruler
+
+" Blink cursor on error instead of beeping (grr)
+" set visualbell
+set cursorline
+
+" Encoding
+set encoding=utf-8
+
+" Whitespace
+set nowrap           " do not automatically wrap on load
+set formatoptions-=t " do not automatically wrap text when typing
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set noshiftround
+
+" Cursor motion
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:> " use % to jump between pairs
+runtime! macros/matchit.vim
+
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
+" Allow hidden buffers
+set hidden
+
+" Rendering
+set ttyfast
+
+" Status bar
+set laststatus=2
+
+" Last line
+set showmode
+set showcmd
+
+" Searching
+nnoremap / /\v
+vnoremap / /\v
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader><space> :let @/=''<cr> " clear search
+" Remap help key.
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+nnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
+" Textmate holdouts
+
+" Others
+" https://vi.stackexchange.com/questions/22547/how-to-prevent-vim-from-making-a-flashy-screen-effect-when-pressing-esc-or
+set belloff=esc
+
+" Formatting
+map <leader>q gqip
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+" Uncomment this to enable by default:
+" set list " To enable by default
+" Or use your leader key + l to toggle on/off
+" map <leader>l :set list!<CR> " Toggle tabs and EOL
+" Color scheme (terminal)
+set t_Co=256
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+" in ~/.vim/colors/ and uncomment:
+" colorscheme quiet
+" colorscheme base16-default-dark
+colorscheme catppuccin_mocha
+
+" plugin
+" nerdtree
+let g:NERDTreeWinPos = "right"
+
+" Mapping
+" map <ESC> :noh<CR>
+noremap - :Ex<CR> " Open local-directory browser
+tnoremap <C-x> <C-\><C-n> " test
+" siwtch window
+map <C-j> <C-w>j
+tnoremap <C-j> <C-w>j
+map <C-k> <C-w>k
+tnoremap <C-k> <C-w>k
+map <C-h> <C-w>h
+tnoremap <C-h> <C-w>h
+map <C-l> <C-w>l
+tnoremap <C-l> <C-w>l
+" https://stackoverflow.com/questions/5933568/disable-blinking-at-the-first-last-line-of-the-file
+noremap <expr> k ((line('.')==1)?'':'k')
+noremap <expr> j ((line('.')==line('$'))?'':'j')
+" term
+noremap <leader>tt :term ++curwin<CR>
+" buffer
+noremap <S-l> :bn<CR>
+noremap <S-h> :bp<CR>
+noremap <leader>x :bd<CR>
+" noremap <leader>b :ls<CR>:b
+" save
+noremap <C-s> :w<CR>
+map <leader>p :set paste<CR>
+map <leader>np :set nopaste<CR>
+" nerdtree
+function MyNerdToggle()
+  if &filetype == 'nerdtree'
+    :NERDTreeToggle
+  else
+    :NERDTreeFind
+  endif
+endfunction
+map <leader>e :call MyNerdToggle()<CR> " Open local-directory browser
+" fzf
+map <leader>ff :Files<CR>
+map <leader>fw :Rg<CR>
+map <leader>b :Buffers<CR>
+map <leader>ct ::Filetypes<CR>

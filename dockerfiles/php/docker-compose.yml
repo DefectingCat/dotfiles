@@ -1,0 +1,28 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "4000:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    links:
+      - php-fpm
+
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: qwer1234
+    volumes:
+      - ./mysql:/var/lib/mysql
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+
+  php-fpm:
+    image: php:7-fpm-alpine
+    volumes:
+      - .:/var/www/html

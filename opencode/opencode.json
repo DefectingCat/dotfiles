@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "volces": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "volcengine",
+      "options": {
+        "baseURL": "https://ark.cn-beijing.volces.com/api/v3",
+        "apiKey": "{env:VOLC_API_KEY}"
+      },
+      "models": {
+        "ep-20260109093713-ddmm8": {
+          "name": "Kimi-K2"
+        },
+        "ep-20251231164745-sqp9x": {
+          "name": "Doubao-Seed-Code"
+        },
+        "ep-20260115152828-clq64": {
+          "name": "Doubao-Smart-Router"
+        },
+        "ep-20260115152657-c4244": {
+          "name": "Doubao-Seed-1.8"
+        },
+        "ep-20260115181005-8jhf9": {
+          "name": "DeepSeek-R1"
+        },
+        "ep-20260115162817-bxqvz": {
+          "name": "GLM-4.7"
+        }
+      }
+    },
+    "code-plan-openai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "volcengine",
+      "options": {
+        "baseURL": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "apiKey": "{env:VOLC_API_KEY}"
+      },
+      "models": {
+        "ark-code-latest": {
+          "name": "CodePlanAuto"
+        }
+      }
+    }
+  }
+}
