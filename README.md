@@ -4,6 +4,7 @@
 - kitty
 - fish
 - iterm2
+- zed
 
 ## Screenshots
 
