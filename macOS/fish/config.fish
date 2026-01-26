@@ -1,7 +1,4 @@
-# source /usr/share/cachyos-fish-config/cachyos-config.fish
-# source $HOME/.config/fish/private_env.fish
 source $HOME/.config/fish/cachyos.fish
-source $HOME/.config/fish/git.fish
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -36,24 +33,4 @@ set -Ux LC_ALL "en_US.UTF-8"
 set -Ux COLORTERM truecolor
 set -Ux TERM xterm-256color
 
-# 代理管理函数
-function proxy
-    set -Ux http_proxy "http://127.0.0.1:10808"
-    set -Ux https_proxy "http://127.0.0.1:10808"
-    echo "代理已启用: http://127.0.0.1:10808"
-end
-function proxy_socks
-    set -Ux http_proxy "socks5://127.0.0.1:13659"
-    set -Ux https_proxy "socks5://127.0.0.1:13659"
-    echo "代理已启用: http://127.0.0.1:10808"
-end
-function unproxy
-    set -e http_proxy
-    set -e https_proxy
-    echo 代理已取消
-end
-
 starship init fish | source
-
-# Added by Qoder CLI installer
-set -gx PATH $PATH /Users/issuser/.local/bin
