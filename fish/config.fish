@@ -1,4 +1,4 @@
-source $HOME/.config/fish/cachyos.fish
+source $HOME/.config/fish/cachyos-config.fish
 
 alias vim="nvim"
 alias ll="lsd -lhtrF"
