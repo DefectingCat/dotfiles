@@ -1,5 +1,0 @@
-set -Ux DEEPSEEK_API_KEY xxx
-set -Ux ARK_API_KEY xxx
-set -Ux OPENROUTER_API_KEY xxx
-set -Ux GOOGLE_SEARCH_API_KEY xxx
-set -Ux GOOGLE_SEARCH_ENGINE_ID nvim
