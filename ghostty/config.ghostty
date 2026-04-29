@@ -1,0 +1,11 @@
+font-family = "Maple Mono Normal NF CN"
+font-size = 16
+font-thicken = true
+font-thicken-strength = 128
+font-feature = calt
+font-feature = liga
+
+theme = Ayu
+
+macos-window-buttons = hidden
+macos-titlebar-style = tabs
