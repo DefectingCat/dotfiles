@@ -1,0 +1,27 @@
+providers:
+  webSearch: auto
+  memoryModel: online
+setupVersion: 1
+modelRoles:
+  default: zhipu-coding-plan/glm-5.2:max
+statusLine:
+  preset: compact
+  separator: powerline
+  transparent: true
+terminal:
+  showProgress: true
+display:
+  shimmer: kitt
+  showTokenUsage: true
+  cacheMissMarker: true
+memory:
+  backend: local
+autolearn:
+  enabled: true
+  autoContinue: false
+defaultThinkingLevel: max
+edit:
+  mode: hashline
+lsp:
+  formatOnWrite: true
+
