@@ -4,19 +4,6 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'tpope/vim-surround'
-" Plugin 'scrooloose/nerdtree'
-" " status line
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-" " find files
-" Plugin 'junegunn/fzf'
-" Plugin 'junegunn/fzf.vim'
-" call vundle#end()
-
 " Turn on syntax highlighting
 syntax on
 
@@ -150,22 +137,7 @@ noremap <leader>tt :term ++curwin<CR>
 noremap <S-l> :bn<CR>
 noremap <S-h> :bp<CR>
 noremap <leader>x :bd<CR>
-" noremap <leader>b :ls<CR>:b
 " save
 noremap <C-s> :w<CR>
 map <leader>p :set paste<CR>
 map <leader>np :set nopaste<CR>
-" nerdtree
-function MyNerdToggle()
-  if &filetype == 'nerdtree'
-    :NERDTreeToggle
-  else
-    :NERDTreeFind
-  endif
-endfunction
-map <leader>e :call MyNerdToggle()<CR> " Open local-directory browser
-" fzf
-map <leader>ff :Files<CR>
-map <leader>fw :Rg<CR>
-map <leader>b :Buffers<CR>
-map <leader>ct ::Filetypes<CR>
