@@ -1,13 +1,11 @@
 source $HOME/.config/fish/cachyos-config.fish
 
-alias vim="nvim"
 alias ll="lsd -lhtrF"
 alias vi="/usr/bin/vim"
-alias vim-update='nvim --headless "+Lazy! update" +qa'
+alias vim="nvim"
+alias vim-update="nvim --headless -c 'PackUpdate' -c 'qa!'"
 alias dur="du -h -d 1 2>/dev/null | sort -hr"
 alias lg="lazygit"
-alias claude="claude --dangerously-skip-permissions"
-alias claudeg="claude 'ulw 分析git历史提交格式，提交修改，如果需要分批次提交则分批次'"
 
 set -Ux EDITOR nvim
 set -Ux RUSTUP_DIST_SERVER https://mirrors.ustc.edu.cn/rust-static
