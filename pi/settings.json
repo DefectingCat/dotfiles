@@ -1,0 +1,23 @@
+{
+    "lastChangelogVersion": "0.85.1",
+    "theme": "dark",
+    "terminal": {
+        "showTerminalProgress": true
+    },
+    "defaultProjectTrust": "always",
+    "packages": [
+        "npm:pi-web-access",
+        "npm:pi-subagents",
+        "npm:pi-lens",
+        "npm:pi-mcp-adapter",
+        "npm:@juicesharp/rpiv-ask-user-question",
+        "npm:@juicesharp/rpiv-todo"
+    ],
+    "tuiMode": "regular",
+    "showCacheMissNotices": true,
+    "collapseChangelog": true,
+    "quietStartup": true,
+    "fullscreenCopyOnSelect": true,
+    "hideThinkingBlock": true,
+    "defaultThinkingLevel": "max"
+}
